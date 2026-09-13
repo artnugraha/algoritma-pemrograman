@@ -1096,7 +1096,7 @@ Kebiasaan ini sangat penting:
 }
 ```
 
-## Galat sintaksis (*syntax error*)
+### Galat sintaksis (*syntax error*)
 
 Jenis kesalahan lain adalah galat sintaksis Misalkan kita menulis
 ```c
@@ -1113,7 +1113,7 @@ Secara sederhana, kita dapat membedakan dua bentuk kesalahan.
 - **Logic error** terjadi ketika program secara sintaks benar tetapi algoritma atau perhitungannya salah.
 Nantinya kita juga akan bertemu berbagai jenis kesalahan lain.
 
-## Peringatan (*warning*) dari *compiler*
+### Peringatan (*warning*) dari *compiler*
 
 Selain mendeteksi kesalahan, *compiler* dapat memberikan peringatan (**warning**). *Warning* berbeda dengan *error* karena *error* biasanya menyebabkan proses kompilasi gagal, sedangkan *warning* sering kali masih memungkinkan program dikompilasi, tetapi *compiler* menemukan sesuatu yang perlu diperhatikan.
 
@@ -1125,7 +1125,7 @@ dan membaca pesan *compiler* dengan hati-hati. Opsi `-Wall` dan `-Wextra` memint
 
 Perlu dipahami bahwa pesan *error* dan *warning* bukanlah musuh *programmer*. Pesan tersebut justru memberikan informasi mengenai bagian program yang mungkin perlu diperiksa.
 
-## *Debugging*
+### *Debugging*
 
 Proses mencari dan memperbaiki kesalahan dalam program disebut **debugging**.
 
@@ -1141,9 +1141,9 @@ Pada tahap awal, *debugging* dapat dilakukan dengan beberapa kebiasaan sederhana
 
 Cara-cara *debugging* yang lebih canggih dan sistematis dapat dipelajari melalui berbagai tutorial pemrograman dari aspek yang lebih teknis. Untuk mata kuliah ini, kita cukup melakukan teknik *debugging* yang disebutkan di atas.
 
-## Contoh program fisika sederhana
+### Contoh program fisika sederhana
 
-### Perhitungan hukum Ohm
+#### Perhitungan hukum Ohm
 
 Misalkan
 ```math
@@ -1196,7 +1196,7 @@ V=IR.
 ```
 Outputnya adalah $V$. Pola tersebut muncul hampir di seluruh aktivitas komputasi.
 
-### Gerak lurus
+#### Gerak lurus
 
 Untuk gerak dengan percepatan konstan,
 ```math
