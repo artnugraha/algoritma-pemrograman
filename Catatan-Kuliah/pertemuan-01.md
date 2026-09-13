@@ -6,13 +6,13 @@ Komputer merupakan salah satu alat kerja utama dalam sains dan rekayasa. Dalam T
 
 Sebagai contoh sederhana, misalkan sebuah eksperimen menghasilkan sejumlah data temperatur:
 
-$$
+```math
 T_1,T_2,\ldots,T_N.
-$$
+```
 
 Kita ingin mengetahui temperatur rata-rata,
 
-$$
+```math
 \overline{T}
 =
 \frac{1}{N}
@@ -20,13 +20,13 @@ $$
 =
 \frac{1}{N}
 (T_1 + T_2 + \ldots + T_N).
-$$
+```
 
 Bagi manusia yang sudah memahami matematika, persamaan tersebut tampak sederhana. Akan tetapi, komputer tidak secara langsung memahami simbol
 
-$$
+```math
 \sum_{i=1}^{N}T_i.
-$$
+```
 
 Komputer membutuhkan serangkaian instruksi yang jauh lebih eksplisit.
 
@@ -48,7 +48,7 @@ Urutan langkah yang terdefinisi dengan jelas seperti ini disebut sebagai **algor
 
 Sepanjang mata kuliah ini, hubungan berikut akan kerap kita gunakan:
 
-$$
+```math
 \boxed{
 \text{masalah}
 \longrightarrow
@@ -60,15 +60,15 @@ $$
 \longrightarrow
 \text{hasil}
 }
-$$
+```
 
 Untuk mahasiswa dan praktisi Teknik Fisika, bagian pertama (**pernyataan masalah**) dari alur tersebut sangat penting. Kita biasanya tidak memulai dari program. Kita memulai dari suatu persoalan fisika atau rekayasa.
 
 Sebagai contoh, energi kinetik sebuah benda diberikan oleh
 
-$$
+```math
 E_k=\frac{1}{2}mv^2.
-$$
+```
 
 Jika massa $m$ dan kecepatan $v$ diketahui, kita dapat menyusun prosedur:
 
@@ -216,11 +216,11 @@ machine code
 
 atau
 
-$$
+```math
 \text{source code}
 \xrightarrow{\text{compiler}}
 \text{machine code}.
-$$
+```
 
 Salah satu *compiler* C yang banyak digunakan adalah GCC. 
 
@@ -317,7 +317,7 @@ Untuk saat ini kita belum perlu memahami seluruh bagian program C tersebut. Sint
 
 Hal yang perlu dipahami sekarang adalah alurnya:
 
-$$
+```math
 \boxed{
 \text{source code}
 \rightarrow
@@ -327,7 +327,7 @@ $$
 \rightarrow
 \text{execution}
 }
-$$
+```
 
 ### Instalasi GCC di Linux
 
@@ -425,49 +425,49 @@ Sampai di sini kita dapat mengajukan pertanyaan yang lebih mendasar. Bagaimana k
 Bit merupakan satuan informasi yang memiliki dua kemungkinan keadaan, yaitu $0$ atau $1$. Secara elektronik, kedua keadaan ini dapat direpresentasikan menggunakan dua rentang kondisi fisik yang berbeda. Detail implementasi elektroniknya tidak diperlukan dalam mata kuliah ini. Yang penting bagi kita adalah bahwa data pada tingkat rendah direpresentasikan menggunakan kombinasi nol dan satu.
 
 Delapan bit dapat membentuk satu **byte**,
-$$
+```math
 1\text{ byte}=8\text{ bit}.
-$$
+```
 Contoh satu byte adalah
 ```text
 01001101
 ```
 
 Karena setiap bit mempunyai dua kemungkinan nilai, delapan bit mempunyai
-$$
+```math
 2^8=256
-$$
+```
 kombinasi berbeda. Prinsip sederhana ini akan menjelaskan mengapa tipe data komputer mempunyai rentang nilai yang terbatas.
 
 ## Sistem bilangan desimal dan biner
 
 Dalam kehidupan sehari-hari kita menggunakan sistem bilangan desimal atau basis sepuluh. Sebagai contoh,
-$$
+```math
 572
-$$
+```
 sebenarnya merupakan singkatan dari
-$$
+```math
 5(10^2)+7(10^1)+2(10^0).
-$$
+```
 Kita tahu
-$$
+```math
 10^2=100,\qquad
 10^1=10,\qquad
 10^0=1,
-$$
+```
 sehingga
-$$
+```math
 572
 =
 5(100)+7(10)+2(1).
-$$
+```
 
 Sistem biner bekerja dengan prinsip yang sama, tetapi menggunakan basis dua. Digit yang tersedia hanya $0$ dan $1$. Misalkan kita mempunyai bilangan biner
-$$
+```math
 1101_2.
-$$
+```
 Subskrip $2$ menunjukkan bahwa bilangan tersebut menggunakan basis dua. Nilainya adalah
-$$
+```math
 1101_2
 =
 1(2^3)
@@ -477,35 +477,35 @@ $$
 0(2^1)
 +
 1(2^0).
-$$
+```
 Karena
-$$
+```math
 2^3=8,\qquad
 2^2=4,\qquad
 2^1=2,\qquad
 2^0=1,
-$$
+```
 kita dapat tuliskan
-$$
+```math
 1101_2
 =
 8+4+0+1
 =
 13_{10}.
-$$
+```
 Jadi,
-$$
+```math
 \boxed{
 1101_2=13_{10}
 }
-$$
+```
 
 Contoh lainnya adalah
-$$
+```math
 10110_2.
-$$
+```
 Kita memperoleh
-$$
+```math
 10110_2
 =
 1(2^4)
@@ -517,68 +517,68 @@ $$
 1(2^1)
 +
 0(2^0),
-$$
+```
 sehingga
-$$
+```math
 10110_2
 =
 16+0+4+2+0
 =
 22_{10}.
-$$
+```
 
 ## Mengubah desimal menjadi biner
 
 Untuk mengubah bilangan desimal bulat menjadi biner, salah satu metode yang dapat digunakan adalah pembagian berulang dengan dua. Misalkan kita ingin mengubah
-$$
+```math
 13_{10}
-$$
+```
 menjadi bilangan biner. Kita mulai dengan
-$$
+```math
 13=6(2)+1.
-$$
+```
 Kemudian
-$$
+```math
 6=3(2)+0,
-$$
-$$
+```
+```math
 3=1(2)+1,
-$$
+```
 dan
-$$
+```math
 1=0(2)+1.
-$$
+```
 Sisa pembagian adalah
-$$
+```math
 1,\quad0,\quad1,\quad1.
-$$
+```
 Jika dibaca dari bawah ke atas,
-$$
+```math
 1101.
-$$
+```
 Jadi,
-$$
+```math
 13_{10}=1101_2.
-$$
+```
 
 Sebagai latihan, coba tunjukkan bahwa
-$$
+```math
 42_{10}=101010_2.
-$$
+```
 Perhatikan pola berikut:
-$$
+```math
 42
 =
 32+8+2
 =
 2^5+2^3+2^1.
-$$
+```
 Karena itu, bit pada posisi $5$, $3$, dan $1$ bernilai satu:
-$$
+```math
 42_{10}
 =
 101010_2.
-$$
+```
 
 ## Sistem heksadesimal
 
@@ -593,71 +593,71 @@ Digit heksadesimal adalah
 0 1 2 3 4 5 6 7 8 9 A B C D E F
 ```
 dengan
-$$
+```math
 A=10,\qquad
 B=11,\qquad
 C=12,
-$$
-$$
+```
+```math
 D=13,\qquad
 E=14,\qquad
 F=15.
-$$
+```
 
 Alasan heksadesimal sangat berguna dalam komputasi adalah
-$$
+```math
 16=2^4.
-$$
+```
 Artinya, satu digit heksadesimal tepat merepresentasikan empat bit. Sebagai contoh,
-$$
+```math
 0000_2=0_{16},
-$$
-$$
+```
+```math
 0001_2=1_{16},
-$$
-$$
+```
+```math
 1010_2=A_{16},
-$$
+```
 dan
-$$
+```math
 1111_2=F_{16}.
-$$
+```
 
 Sekarang perhatikan bilangan
-$$
+```math
 10101111_2.
-$$
+```
 Kita dapat mengelompokkannya menjadi
-$$
+```math
 1010\quad1111.
-$$
+```
 Kelompok pertama adalah
-$$
+```math
 1010_2=A_{16},
-$$
+```
 sedangkan kelompok kedua adalah
-$$
+```math
 1111_2=F_{16}.
-$$
+```
 Jadi,
-$$
+```math
 \boxed{
 10101111_2=AF_{16}
 }
-$$
+```
 
 Notasi heksadesimal akan muncul kembali ketika kita membahas representasi data dan alamat memori.
 
 ## Berapa banyak nilai yang dapat disimpan oleh sejumlah bit?
 
 Jika terdapat satu bit, jumlah pola yang mungkin adalah
-$$
+```math
 2.
-$$
+```
 Jika terdapat dua bit,
-$$
+```math
 2^2=4.
-$$
+```
 Pola yang mungkin adalah
 ```text
 00
@@ -666,28 +666,28 @@ Pola yang mungkin adalah
 11
 ```
 Untuk tiga bit,
-$$
+```math
 2^3=8.
-$$
+```
 
 Secara umum, dengan $n$ bit terdapat
-$$
+```math
 \boxed{
 2^n
 }
-$$
+```
 pola bit yang berbeda. Hasil ini tampak sederhana, tetapi sangat penting. Dengan delapan bit,
-$$
+```math
 2^8=256
-$$
+```
 pola dapat direpresentasikan. Dengan enam belas bit,
-$$
+```math
 2^{16}=65536.
-$$
+```
 Dengan 32 bit,
-$$
+```math
 2^{32}=4294967296.
-$$
+```
 Jumlah pola ini kemudian dapat dipetakan ke nilai-nilai yang ingin kita representasikan.
 
 ## Unsigned integer
@@ -701,59 +701,59 @@ yang mewakili $0$. Sementara itu, pola terbesar adalah
 11111111
 ```
 yang bernilai
-$$
+```math
 2^7+2^6+\cdots+2^1+2^0.
-$$
+```
 Nilai eksaknya adalah
-$$
+```math
 255.
-$$
+```
 Dengan demikian, rentang *unsigned integer* delapan bit adalah
-$$
+```math
 0\leq x\leq255.
-$$
+```
 
 Secara umum, *unsigned integer* dengan $n$ bit mempunyai rentang
-$$
+```math
 \boxed{
 0\leq x\leq2^n-1.
 }
-$$
+```
 Untuk 16 bit,
-$$
+```math
 0\leq x\leq65535.
-$$
+```
 Untuk 32 bit,
-$$
+```math
 0\leq x\leq4294967295.
-$$
+```
 Penting untuk diperhatikan bahwa jumlah bit terbatas menyebabkan rentang nilai juga terbatas.
 
 ## Bagaimana dengan bilangan negatif?
 
 Kita juga membutuhkan representasi untuk bilangan seperti
-$$
+```math
 -1,\qquad -27,\qquad -100.
-$$
+```
 Komputer modern umumnya menggunakan representasi yang disebut **two's complement** untuk *signed integer*.
 
 Pada tahap ini kita belum perlu membahas seluruh detail *two's complement*. Hal yang perlu diketahui adalah bahwa untuk *signed integer* $n$-bit, rentang tipikalnya adalah
-$$
+```math
 \boxed{
 -2^{n-1}
 \leq x
 \leq
 2^{n-1}-1.
 }
-$$
+```
 Untuk delapan bit,
-$$
+```math
 -128\leq x\leq127.
-$$
+```
 Untuk 16 bit,
-$$
+```math
 -32768\leq x\leq32767.
-$$
+```
 Perhatikan bahwa rentangnya tidak simetris sempurna. Ada satu bilangan negatif tambahan.  Kita akan kembali ke detail representasi data ketika mempelajari tipe data dalam C.
 
 ## Overflow
@@ -761,23 +761,23 @@ Perhatikan bahwa rentangnya tidak simetris sempurna. Ada satu bilangan negatif t
 Jumlah bit yang terbatas membuat sebuah integer tidak dapat bertambah tanpa batas.
 
 Mari kita tinjau *unsigned integer* delapan bit.Nilai maksimum yang dapat direpresentasikan adalah
-$$
+```math
 255.
-$$
+```
 Secara matematis,
-$$
+```math
 255+1=256.
-$$
+```
 Namun, 256 tidak dapat direpresentasikan oleh delapan bit *unsigned* karena
-$$
+```math
 256=2^8.
-$$
+```
 Representasi binernya membutuhkan sembilan bit:
-$$
+```math
 256_{10}
 =
 100000000_2.
-$$
+```
 Ketika hasil suatu operasi keluar dari rentang representasi tipe data, kita menghadapi kondisi yang disebut **overflow**. 
 
 *Overflow* merupakan salah satu contoh awal bahwa matematika dan komputasi tidak selalu identik.Dalam matematika, bilangan bulat dapat sebesar apa pun. Dalam komputer, bilangan tersebut disimpan menggunakan jumlah bit yang terbatas. Jadi, ketika melakukan komputasi, kita harus selalu mempertimbangkan **nilai matematis** 
@@ -795,64 +795,64 @@ Teknik Fisika
 ```
 
 Bagaimana komputer menyimpan huruf atau karakter (*character*) semacam itu? Salah satu idenya adalah memberikan suatu bilangan kepada setiap karakter. Dalam ASCII, misalnya, karakter `A` diasosiasikan dengan nilai desimal
-$$
+```math
 65.
-$$
+```
 Karakter `B` diasosiasikan dengan
-$$
+```math
 66.
-$$
+```
 Karakter `a` diasosiasikan dengan
-$$
+```math
 97.
-$$
+```
 Bilangan-bilangan tersebut pada akhirnya direpresentasikan menggunakan bit sehingga teks juga dapat disimpan dalam memori komputer. Secara konseptual,
-$$
+```math
 \text{karakter}
 \longrightarrow
 \text{kode numerik}
 \longrightarrow
 \text{bit}.
-$$
+```
 
 ASCII hanya mencakup kumpulan karakter yang relatif terbatas. Sistem modern menggunakan Unicode untuk merepresentasikan kumpulan karakter yang jauh lebih luas. Kita tidak perlu mempelajari detail Unicode sekarang. Poin pentingnya adalah bahwa hampir semua informasi digital akhirnya perlu direpresentasikan menggunakan pola bit.
 
 ## Representasi bilangan real
 
 Sejauh ini, bilangan bulat relatif mudah dipahami. Masalah menjadi lebih rumit ketika kita ingin menyimpan bilangan *real* seperti
-$$
+```math
 3.141592653589793\ldots
-$$
+```
 atau
-$$
+```math
 \frac{1}{3}
 =
 0.333333333333333\ldots
-$$
+```
 atau
-$$
+```math
 6.02214076\times10^{23}.
-$$
+```
 
 Komputer memiliki jumlah bit yang terbatas, sedangkan beberapa bilangan membutuhkan jumlah digit yang tidak terbatas untuk direpresentasikan secara eksak.
 
 Untuk menyimpan bilangan real, komputer biasanya menggunakan representasi titik kambang (**floating-point**). Idenya mirip dengan notasi ilmiah. Dalam notasi ilmiah desimal, kita dapat menulis
-$$
+```math
 602200000000000000000000
-$$
+```
 sebagai
-$$
+```math
 6.022\times10^{23}.
-$$
+```
 Secara umum,
-$$
+```math
 x
 =
 \pm m\times10^e.
-$$
+```
 
 *Floating-point* menggunakan gagasan serupa notasi ilmiah, tetapi secara internal menggunakan basis dua dalam suatu konvensi yang disebut format IEEE754:
-$$
+```math
 \boxed{
 x
 =
@@ -860,40 +860,40 @@ x
 m
 2^e.
 }
-$$
+```
 Di sini $s$ berkaitan dengan tanda, $m$ berkaitan dengan bagian signifikan bilangan, dan $e$ merupakan eksponen. Detail format IEEE 754 belum diperlukan pada tahap ini. Kita hanya perlu memahami konsekuensi dari jumlah bit yang terbatas.
 
 ## Mengapa $0.1$ sulit direpresentasikan?
 
 Dalam sistem desimal, pecahan
-$$
+```math
 \frac{1}{3}
-$$
+```
 tidak dapat direpresentasikan menggunakan jumlah digit yang terbatas:
-$$
+```math
 \frac13
 =
 0.333333333333\ldots
-$$
+```
 Jika kita hanya mempunyai beberapa digit, kita harus melakukan pendekatan, misalnya
-$$
+```math
 0.3333,
-$$
+```
 yang serupa terjadi pada sistem biner.
 
 Bilangan desimal
-$$
+```math
 0.1
-$$
+```
 tidak mempunyai representasi biner berhingga. Representasinya terus berlanjut. Karena komputer hanya menyediakan jumlah bit yang terbatas, komputer harus menyimpan nilai biner yang sangat dekat dengan $0.1$, bukan nilai $0.1$ matematis secara eksak. Hal yang sama terjadi untuk banyak bilangan desimal lainnya.
 Akibatnya,
-$$
+```math
 0.1+0.2
-$$
+```
 dapat menghasilkan representasi internal yang sedikit berbeda dari
-$$
+```math
 0.3.
-$$
+```
 
 Dalam beberapa sistem pemrograman kita dapat melihat hasil seperti
 ```text
@@ -906,32 +906,32 @@ Hasil ini bukan karena komputer tidak mampu melakukan penjumlahan sederhana. Mas
 Perbedaan kecil yang muncul akibat representasi terbatas disebut **rounding error** atau kesalahan pembulatan. Untuk satu operasi sederhana, kesalahan tersebut biasanya sangat kecil. Namun, dalam komputasi ilmiah kita dapat melakukan jutaan atau bahkan miliaran operasi. Dalam algoritma tertentu, kesalahan kecil dapat terakumulasi atau diperbesar.
 
 Dari uraian ini, mahasiswa Teknik Fisika perlu memahami sejak awal bahwa hasil komputasi numerik perlu dianalisis, bukan hanya diterima begitu saja. Misalkan teori memberikan nilai
-$$
+```math
 x_{\text{exact}}
-$$
+```
 dan program menghasilkan
-$$
+```math
 x_{\text{computed}}.
-$$
+```
 Kita sering lebih tertarik pada kesalahannya,
-$$
+```math
 \Delta x
 =
 x_{\text{computed}}
 -
 x_{\text{exact}}.
-$$
+```
 Kita juga dapat melihat kesalahan absolut
-$$
+```math
 |\Delta x|
 =
 |x_{\text{computed}}-x_{\text{exact}}|.
-$$
+```
 
 Dalam praktik pemrograman, dua nilai *floating-point* sering dibandingkan menggunakan suatu toleransi $\varepsilon$:
-$$
+```math
 |x_1-x_2|<\varepsilon.
-$$
+```
 Ide ini akan menjadi sangat penting ketika kita mempelajari komputasi numerik lebih lanjut, misalnya dalam mata kuliah fisika komputasi atau teknik komputasi.
 
 ## Presisi (*precision*) dan rentang (*range*)
@@ -951,36 +951,36 @@ Keduanya merepresentasikan bilangan *floating-point*, tetapi umumnya `double` me
 ## Program C pertama untuk perhitungan fisika
 
 Sekarang kita dapat menggabungkan beberapa gagasan yang telah dipelajari. Misalkan sebuah benda mempunyai massa
-$$
+```math
 m=2.0\text{ kg}
-$$
+```
 dan besar kecepatan
-$$
+```math
 v=3.0\text{ m/s}.
-$$
+```
 Energi kinetiknya adalah
-$$
+```math
 E_k=\frac12mv^2.
-$$
+```
 
 Secara hitungan manual,
-$$
+```math
 E_k
 =
 \frac12(2.0)(3.0)^2.
-$$
+```
 Perhatikan
-$$
+```math
 3^2=9,
-$$
+```
 sehingga
-$$
+```math
 E_k
 =
 \frac12(2)(9)
 =
 9\text{ J}.
-$$
+```
 
 Sekarang kita implementasikan perhitungan tersebut dalam bahasa C.
 ```c
@@ -1032,9 +1032,9 @@ Kemudian
 double energy = 0.5 * mass * velocity * velocity;
 ```
 melakukan perhitungan
-$$
+```math
 E_k=\frac12mv^2.
-$$
+```
 
 Untuk sementara kita belum perlu menghafalkan semua aturan sintaksis tersebut. Kita akan membahas variabel, tipe data, operator, dan ekspresi dengan lebih terstruktur pada pertemuan-pertemuan berikutnya.
 
@@ -1059,13 +1059,13 @@ int main(void)
 }
 ```
 Program ini kemungkinan besar dapat dikompilasi tanpa masalah. Namun, persamaan yang digunakan adalah
-$$
+```math
 E=\frac12mv,
-$$
+```
 bukan
-$$
+```math
 E_k=\frac12mv^2.
-$$
+```
 Program akan berjalan, tetapi hasilnya salah.
 Situasi ini adalah contoh sederhana dari galat logika (**logic error**). Oleh karena itu, terdapat perbedaan besar antara
 > program dapat dijalankan
@@ -1073,18 +1073,18 @@ dan
 > program menghasilkan jawaban yang benar.
 
 Dalam sains dan rekayasa, kita selalu perlu memeriksa apakah hasil program masuk akal. Salah satu cara paling sederhana adalah membandingkan hasil program dengan kasus yang dapat dihitung secara manual. Untuk contoh tadi, kita sudah mengetahui bahwa
-$$
+```math
 m=2,\qquad
 v=3
-$$
+```
 seharusnya menghasilkan
-$$
+```math
 E_k=9\text{ J}.
-$$
+```
 Jika program menghasilkan nilai lain, kita mengetahui ada sesuatu yang perlu diperiksa.
 
 Kebiasaan ini sangat penting:
-$$
+```math
 \boxed{
 \text{prediksi}
 \rightarrow
@@ -1092,7 +1092,7 @@ $$
 \rightarrow
 \text{bandingkan}
 }
-$$
+```
 
 ## Galat sintaksis (*syntax error*)
 
@@ -1144,21 +1144,21 @@ Cara-cara *debugging* yang lebih canggih dan sistematis dapat dipelajari melalui
 ### Perhitungan hukum Ohm
 
 Misalkan
-$$
+```math
 V=IR.
-$$
+```
 Jika
-$$
+```math
 I=2.5\text{ A}
-$$
+```
 dan
-$$
+```math
 R=10\ \Omega,
-$$
+```
 maka
-$$
+```math
 V=(2.5)(10)=25\text{ V}.
-$$
+```
 
 Program C sederhana untuk menghitungnya adalah
 ```c
@@ -1178,7 +1178,7 @@ int main(void)
 ```
 
 Program ini mengikuti pola umum
-$$
+```math
 \boxed{
 \text{input}
 \rightarrow
@@ -1186,38 +1186,38 @@ $$
 \rightarrow
 \text{output}.
 }
-$$
+```
 Inputnya adalah $I$ dan $R$.
 Prosesnya adalah
-$$
+```math
 V=IR.
-$$
+```
 Outputnya adalah $V$. Pola tersebut muncul hampir di seluruh aktivitas komputasi.
 
 ## Gerak lurus
 
 Untuk gerak dengan percepatan konstan,
-$$
+```math
 x(t)
 =
 x_0+v_0t+\frac12at^2.
-$$
+```
 Misalkan
-$$
+```math
 x_0=2.0\text{ m},
-$$
-$$
+```
+```math
 v_0=5.0\text{ m/s},
-$$
-$$
+```
+```math
 a=3.0\text{ m/s}^2,
-$$
+```
 dan
-$$
+```math
 t=4.0\text{ s}.
-$$
+```
 Secara manual,
-$$
+```math
 x
 =
 2.0
@@ -1225,24 +1225,24 @@ x
 (5.0)(4.0)
 +
 \frac12(3.0)(4.0)^2.
-$$
+```
 Maka
-$$
+```math
 x
 =
 2+20+\frac12(3)(16),
-$$
-$$
+```
+```math
 x
 =
 22+24,
-$$
+```
 dan kita peroleh
-$$
+```math
 \boxed{
 x=46\text{ m}.
 }
-$$
+```
 
 Program C-nya dapat ditulis sebagai
 ```c
@@ -1270,9 +1270,9 @@ int main(void)
 }
 ```
 Sekali lagi, sebelum mempercayai program kita sudah mempunyai prediksi:
-$$
+```math
 x=46\text{ m}.
-$$
+```
 Jika program tidak memberikan nilai tersebut, kita harus memeriksa kembali programnya.
 
 ## Program adalah representasi model
@@ -1288,11 +1288,11 @@ double energy = 0.5 * mass * velocity * velocity;
 komputer tidak memahami konsep energi kinetik.
 
 Makna fisika berasal dari kita sebagai pembuat model dan program. Dengan kata lain,
-$$
+```math
 \boxed{
 \text{komputer menjalankan instruksi, manusia menentukan maknanya}.
 }
-$$
+```
 Karena itu, kesalahan dalam model atau algoritma dapat menghasilkan program yang berjalan sempurna secara teknis, tetapi salah secara ilmiah.
 
 Dalam komputasi sains dan rekayasa, kita perlu memeriksa setidaknya tiga hal:
@@ -1304,19 +1304,19 @@ Jika salah satu tahap tersebut bermasalah, hasil komputasi juga dapat salah.
 ## Pentingnya satuan dalam komputasi fisika
 
 Pemrograman tidak menghapus kebutuhan untuk memahami satuan. Misalkan kita menggunakan
-$$
+```math
 v=72\text{ km/jam}
-$$
+```
 dalam persamaan energi kinetik, tetapi program menganggap nilai tersebut memiliki satuan
-$$
+```math
 \text{m/s}.
-$$
+```
 Program dapat berjalan tanpa *error*, tetapi hasilnya salah secara fisika. Karena
-$$
+```math
 72\text{ km/jam}
 =
 20\text{ m/s},
-$$
+```
 memasukkan angka `72` ketika program mengharapkan satuan m/s akan menghasilkan kesalahan besar.
 
 Dari sini, nama variabel, dokumentasi, dan pemahaman satuan sangat penting dalam program teknik. Pada contoh sederhana, kita dapat menambahkan komentar:
@@ -1341,13 +1341,13 @@ Kita akan menggunakan komentar secukupnya untuk menjelaskan bagian program yang 
 Salah satu kesalahan umum ketika mulai menggunakan komputer adalah menganggap angka yang keluar dari program sebagai jawaban yang benar. Padahal, komputer hanya melakukan apa yang kita instruksikan.
 
 Misalkan sebuah program menghitung kecepatan benda dan menghasilkan
-$$
+```math
 v=3.7\times10^{12}\text{ m/s}.
-$$
+```
 Program mungkin saja berjalan tanpa error. Namun, hasil tersebut jauh lebih besar daripada kecepatan cahaya,
-$$
+```math
 c\approx3\times10^8\text{ m/s}.
-$$
+```
 Contoh ini menunjukkan indikasi kuat bahwa model, satuan, input, atau program perlu diperiksa.
 
 Dalam komputasi ilmiah selalu tanyakan:
@@ -1359,9 +1359,9 @@ Pertanyaan tersebut sama pentingnya dengan pertanyaan
 ## Perumusan algoritma
 
 Perhatikan persamaan
-$$
+```math
 P=VI.
-$$
+```
 Persamaan tersebut menyatakan hubungan matematis antara daya, tegangan, dan arus. Jika kita ingin membuat program untuk menghitung daya, kita perlu menetapkan secara lebih eksplisit:
 ```text
 Baca tegangan V
@@ -1401,9 +1401,9 @@ hitung energi kinetik
 tampilkan hasil
 ```
 Pada tingkat paling dekat dengan pekerjaan seorang *engineer*, kita mempunyai model fisika:
-$$
+```math
 E_k=\frac12mv^2.
-$$
+```
 
 Kita dapat menggambarkan lapisan-lapisan tersebut sebagai berikut.
 ```text
@@ -1440,9 +1440,9 @@ Cobalah menjawab beberapa pertanyaan berikut tanpa melihat kembali catatan.
 - Berapa banyak pola berbeda yang dapat direpresentasikan menggunakan delapan bit?
 - Mengapa *unsigned integer* delapan bit mempunyai rentang $0$ sampai $255$?
 - Mengapa
-    $$
+    ```math
     13_{10}=1101_2?
-    $$
+    ```
 - Apa keuntungan menggunakan notasi heksadesimal dalam komputasi?
 - Mengapa suatu integer mempunyai nilai maksimum?
 - Apa yang dimaksud dengan *overflow*?
@@ -1463,79 +1463,79 @@ Jika sebagian besar pertanyaan tersebut dapat dijawab dengan baik, kita sudah me
 
 Konversikan bilangan berikut ke desimal:
 
-$$
+```math
 1011_2
-$$
+```
 
-$$
+```math
 100101_2
-$$
+```
 
-$$
+```math
 11111111_2
-$$
+```
 
-$$
+```math
 10000000_2
-$$
+```
 
 Konversikan bilangan berikut ke biner:
 
-$$
+```math
 7_{10}
-$$
+```
 
-$$
+```math
 18_{10}
-$$
+```
 
-$$
+```math
 25_{10}
-$$
+```
 
-$$
+```math
 42_{10}
-$$
+```
 
-$$
+```math
 100_{10}
-$$
+```
 
 ### Representasi heksadesimal
 
 Ubah bilangan berikut dari biner menjadi heksadesimal:
 
-$$
+```math
 1111_2
-$$
+```
 
-$$
+```math
 1010_2
-$$
+```
 
-$$
+```math
 11111111_2
-$$
+```
 
-$$
+```math
 10101111_2
-$$
+```
 
-$$
+```math
 1100101011110000_2
-$$
+```
 
 Kemudian ubah
 
-$$
+```math
 3A_{16}
-$$
+```
 
 dan
 
-$$
+```math
 FF_{16}
-$$
+```
 
 ke bentuk desimal.
 
@@ -1555,23 +1555,23 @@ Kemudian tentukan rentang signed integer 8 bit dan signed integer 16 bit dengan 
 
 Sebuah unsigned integer 8 bit memiliki nilai maksimum
 
-$$
+```math
 255.
-$$
+```
 
 Jelaskan mengapa nilai
 
-$$
+```math
 256
-$$
+```
 
 tidak dapat direpresentasikan menggunakan delapan bit.
 
 Berapa banyak bit minimum yang diperlukan untuk merepresentasikan
 
-$$
+```math
 256
-$$
+```
 
 sebagai unsigned integer?
 
@@ -1579,17 +1579,17 @@ sebagai unsigned integer?
 
 Jelaskan dengan kalimat sendiri mengapa komputer tidak selalu dapat menyimpan nilai
 
-$$
+```math
 0.1
-$$
+```
 
 secara eksak.
 
 Apa hubungan masalah tersebut dengan representasi
 
-$$
+```math
 \frac13=0.333333\ldots
-$$
+```
 
 dalam sistem desimal?
 
@@ -1599,9 +1599,9 @@ Mengapa membandingkan dua hasil floating-point menggunakan kesamaan eksak dapat 
 
 Tuliskan algoritma dengan kalimat biasa untuk menghitung daya listrik dari
 
-$$
+```math
 P=VI.
-$$
+```
 
 Tentukan dengan jelas:
 
@@ -1611,9 +1611,9 @@ Tentukan dengan jelas:
 
 Lakukan hal yang sama untuk persamaan gas ideal
 
-$$
+```math
 PV=nRT
-$$
+```
 
 dengan tujuan mencari tekanan $P$.
 
@@ -1627,21 +1627,21 @@ power.c
 
 untuk menghitung daya listrik dari
 
-$$
+```math
 P=VI.
-$$
+```
 
 Gunakan
 
-$$
+```math
 V=12.0\text{ V},
-$$
+```
 
 dan
 
-$$
+```math
 I=2.5\text{ A}.
-$$
+```
 
 Hitung terlebih dahulu hasilnya secara manual.
 
@@ -1665,31 +1665,31 @@ motion.c
 
 yang menghitung
 
-$$
+```math
 x
 =
 x_0+v_0t+\frac12at^2.
-$$
+```
 
 Gunakan
 
-$$
+```math
 x_0=2.0\text{ m},
-$$
+```
 
-$$
+```math
 v_0=5.0\text{ m/s},
-$$
+```
 
-$$
+```math
 a=3.0\text{ m/s}^2,
-$$
+```
 
 dan
 
-$$
+```math
 t=4.0\text{ s}.
-$$
+```
 
 Program harus menampilkan nilai
 
@@ -1708,7 +1708,7 @@ Setelah menjalankan program, periksa apakah kedua hasil tersebut sesuai.
 - Pada pertemuan ini kita memulai dari sebuah gagasan sederhana: komputer adalah alat untuk menjalankan prosedur komputasi. Persoalan fisika dapat diterjemahkan menjadi model matematis. Model tersebut kemudian diterjemahkan menjadi algoritma. Algoritma dapat diimplementasikan sebagai program.
 
 - Hubungan tersebut dapat diringkas sebagai
-    $$
+    ```math
     \boxed{
     \text{masalah fisika}
     \rightarrow
@@ -1720,10 +1720,10 @@ Setelah menjalankan program, periksa apakah kedua hasil tersebut sesuai.
     \rightarrow
     \text{hasil}
     }
-    $$
+    ```
 
 - Program C yang kita tulis masih harus diterjemahkan oleh *compiler* sebelum dapat dijalankan oleh komputer:
-    $$
+    ```math
     \boxed{
     \text{source code}
     \rightarrow
@@ -1733,24 +1733,24 @@ Setelah menjalankan program, periksa apakah kedua hasil tersebut sesuai.
     \rightarrow
     \text{execution}.
     }
-    $$
+    ```
 
 - Pada tingkat representasi data, komputer menggunakan bit. Dengan $n$ bit terdapat
-    $$
+    ```math
     2^n
-    $$
+    ```
     pola yang berbeda.
 - Untuk *unsigned integer* $n$-bit,
-    $$
+    ```math
     0\leq x\leq2^n-1.
-    $$
+    ```
 - Untuk *signed integer* *two's complement*,
-    $$
+    ```math
     -2^{n-1}
     \leq x
     \leq
     2^{n-1}-1.
-    $$
+    ```
 - Karena jumlah bit terbatas, representasi data juga terbatas. Hal ini menghasilkan konsep seperti *overflow* pada *integer* dan kesalahan pembulatan pada *floating-point*.
 
 - Kita juga melihat bahwa keberhasilan program untuk dikompilasi dan dijalankan tidak menjamin bahwa hasilnya benar. Program perlu diperiksa menggunakan penalaran matematis, satuan, prediksi, dan pemahaman fisika.
@@ -1758,12 +1758,12 @@ Setelah menjalankan program, periksa apakah kedua hasil tersebut sesuai.
 - Pada tahap ini, tujuan kita bukan menguasai seluruh sintaks C. Kita baru membangun gambaran mengenai bagaimana masalah ilmiah dapat diterjemahkan menjadi komputasi.
 
 - Pada pertemuan berikutnya kita akan memusatkan perhatian pada bagian
-    $$
+    ```math
     \boxed{
     \text{masalah}
     \longrightarrow
     \text{algoritma}.
     }
-    $$
+    ```
 
 - Kita akan mempelajari bagaimana sebuah prosedur dapat ditulis secara sistematis menggunakan kalimat berurut, diagram alir, dan pseudocode, terutama pseudocode matematis. Kita juga akan mulai membahas bagaimana menilai kebenaran serta kebutuhan komputasi suatu algoritma.
