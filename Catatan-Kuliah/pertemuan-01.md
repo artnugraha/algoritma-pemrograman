@@ -1709,48 +1709,44 @@ Setelah menjalankan program, periksa apakah kedua hasil tersebut sesuai.
 
 - Hubungan tersebut dapat diringkas sebagai
     ```math
-    \boxed{
-    \text{masalah fisika}
-    \rightarrow
-    \text{model matematis}
-    \rightarrow
-    \text{algoritma}
-    \rightarrow
-    \text{program}
-    \rightarrow
-    \text{hasil}
-    }
+        \boxed{
+        \text{masalah fisika}
+        \rightarrow
+        \text{model matematis}
+        \rightarrow
+        \text{algoritma}
+        \rightarrow
+        \text{program}
+        \rightarrow
+        \text{hasil}
+        }
     ```
 
 - Program C yang kita tulis masih harus diterjemahkan oleh *compiler* sebelum dapat dijalankan oleh komputer:
     ```math
-    \boxed{
-    \text{source code}
-    \rightarrow
-    \text{compiler}
-    \rightarrow
-    \text{machine code}
-    \rightarrow
-    \text{execution}.
-    }
+        \boxed{
+        \text{source code}
+        \rightarrow
+        \text{compiler}
+        \rightarrow
+        \text{machine code}
+        \rightarrow
+        \text{execution}.
+        }
     ```
 
-- Pada tingkat representasi data, komputer menggunakan bit. Dengan $n$ bit terdapat
-    ```math
-    2^n
-    ```
-    pola yang berbeda.
+- Pada tingkat representasi data, komputer menggunakan bit. Dengan $n$ bit terdapat $2^n$ pola yang berbeda.
 - Untuk *unsigned integer* $n$-bit,
-    ```math
+```math
     0\leq x\leq2^n-1.
-    ```
+```
 - Untuk *signed integer* *two's complement*,
-    ```math
+```math
     -2^{n-1}
     \leq x
     \leq
     2^{n-1}-1.
-    ```
+```
 - Karena jumlah bit terbatas, representasi data juga terbatas. Hal ini menghasilkan konsep seperti *overflow* pada *integer* dan kesalahan pembulatan pada *floating-point*.
 
 - Kita juga melihat bahwa keberhasilan program untuk dikompilasi dan dijalankan tidak menjamin bahwa hasilnya benar. Program perlu diperiksa menggunakan penalaran matematis, satuan, prediksi, dan pemahaman fisika.
@@ -1759,11 +1755,11 @@ Setelah menjalankan program, periksa apakah kedua hasil tersebut sesuai.
 
 - Pada pertemuan berikutnya kita akan memusatkan perhatian pada bagian
     ```math
-    \boxed{
-    \text{masalah}
-    \longrightarrow
-    \text{algoritma}.
-    }
+        \boxed{
+        \text{masalah}
+        \longrightarrow
+        \text{algoritma}.
+        }
     ```
 
 - Kita akan mempelajari bagaimana sebuah prosedur dapat ditulis secara sistematis menggunakan kalimat berurut, diagram alir, dan pseudocode, terutama pseudocode matematis. Kita juga akan mulai membahas bagaimana menilai kebenaran serta kebutuhan komputasi suatu algoritma.
