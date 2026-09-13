@@ -1708,8 +1708,9 @@ Setelah menjalankan program, periksa apakah kedua hasil tersebut sesuai.
 - Pada pertemuan ini kita memulai dari sebuah gagasan sederhana: komputer adalah alat untuk menjalankan prosedur komputasi. Persoalan fisika dapat diterjemahkan menjadi model matematis. Model tersebut kemudian diterjemahkan menjadi algoritma. Algoritma dapat diimplementasikan sebagai program.
 
 - Hubungan tersebut dapat diringkas sebagai
-    ```math
-        \boxed{
+    
+```math
+    \boxed{
         \text{masalah fisika}
         \rightarrow
         \text{model matematis}
@@ -1719,12 +1720,13 @@ Setelah menjalankan program, periksa apakah kedua hasil tersebut sesuai.
         \text{program}
         \rightarrow
         \text{hasil}
-        }
-    ```
+    }
+```
 
 - Program C yang kita tulis masih harus diterjemahkan oleh *compiler* sebelum dapat dijalankan oleh komputer:
-    ```math
-        \boxed{
+    
+```math
+    \boxed{
         \text{source code}
         \rightarrow
         \text{compiler}
@@ -1732,8 +1734,8 @@ Setelah menjalankan program, periksa apakah kedua hasil tersebut sesuai.
         \text{machine code}
         \rightarrow
         \text{execution}.
-        }
-    ```
+    }
+```
 
 - Pada tingkat representasi data, komputer menggunakan bit. Dengan $n$ bit terdapat $2^n$ pola yang berbeda.
 - Untuk *unsigned integer* $n$-bit,
