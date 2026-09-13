@@ -1475,23 +1475,18 @@ Konversikan bilangan berikut ke desimal:
 10000000_2
 ```
 Konversikan bilangan berikut ke biner:
-
 ```math
 7_{10}
 ```
-
 ```math
 18_{10}
 ```
-
 ```math
 25_{10}
 ```
-
 ```math
 42_{10}
 ```
-
 ```math
 100_{10}
 ```
@@ -1499,161 +1494,118 @@ Konversikan bilangan berikut ke biner:
 ### 2. Representasi heksadesimal
 
 Ubah bilangan berikut dari biner menjadi heksadesimal:
-
 ```math
 1111_2
 ```
-
 ```math
 1010_2
 ```
-
 ```math
 11111111_2
 ```
-
 ```math
 10101111_2
 ```
-
 ```math
 1100101011110000_2
 ```
-
 Kemudian ubah
-
 ```math
 3A_{16}
 ```
-
 dan
-
 ```math
 FF_{16}
 ```
-
 ke bentuk desimal.
 
 ### 3. Rentang integer
 
 Jika sebuah *unsigned integer* menggunakan 10 bit, tentukan:
-
 - jumlah pola bit yang mungkin;
 - nilai minimum;
 - nilai maksimum.
 
-Ulangi untuk unsigned integer 16 bit.
+Ulangi untuk *unsigned integer* 16 bit. 
 
-Kemudian tentukan rentang signed integer 8 bit dan signed integer 16 bit dengan asumsi representasi two's complement.
+Kemudian, tentukan rentang *signed integer8 8 bit dan *signed integer* 16 bit dengan asumsi representasi *two's complement*.
 
 ### 4. Memahami *overflow*
 
 Sebuah *unsigned integer* 8 bit memiliki nilai maksimum
-
 ```math
 255.
 ```
-
 Jelaskan mengapa nilai
-
 ```math
 256
 ```
-
 tidak dapat direpresentasikan menggunakan delapan bit.
-
 Berapa banyak bit minimum yang diperlukan untuk merepresentasikan
-
 ```math
 256
 ```
-
-sebagai unsigned integer?
+sebagai *unsigned integer*?
 
 ### 5. Floating-point
 
 Jelaskan dengan kalimat sendiri mengapa komputer tidak selalu dapat menyimpan nilai
-
 ```math
 0.1
 ```
-
 secara eksak.
-
 Apa hubungan masalah tersebut dengan representasi
-
 ```math
 \frac13=0.333333\ldots
 ```
-
 dalam sistem desimal?
-
-Mengapa membandingkan dua hasil floating-point menggunakan kesamaan eksak dapat menimbulkan masalah?
+Mengapa perbandingan dua hasil floating-point menggunakan kesamaan eksak (misal $0.3 = 0.2 + 0.1$) dapat menimbulkan masalah?
 
 ### 6. Algoritma sederhana
 
 Tuliskan algoritma dengan kalimat biasa untuk menghitung daya listrik dari
-
 ```math
 P=VI.
 ```
-
-Tentukan dengan jelas:
-
+Tentukan dengan jelas yang mana
 - input;
 - proses;
 - output.
 
 Lakukan hal yang sama untuk persamaan gas ideal
-
 ```math
 PV=nRT
 ```
-
 dengan tujuan mencari tekanan $P$.
 
 ### 7. Program C sederhana
 
 Buat program
-
 ```text
 power.c
 ```
-
 untuk menghitung daya listrik dari
-
 ```math
 P=VI.
 ```
-
 Gunakan
-
 ```math
 V=12.0\text{ V},
 ```
-
 dan
-
 ```math
 I=2.5\text{ A}.
 ```
 
-Hitung terlebih dahulu hasilnya secara manual.
-
-Kemudian bandingkan dengan keluaran program.
-
-Kompilasi menggunakan
-
+Hitung terlebih dahulu hasilnya secara manual. Kemudian bandingkan dengan keluaran program.Kompilasi menggunakan
 ```bash
 gcc -Wall -Wextra power.c -o power
 ```
-
-Program yang baik pada tahap ini setidaknya harus dapat dikompilasi tanpa warning.
+Program yang baik pada tahap ini setidaknya harus dapat dikompilasi tanpa peringatan (*warning*).
 
 ### 8. Program gerak lurus
 
 Buat program
-
 ```text
 motion.c
 ```
@@ -1674,7 +1626,6 @@ v_0=5.0\text{ m/s},
 a=3.0\text{ m/s}^2,
 ```
 dan
-
 ```math
 t=4.0\text{ s}.
 ```
