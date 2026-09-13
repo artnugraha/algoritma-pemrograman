@@ -1440,9 +1440,9 @@ Cobalah menjawab beberapa pertanyaan berikut tanpa melihat kembali catatan.
 - Berapa banyak pola berbeda yang dapat direpresentasikan menggunakan delapan bit?
 - Mengapa *unsigned integer* delapan bit mempunyai rentang $0$ sampai $255$?
 - Mengapa
-  ```math
+```math
   13_{10}=1101_2?
-  ```
+```
 - Apa keuntungan menggunakan notasi heksadesimal dalam komputasi?
 - Mengapa suatu integer mempunyai nilai maksimum?
 - Apa yang dimaksud dengan *overflow*?
