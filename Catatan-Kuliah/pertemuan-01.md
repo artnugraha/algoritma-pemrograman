@@ -1441,7 +1441,7 @@ Cobalah menjawab beberapa pertanyaan berikut tanpa melihat kembali catatan.
 - Mengapa *unsigned integer* delapan bit mempunyai rentang $0$ sampai $255$?
 - Mengapa
     ```math
-    13_{10}=1101_2?
+        13_{10}=1101_2?
     ```
 - Apa keuntungan menggunakan notasi heksadesimal dalam komputasi?
 - Mengapa suatu integer mempunyai nilai maksimum?
@@ -1459,26 +1459,21 @@ Jika sebagian besar pertanyaan tersebut dapat dijawab dengan baik, kita sudah me
 
 ## Latihan
 
-### Representasi biner
+### 1. Representasi biner
 
 Konversikan bilangan berikut ke desimal:
-
 ```math
 1011_2
 ```
-
 ```math
 100101_2
 ```
-
 ```math
 11111111_2
 ```
-
 ```math
 10000000_2
 ```
-
 Konversikan bilangan berikut ke biner:
 
 ```math
@@ -1501,7 +1496,7 @@ Konversikan bilangan berikut ke biner:
 100_{10}
 ```
 
-### Representasi heksadesimal
+### 2. Representasi heksadesimal
 
 Ubah bilangan berikut dari biner menjadi heksadesimal:
 
@@ -1539,9 +1534,9 @@ FF_{16}
 
 ke bentuk desimal.
 
-### Rentang integer
+### 3. Rentang integer
 
-Jika sebuah unsigned integer menggunakan 10 bit, tentukan:
+Jika sebuah *unsigned integer* menggunakan 10 bit, tentukan:
 
 - jumlah pola bit yang mungkin;
 - nilai minimum;
@@ -1551,9 +1546,9 @@ Ulangi untuk unsigned integer 16 bit.
 
 Kemudian tentukan rentang signed integer 8 bit dan signed integer 16 bit dengan asumsi representasi two's complement.
 
-### Memahami overflow
+### 4. Memahami *overflow*
 
-Sebuah unsigned integer 8 bit memiliki nilai maksimum
+Sebuah *unsigned integer* 8 bit memiliki nilai maksimum
 
 ```math
 255.
@@ -1575,7 +1570,7 @@ Berapa banyak bit minimum yang diperlukan untuk merepresentasikan
 
 sebagai unsigned integer?
 
-### Floating-point
+### 5. Floating-point
 
 Jelaskan dengan kalimat sendiri mengapa komputer tidak selalu dapat menyimpan nilai
 
@@ -1595,7 +1590,7 @@ dalam sistem desimal?
 
 Mengapa membandingkan dua hasil floating-point menggunakan kesamaan eksak dapat menimbulkan masalah?
 
-### Algoritma sederhana
+### 6. Algoritma sederhana
 
 Tuliskan algoritma dengan kalimat biasa untuk menghitung daya listrik dari
 
@@ -1617,7 +1612,7 @@ PV=nRT
 
 dengan tujuan mencari tekanan $P$.
 
-### Program C sederhana
+### 7. Program C sederhana
 
 Buat program
 
@@ -1655,36 +1650,29 @@ gcc -Wall -Wextra power.c -o power
 
 Program yang baik pada tahap ini setidaknya harus dapat dikompilasi tanpa warning.
 
-### Program gerak lurus
+### 8. Program gerak lurus
 
 Buat program
 
 ```text
 motion.c
 ```
-
 yang menghitung
-
 ```math
 x
 =
 x_0+v_0t+\frac12at^2.
 ```
-
 Gunakan
-
 ```math
 x_0=2.0\text{ m},
 ```
-
 ```math
 v_0=5.0\text{ m/s},
 ```
-
 ```math
 a=3.0\text{ m/s}^2,
 ```
-
 dan
 
 ```math
@@ -1692,16 +1680,13 @@ t=4.0\text{ s}.
 ```
 
 Program harus menampilkan nilai
-
 - posisi awal;
 - kecepatan awal;
 - percepatan;
 - waktu;
 - posisi akhir.
 
-Sebelum menjalankan program, hitung hasilnya secara manual.
-
-Setelah menjalankan program, periksa apakah kedua hasil tersebut sesuai.
+Sebelum menjalankan program, hitung hasilnya secara manual. Setelah menjalankan program, periksa apakah kedua hasil tersebut sesuai.
 
 ## Rangkuman
 
