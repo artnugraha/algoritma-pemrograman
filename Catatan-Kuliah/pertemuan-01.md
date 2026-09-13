@@ -97,7 +97,7 @@ Kedua program tersebut memiliki sintaksis yang tampak berbeda, tetapi ide komput
 
 Dengan demikian, aktivitas belajar pemrograman itu bukanlah semata-mata mempelajari sintaks C atau Python. Aktivitas kita dalam mata kuliah ini akan sekaligus belajar merumuskan suatu persoalan menjadi langkah-langkah komputasi yang jelas, benar, dan efisien.
 
-## Apa sebenarnya yang dilakukan komputer?
+### Apa sebenarnya yang dilakukan komputer?
 
 Untuk memahami pemrograman dengan baik, terlebih dahulu kita perlu memiliki gambaran sederhana mengenai cara kerja komputer.
 
@@ -151,7 +151,7 @@ Memory
 
 Pada kenyataannya, komputer tidak menyimpan tulisan `2.5` seperti yang kita lihat di layar. Nilai tersebut direpresentasikan menggunakan pola bit. Konsep bagaimana data direpresentasikan dalam memori akan sangat penting ketika kita mulai mempelajari tipe data, larik (*array*), *pointer*, dan pengolahan berkas.
 
-## CPU dan instruksi
+### CPU dan instruksi
 
 CPU pada komputer menjalankan sejumlah instruksi dasar. Dalam bentuk yang sangat disederhanakan, CPU dapat melakukan operasi seperti
 
@@ -418,7 +418,7 @@ Jalankan berkas *executable* hasil kompilasi:
 
 Teks keluaran program akan langsung dicetak pada panel terminal VS Code.
 
-## Komputer memerlukan representasi data
+## Representasi data
 
 Sampai di sini kita dapat mengajukan pertanyaan yang lebih mendasar. Bagaimana komputer menyimpan data? Misalkan kita mempunyai nilai $42$ atau $-17$ atau $3.1415926535$. Bagaimana nilai-nilai tersebut disimpan di dalam memori?Untuk menjawabnya kita perlu mengenal **bit**. 
 
@@ -439,7 +439,7 @@ Karena setiap bit mempunyai dua kemungkinan nilai, delapan bit mempunyai
 ```
 kombinasi berbeda. Prinsip sederhana ini akan menjelaskan mengapa tipe data komputer mempunyai rentang nilai yang terbatas.
 
-## Sistem bilangan desimal dan biner
+### Sistem bilangan desimal dan biner
 
 Dalam kehidupan sehari-hari kita menggunakan sistem bilangan desimal atau basis sepuluh. Sebagai contoh,
 ```math
@@ -527,7 +527,7 @@ sehingga
 22_{10}.
 ```
 
-## Mengubah desimal menjadi biner
+#### Mengubah desimal menjadi biner
 
 Untuk mengubah bilangan desimal bulat menjadi biner, salah satu metode yang dapat digunakan adalah pembagian berulang dengan dua. Misalkan kita ingin mengubah
 ```math
@@ -580,7 +580,7 @@ Karena itu, bit pada posisi $5$, $3$, dan $1$ bernilai satu:
 101010_2.
 ```
 
-## Sistem heksadesimal
+### Sistem heksadesimal
 
 Perhatikan bahwa bilangan biner cepat menjadi panjang. Sebagai contoh,
 ```text
@@ -648,7 +648,7 @@ Jadi,
 
 Notasi heksadesimal akan muncul kembali ketika kita membahas representasi data dan alamat memori.
 
-## Berapa banyak nilai yang dapat disimpan oleh sejumlah bit?
+#### Berapa banyak nilai yang dapat disimpan oleh sejumlah bit?
 
 Jika terdapat satu bit, jumlah pola yang mungkin adalah
 ```math
@@ -690,7 +690,9 @@ Dengan 32 bit,
 ```
 Jumlah pola ini kemudian dapat dipetakan ke nilai-nilai yang ingin kita representasikan.
 
-## Unsigned integer
+### Representasi Bilangan Bulat
+
+#### Unsigned integer
 
 Mari mulai dari kasus termudah, yaitu bilangan bulat (*integer*) tidak negatif. Jika delapan bit digunakan untuk menyimpan sebuah *unsigned integer*, pola terkecil adalah
 ```text
@@ -729,7 +731,7 @@ Untuk 32 bit,
 ```
 Penting untuk diperhatikan bahwa jumlah bit terbatas menyebabkan rentang nilai juga terbatas.
 
-## Bagaimana dengan bilangan negatif?
+#### Bagaimana dengan bilangan negatif?
 
 Kita juga membutuhkan representasi untuk bilangan seperti
 ```math
@@ -756,7 +758,7 @@ Untuk 16 bit,
 ```
 Perhatikan bahwa rentangnya tidak simetris sempurna. Ada satu bilangan negatif tambahan.  Kita akan kembali ke detail representasi data ketika mempelajari tipe data dalam C.
 
-## Overflow
+#### Overflow
 
 Jumlah bit yang terbatas membuat sebuah integer tidak dapat bertambah tanpa batas.
 
@@ -783,7 +785,7 @@ Ketika hasil suatu operasi keluar dari rentang representasi tipe data, kita meng
 *Overflow* merupakan salah satu contoh awal bahwa matematika dan komputasi tidak selalu identik.Dalam matematika, bilangan bulat dapat sebesar apa pun. Dalam komputer, bilangan tersebut disimpan menggunakan jumlah bit yang terbatas. Jadi, ketika melakukan komputasi, kita harus selalu mempertimbangkan **nilai matematis** 
 dan **representasi komputer**. Keduanya berkaitan erat, tetapi tidak sama.
 
-## Karakter juga direpresentasikan sebagai bilangan
+### Karakter juga direpresentasikan sebagai bilangan
 
 Komputer tidak hanya menyimpan angka, tetapi juga teks. Misalnya,
 ```text
@@ -817,7 +819,7 @@ Bilangan-bilangan tersebut pada akhirnya direpresentasikan menggunakan bit sehin
 
 ASCII hanya mencakup kumpulan karakter yang relatif terbatas. Sistem modern menggunakan Unicode untuk merepresentasikan kumpulan karakter yang jauh lebih luas. Kita tidak perlu mempelajari detail Unicode sekarang. Poin pentingnya adalah bahwa hampir semua informasi digital akhirnya perlu direpresentasikan menggunakan pola bit.
 
-## Representasi bilangan real
+### Representasi bilangan real
 
 Sejauh ini, bilangan bulat relatif mudah dipahami. Masalah menjadi lebih rumit ketika kita ingin menyimpan bilangan *real* seperti
 ```math
@@ -863,7 +865,7 @@ m
 ```
 Di sini $s$ berkaitan dengan tanda, $m$ berkaitan dengan bagian signifikan bilangan, dan $e$ merupakan eksponen. Detail format IEEE 754 belum diperlukan pada tahap ini. Kita hanya perlu memahami konsekuensi dari jumlah bit yang terbatas.
 
-## Mengapa $0.1$ sulit direpresentasikan?
+#### Mengapa $0.1$ sulit direpresentasikan?
 
 Dalam sistem desimal, pecahan
 ```math
@@ -901,7 +903,7 @@ Dalam beberapa sistem pemrograman kita dapat melihat hasil seperti
 ```
 Hasil ini bukan karena komputer tidak mampu melakukan penjumlahan sederhana. Masalahnya berada pada representasi bilangan. Nilai $0.1$ dan $0.2$ yang digunakan dalam operasi tersebut sendiri sudah merupakan pendekatan.
 
-## Kesalahan pembulatan
+#### Kesalahan pembulatan
 
 Perbedaan kecil yang muncul akibat representasi terbatas disebut **rounding error** atau kesalahan pembulatan. Untuk satu operasi sederhana, kesalahan tersebut biasanya sangat kecil. Namun, dalam komputasi ilmiah kita dapat melakukan jutaan atau bahkan miliaran operasi. Dalam algoritma tertentu, kesalahan kecil dapat terakumulasi atau diperbesar.
 
@@ -934,7 +936,7 @@ Dalam praktik pemrograman, dua nilai *floating-point* sering dibandingkan menggu
 ```
 Ide ini akan menjadi sangat penting ketika kita mempelajari komputasi numerik lebih lanjut, misalnya dalam mata kuliah fisika komputasi atau teknik komputasi.
 
-## Presisi (*precision*) dan rentang (*range*)
+### Presisi (*precision*) dan rentang (*range*)
 
 Dua istilah dalam representasi bilangan yang perlu dibedakan adalah **precision** dan rentang **range**. *Precision* berkaitan dengan banyaknya informasi signifikan yang dapat disimpan, sementara *range* berkaitan dengan seberapa besar atau kecil nilai yang dapat direpresentasikan.
 
@@ -1038,7 +1040,7 @@ E_k=\frac12mv^2.
 
 Untuk sementara kita belum perlu menghafalkan semua aturan sintaksis tersebut. Kita akan membahas variabel, tipe data, operator, dan ekspresi dengan lebih terstruktur pada pertemuan-pertemuan berikutnya.
 
-## Program komputer perlu diperiksa
+### Program komputer perlu diperiksa
 
 Misalkan program berhasil dikompilasi. Apakah itu berarti program pasti benar? Jawabannya jelas tidak.
 
@@ -1194,7 +1196,7 @@ V=IR.
 ```
 Outputnya adalah $V$. Pola tersebut muncul hampir di seluruh aktivitas komputasi.
 
-## Gerak lurus
+### Gerak lurus
 
 Untuk gerak dengan percepatan konstan,
 ```math
@@ -1301,7 +1303,7 @@ Dalam komputasi sains dan rekayasa, kita perlu memeriksa setidaknya tiga hal:
 3. apakah program mengimplementasikan algoritma dengan benar.
 Jika salah satu tahap tersebut bermasalah, hasil komputasi juga dapat salah.
 
-## Pentingnya satuan dalam komputasi fisika
+### Pentingnya satuan dalam komputasi fisika
 
 Pemrograman tidak menghapus kebutuhan untuk memahami satuan. Misalkan kita menggunakan
 ```math
@@ -1336,7 +1338,7 @@ sedangkan komentar beberapa baris dapat ditulis sebagai
 ```
 Kita akan menggunakan komentar secukupnya untuk menjelaskan bagian program yang memang membutuhkan penjelasan.
 
-## Komputasi tidak menggantikan penalaran fisika
+### Komputasi tidak menggantikan penalaran fisika
 
 Salah satu kesalahan umum ketika mulai menggunakan komputer adalah menganggap angka yang keluar dari program sebagai jawaban yang benar. Padahal, komputer hanya melakukan apa yang kita instruksikan.
 
@@ -1383,7 +1385,7 @@ Untuk persoalan sederhana, algoritma hampir sama langsungnya dengan persamaan. N
 
 Dalam materi mendatang, kita akan berfokus pada cara menuliskan algoritma sebelum menerjemahkannya ke program.
 
-## Proses dari bit menuju program ilmiah
+### Proses dari bit menuju program ilmiah
 
 Sekarang kita dapat melihat beberapa lapisan abstraksi dalam komputasi. Pada tingkat fisika perangkat keras, komputer terdiri atas sistem elektronik. Pada tingkat representasi data, kita berbicara tentang bit:
 ```text
