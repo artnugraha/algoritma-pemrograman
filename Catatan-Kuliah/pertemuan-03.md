@@ -1,11 +1,8 @@
 # Kuliah 3: Dasar-dasar Pemrograman dalam Bahasa C
 
-## Dari algoritma menuju program C
+## Mengubah algoritma menjadi program C
 
-Pada dua kuliah sebelumnya kita telah membangun dua fondasi penting.
-
-Pertama, kita melihat hubungan
-
+Pada dua kuliah sebelumnya kita telah membangun dua fondasi penting. Pertama, kita melihat hubungan
 ```math
 \boxed{
 \text{masalah}
@@ -19,7 +16,6 @@ Pertama, kita melihat hubungan
 \text{hasil}
 }
 ```
-
 Kedua, kita mempelajari bagaimana suatu persoalan dapat dirumuskan menjadi langkah-langkah algoritmik melalui dekomposisi, diagram alir, *pseudocode*, *tracing*, serta pemeriksaan kebenaran secara sederhana.
 
 Pada kuliah ini kita mulai memusatkan perhatian pada bagian
@@ -32,20 +28,16 @@ Pada kuliah ini kita mulai memusatkan perhatian pada bagian
 }
 ```
 
-Tujuan kita bukan sekadar menghafal sintaks. Kita ingin memahami bagaimana konsep algoritmik seperti
+Saat ini sudah era AI sehingga kita sebenarnya tidak perlu menghafal sintaks bahasa C secara lengkap. Namun, kita perlu memahami bagaimana konsep algoritmik seperti
+- masukan,
+- penyimpanan nilai,
+- perhitungan,
+- keputusan logika, dan
+- keluaran
 
-```text
-masukan
-penyimpanan nilai
-perhitungan
-keputusan logika
-keluaran
-```
+direpresentasikan dalam bahasa C. 
 
-direpresentasikan dalam bahasa C.
-
-Bahasa C dipilih sebagai bahasa utama pada bagian awal mata kuliah karena beberapa alasan.
-
+Bahasa C dipilih sebagai bahasa utama pada bagian awal mata kuliah karena beberapa alasan:
 - C memiliki sintaks yang relatif kecil dan terstruktur.
 - Hubungan antara program, tipe data, memori, dan representasi data cukup terlihat.
 - C banyak digunakan dalam sistem tertanam, mikrokontroler, instrumentasi, sistem operasi, komputasi berperforma tinggi, dan perangkat lunak rekayasa.
@@ -57,15 +49,12 @@ Bagi mahasiswa Teknik Fisika, bahasa C juga relevan karena banyak sistem akuisis
 ### Algoritma yang sama, bahasa yang berbeda
 
 Misalkan kita ingin menghitung energi kinetik,
-
 ```math
 E_k
 =
 \frac{1}{2}mv^2.
 ```
-
 Secara algoritmik,
-
 ```text
 INPUT m
 INPUT v
@@ -74,27 +63,21 @@ Ek ← 0.5 * m * v * v
 
 OUTPUT Ek
 ```
-
-Dalam C kita dapat menulis
-
+Dalam C, kita dapat menulis
 ```c
 double kinetic_energy = 0.5 * mass * velocity * velocity;
 ```
-
 Dalam Python, algoritma yang sama dapat ditulis
-
 ```python
 kinetic_energy = 0.5 * mass * velocity**2
 ```
+Sintaksnya berbeda, tetapi algoritmanya sama.
 
-Sintaks berbeda, tetapi algoritmanya sama.
-
-Hal ini penting karena pemrograman tidak identik dengan bahasa pemrograman tertentu. Bahasa pemrograman adalah media untuk mengekspresikan algoritma.
+Fakta ini penting dipahami karena pemrograman tidak identik dengan bahasa pemrograman tertentu. Bahasa pemrograman adalah media untuk mengekspresikan algoritma.
 
 ## Struktur dasar program C
 
 Perhatikan program C berikut.
-
 ```c
 #include <stdio.h>
 
@@ -105,133 +88,89 @@ int main(void)
     return 0;
 }
 ```
-
 Program tersebut terdiri atas beberapa bagian penting.
 
-### Direktif `#include`
+### 1. Direktif `#include`
 
 Baris
-
 ```c
 #include <stdio.h>
 ```
-
 meminta *preprocessor* C untuk menyertakan deklarasi dari pustaka standar input-output.
 
 `stdio` merupakan singkatan dari
-
 ```text
 standard input/output
 ```
-
-sedangkan `.h` menunjukkan *header file*.
-
-Kita memerlukan `stdio.h` ketika menggunakan fungsi seperti
-
+sedangkan `.h` menunjukkan *header file*. Kita memerlukan `stdio.h` ketika menggunakan fungsi seperti
 ```c
 printf()
 ```
-
 dan
-
 ```c
 scanf()
 ```
-
 Secara konseptual, pustaka standar menyediakan fungsi-fungsi yang telah ditulis dan diuji sehingga kita tidak perlu membuat semuanya dari awal.
 
-### Fungsi `main`
+### 2. Fungsi `main`
 
-Setiap program C yang dapat dieksekusi memiliki titik awal eksekusi.
-
-Dalam contoh kita,
-
+Setiap program C yang dapat dieksekusi memiliki titik awal eksekusi. Dalam contoh kita,
 ```c
 int main(void)
 ```
-
 menyatakan fungsi utama program.
 
 Kata
-
 ```c
 int
 ```
-
-menunjukkan bahwa fungsi `main` mengembalikan sebuah nilai bertipe integer kepada lingkungan yang menjalankan program.
-
-Bagian
-
+menunjukkan bahwa fungsi `main` mengembalikan (*return*) atau memberikan sebuah nilai bertipe integer kepada lingkungan yang menjalankan program. Bagian
 ```c
 (void)
 ```
-
-menyatakan bahwa fungsi tersebut tidak menerima argumen.
-
-Tubuh fungsi dituliskan di antara kurung kurawal,
-
+menyatakan bahwa fungsi tersebut tidak menerima argumen. Tubuh fungsi dituliskan di antara kurung kurawal,
 ```c
 {
     ...
 }
 ```
-
 Program mulai menjalankan pernyataan-pernyataan di dalam `main` dari atas menuju bawah, kecuali aliran kontrol mengubah urutannya.
 
-### Pernyataan
+### 3. Pernyataan (*statement*)
 
 Baris
-
 ```c
 printf("Hello, Teknik Fisika!\n");
 ```
-
 merupakan suatu **pernyataan** (*statement*).
-
 Dalam C, banyak pernyataan diakhiri dengan titik koma,
-
 ```text
 ;
 ```
-
-Titik koma merupakan bagian dari sintaks.
-
-Jika kita menulis
-
+Titik koma merupakan bagian dari sintaks. Jika kita menulis
 ```c
 printf("Hello, Teknik Fisika!\n")
 ```
-
 tanpa titik koma, *compiler* akan menghasilkan galat sintaksis.
 
-### `return 0`
+### 4. `return 0`
 
 Baris
-
 ```c
 return 0;
 ```
-
 mengakhiri fungsi `main` dan mengembalikan nilai `0`.
+Secara konvensi, nilai nol menunjukkan bahwa program selesai secara normal. 
 
-Secara konvensi, nilai nol menunjukkan bahwa program selesai secara normal.
-
-Program dapat menggunakan nilai selain nol untuk menunjukkan kondisi gagal atau kesalahan.
-
-Kita akan menggunakan pola
-
+Program dapat menggunakan nilai selain nol untuk menunjukkan kondisi gagal atau kesalahan. Namun, kita akan menggunakan pola
 ```c
 return 0;
 ```
-
 secara konsisten untuk program-program sederhana.
 
 ## Kompilasi program
 
-Program C tidak langsung dijalankan dari kode sumber.
-
-Kita telah melihat alur
-
+Program C tidak langsung dijalankan dari kode sumber. Kita telah melihat alur
 ```math
 \boxed{
 \text{source code}
@@ -245,73 +184,41 @@ Kita telah melihat alur
 ```
 
 Misalkan program disimpan sebagai
-
 ```text
 hello.c
 ```
-
-Kita dapat mengompilasinya menggunakan GCC.
-
-Pada Linux atau WSL,
-
+Kita dapat mengompilasinya menggunakan GCC. Pada Linux atau WSL,
 ```bash
-gcc -Wall -Wextra -Wpedantic -std=c17 hello.c -o hello
+gcc -Wall -Wextra hello.c -o hello
 ```
-
-Kemudian program dijalankan dengan
-
+Kemudian, program dijalankan dengan
 ```bash
 ./hello
 ```
-
-Pada Windows dengan GCC,
-
+Sementara itu, pada Windows dengan GCC, kita dapat menuliskan
 ```bash
-gcc -Wall -Wextra -Wpedantic -std=c17 hello.c -o hello.exe
+gcc -Wall -Wextra hello.c -o hello.exe
 ```
-
 dan dapat dijalankan dengan
-
 ```bash
 .\hello.exe
 ```
 
 Opsi
-
 ```text
 -Wall
 -Wextra
--Wpedantic
 ```
-
 meminta *compiler* menampilkan lebih banyak peringatan.
-
-Opsi
-
-```text
--std=c17
-```
-
-meminta GCC menggunakan standar C17.
-
-Sepanjang mata kuliah ini, peringatan *compiler* harus diperlakukan sebagai informasi penting, bukan sebagai gangguan.
-
-Program yang dapat dikompilasi belum tentu benar, tetapi program yang menghasilkan banyak peringatan sebaiknya diperiksa sebelum dilanjutkan.
+Sepanjang mata kuliah ini, peringatan *compiler* harus diperlakukan sebagai informasi penting, bukan sebagai gangguan. Program yang dapat dikompilasi belum tentu benar, tetapi program yang menghasilkan banyak peringatan sebaiknya diperiksa sebelum dilanjutkan.
 
 ## Komentar dalam C
 
-Komentar digunakan untuk memberikan informasi kepada manusia yang membaca program.
-
-Komentar tidak dieksekusi oleh komputer.
-
-Komentar satu baris ditulis menggunakan
-
+Komentar digunakan untuk memberikan informasi kepada manusia yang membaca program. Komentar tidak akan dieksekusi oleh komputer. Komentar satu baris ditulis menggunakan
 ```c
 // komentar satu baris
 ```
-
 Komentar beberapa baris dapat ditulis menggunakan
-
 ```c
 /*
     komentar
@@ -320,7 +227,6 @@ Komentar beberapa baris dapat ditulis menggunakan
 ```
 
 Sebagai contoh,
-
 ```c
 #include <stdio.h>
 
@@ -340,56 +246,35 @@ int main(void)
 }
 ```
 
-Komentar sebaiknya menjelaskan sesuatu yang tidak langsung terlihat dari kode.
-
-Komentar seperti
-
+Komentar sebaiknya menjelaskan sesuatu yang tidak langsung terlihat dari kode. Komentar seperti
 ```c
 x = x + 1;  // tambah x dengan 1
 ```
-
-sering kali tidak memberikan informasi tambahan.
-
-Sebaliknya,
-
+sering kali tidak memberikan informasi tambahan. Sementara itu, komentar semacam
 ```c
 double velocity = 20.0;  // m/s
 ```
-
 berguna karena menjelaskan satuan.
 
 ## Variabel dan nilai
 
-Dalam program, kita sering perlu menyimpan nilai yang dapat digunakan kembali.
-
-Tempat penyimpanan bernama disebut **variabel**.
-
-Sebagai contoh,
-
+Dalam program, kita sering perlu menyimpan nilai yang dapat digunakan kembali. Tempat penyimpanan bernama disebut **variabel**. Sebagai contoh,
 ```c
 double mass = 2.0;
 ```
-
 mendeklarasikan variabel bernama
-
 ```text
 mass
 ```
-
 dengan tipe
-
 ```text
 double
 ```
-
 dan memberikan nilai awal
-
 ```math
 2.0.
 ```
-
 Secara konseptual,
-
 ```text
 mass
   |
@@ -399,85 +284,60 @@ mass
 +-------+
  memory
 ```
-
 Nama `mass` digunakan agar kita tidak perlu memikirkan alamat memori secara langsung.
 
 ### Deklarasi
 
 Pernyataan
-
 ```c
 double mass;
 ```
-
-disebut deklarasi variabel.
-
-Deklarasi memberitahu *compiler* bahwa kita ingin menggunakan variabel bernama `mass` dengan tipe `double`.
-
+disebut deklarasi variabel. Deklarasi memberitahu *compiler* bahwa kita ingin menggunakan variabel bernama `mass` dengan tipe `double`.
 Jika kita ingin langsung memberikan nilai awal,
-
 ```c
 double mass = 2.0;
 ```
-
 proses pemberian nilai awal ini disebut **inisialisasi**.
 
-### Assignment
+### *Assignment* (penetapan)
 
 Setelah variabel dibuat, nilainya dapat diperbarui.
-
 ```c
 mass = 3.5;
 ```
-
 Operasi tersebut disebut **assignment** atau pemberian nilai.
 
 Perhatikan bahwa simbol
-
 ```text
 =
 ```
-
-dalam C bukan merupakan tanda kesamaan matematika.
-
-Dalam C,
-
+dalam C bukan merupakan tanda kesamaan matematika. Dalam C,
 ```c
 x = 5;
 ```
-
 berarti
-
 > simpan nilai 5 ke dalam variabel `x`.
 
-Karena itu, pernyataan
-
+Oleh karena itu, pernyataan
 ```c
 x = x + 1;
 ```
-
-valid dalam C.
-
+valid dalam C dan dalam mayoritas bahasa pemrograman.
 Maknanya adalah
-
 1. ambil nilai lama `x`;
 2. tambahkan satu;
 3. simpan hasilnya kembali ke `x`.
 
-Jika nilai awalnya
 
+Misalkan variabel `x` nilai awalnya
 ```math
-x=4,
+x=4.
 ```
-
-setelah
-
+Setelah
 ```c
 x = x + 1;
 ```
-
 nilai barunya adalah
-
 ```math
 x=5.
 ```
@@ -485,7 +345,6 @@ x=5.
 ### Variabel harus diberi nilai sebelum digunakan
 
 Perhatikan program berikut.
-
 ```c
 #include <stdio.h>
 
@@ -498,25 +357,17 @@ int main(void)
     return 0;
 }
 ```
-
 Variabel `temperature` dibuat tetapi belum diberi nilai.
 
-Menggunakan nilai variabel lokal yang belum diinisialisasi menghasilkan perilaku yang tidak dapat diandalkan.
-
-Karena itu, biasakan memberikan nilai sebelum variabel digunakan.
-
+Penggunaan nilai variabel lokal yang belum diinisialisasi menghasilkan perilaku yang tidak dapat diandalkan. Oleh karena itu, biasakan memberikan nilai sebelum variabel digunakan.
 ```c
 double temperature = 25.0;
 ```
-
-Kebiasaan inisialisasi yang jelas akan mengurangi banyak kesalahan.
+Kebiasaan inisialisasi yang jelas akan mengurangi banyak kesalahan komputasi.
 
 ## Aturan penamaan variabel
 
-Nama variabel dalam C disebut **identifier**.
-
-Contoh identifier yang valid adalah
-
+Nama variabel dalam C disebut **identifier**. Contoh *identifier* yang valid adalah
 ```text
 mass
 velocity
@@ -525,57 +376,42 @@ sensor_value
 x0
 pressure_1
 ```
-
-Secara umum, identifier dapat menggunakan
-
+Secara umum, *identifier* dapat menggunakan
 - huruf;
 - angka;
 - garis bawah `_`.
-
 Namun, identifier tidak boleh dimulai dengan angka.
-
 Contoh yang tidak valid:
-
 ```text
 2mass
 3temperature
 ```
 
-C bersifat **case-sensitive**.
-
-Artinya,
-
+C bersifat **case-sensitive**, alias sensitif dengan besar-kecilnya huruf. Artinya,
 ```text
 temperature
 Temperature
 TEMPERATURE
 ```
-
 dianggap sebagai tiga nama yang berbeda.
 
 ### Gunakan nama yang bermakna
 
 Bandingkan
-
 ```c
 double a = 12.0;
 double b = 2.5;
 double c = a * b;
 ```
-
 dengan
-
 ```c
 double voltage = 12.0;
 double current = 2.5;
 double power = voltage * current;
 ```
-
 Keduanya dapat menghasilkan nilai yang sama, tetapi program kedua jauh lebih mudah dipahami.
 
-Untuk program teknik, nama variabel sebaiknya memberikan informasi mengenai makna fisik.
-
-Contoh:
+Untuk program teknik, nama variabel sebaiknya memberikan informasi mengenai makna fisis. Beberapa contoh:
 
 ```c
 double mass;
@@ -585,35 +421,27 @@ double resistance;
 double pressure;
 double time_step;
 ```
-
 Jika diperlukan, satuan dapat dicantumkan dalam komentar atau bahkan nama variabel.
-
 ```c
 double temperature_celsius = 25.0;
 double pressure_pa = 101325.0;
 ```
-
 Pendekatan tersebut sangat membantu ketika beberapa sistem satuan digunakan sekaligus.
 
 ## Tipe data dasar
 
-Tipe data menentukan
-
+Tipe data akan menentukan
 - jenis nilai yang dapat disimpan;
 - cara nilai direpresentasikan;
 - operasi yang dapat dilakukan;
 - jumlah memori yang biasanya digunakan.
 
 Beberapa tipe data dasar yang penting adalah
-
-```text
-char
-int
-float
-double
-bool
-```
-
+- `char`,
+- `int`,
+- `float`,
+- `double`, dan
+- `bool`.
 Kita akan membahas masing-masing secara bertahap.
 
 ### `int`
@@ -2515,7 +2343,7 @@ Karena itu, galat logika harus ditemukan melalui
 Gunakan
 
 ```bash
-gcc -Wall -Wextra -Wpedantic -std=c17 program.c -o program
+gcc -Wall -Wextra program.c -o program
 ```
 
 dan baca setiap pesan dengan teliti.
@@ -3011,7 +2839,7 @@ Jika ekspresi sulit dibaca, pecah menjadi variabel antara.
 ### Kompilasi dengan warning
 
 ```bash
-gcc -Wall -Wextra -Wpedantic -std=c17 program.c -o program
+gcc -Wall -Wextra program.c -o program
 ```
 
 ### Prediksi sebelum menjalankan
@@ -3058,7 +2886,7 @@ Cobalah menjawab pertanyaan berikut tanpa melihat kembali catatan.
 - Mengapa konversi dari `double` ke `int` dapat kehilangan informasi?
 - Format apa yang digunakan `scanf` untuk membaca `double`?
 - Mengapa `scanf` membutuhkan `&` di depan variabel?
-- Apa manfaat `-Wall`, `-Wextra`, dan `-Wpedantic`?
+- Apa manfaat `-Wall` dan `-Wextra`?
 - Mengapa program yang berhasil dikompilasi belum tentu benar secara fisika?
 
 ## Latihan
@@ -3083,7 +2911,7 @@ dan pastikan setiap teks tampil pada baris yang berbeda.
 Kompilasi menggunakan
 
 ```bash
-gcc -Wall -Wextra -Wpedantic -std=c17 program.c -o program
+gcc -Wall -Wextra program.c -o program
 ```
 
 Pastikan tidak muncul peringatan.
@@ -3570,7 +3398,7 @@ temperature <= 30.0
 - Program teknik sebaiknya dikompilasi dengan peringatan aktif, misalnya
 
 ```bash
-gcc -Wall -Wextra -Wpedantic -std=c17 program.c -o program
+gcc -Wall -Wextra program.c -o program
 ```
 
 - Program yang berhasil dikompilasi belum tentu benar. Hasil tetap perlu diperiksa menggunakan algoritma, perhitungan manual, satuan, orde besaran, dan penalaran fisika.
