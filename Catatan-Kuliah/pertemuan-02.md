@@ -2,7 +2,7 @@
 
 ## Menyusun algoritma dari masalah fisika
 
-Pada pertemuan sebelumnya kita telah melihat bahwa komputer bekerja dengan menjalankan instruksi yang sangat terstruktur. Komputer tidak memahami tujuan eksperimen, makna fisis suatu besaran, atau alasan kita menggunakan suatu persamaan. Komputer hanya menjalankan instruksi yang diberikan kepadanya. 
+Pada pertemuan sebelumnya kita telah melihat bahwa komputer bekerja dengan menjalankan instruksi yang sangat terstruktur. Komputer tidak memahami tujuan eksperimen, makna fisis suatu besaran, atau alasan kita menggunakan suatu persamaan. Komputer hanya "menuruti" manusia, menjalankan instruksi yang diberikan kepadanya. 
 
 Dengan alasan di atas, sebelum menulis program, kita memerlukan suatu cara berpikir yang dapat menjembatani persoalan fisis dengan instruksi komputasi. Cara berpikir ini disebut **pola pikir algoritmik** (*algorithmic thinking*). Secara umum, alur yang akan sering kita gunakan sepanjang mata kuliah ini adalah
 ```math
@@ -213,7 +213,7 @@ Submasalah:
 
 Setiap submasalah masih dapat dipecah lagi. Sebagai contoh,
 ```text
-Hitung statistik dasar
+Hitung besaran statistik dasar
 
 dapat dipecah menjadi
 
@@ -223,11 +223,11 @@ dapat dipecah menjadi
 - cari maksimum
 ```
 
-Dekomposisi membantu kita memperoleh struktur. Alih-alih memiliki satu program besar yang sulit dipahami, kita mulai melihat sekumpulan tugas kecil yang masing-masing mempunyai tujuan jelas.
+Dekomposisi membantu kita memperoleh struktur detail dari masalah. Alih-alih memiliki satu program besar yang sulit dipahami, kita mulai melihat sekumpulan tugas kecil yang masing-masing mempunyai tujuan jelas.
 
 ### Pernyataan masalah menuju tujuan komputasi
 
-Tinjau sebuah persoalan fisika sederhana. Sebuah resistor dialiri arus $I$ dan memiliki hambatan $R$. Kita ingin menentukan daya yang didisipasikan.
+Mari kita tinjau suatu persoalan fisika sederhana. Sebuah resistor dialiri arus $I$ dan memiliki hambatan $R$. Kita ingin menentukan daya yang didisipasikan.
 
 Secara fisika,
 ```math
@@ -259,7 +259,7 @@ Tampilkan V dan P
 ```
 Kedua algoritma tersebut sah. Pemilihan algoritma bergantung pada informasi apa yang ingin kita peroleh dan bagaimana hasil perantara akan digunakan.
 
-### Menentukan batas persoalan
+### Menentukan batasan masalah
 
 Dekomposisi juga menuntut kita menentukan apa yang **tidak** sedang diselesaikan. Misalnya, untuk program daya resistor di atas, kita mungkin mengasumsikan
 - hambatan tetap;
@@ -297,15 +297,11 @@ Hitung posisi x = x0 + v0*t + 0.5*a*t*t
 Tampilkan x
 ```
 
-Untuk persoalan yang pendek, bentuk seperti ini sudah cukup baik. Keuntungan kalimat berurutan adalah mudah dibaca oleh orang yang belum terbiasa dengan notasi algoritmik.
-
-Kelemahannya, ketika persoalan menjadi lebih kompleks, kalimat biasa dapat menjadi panjang dan ambigu. Karena itu kita memerlukan representasi lain seperti diagram alir dan *pseudocode*.
+Untuk persoalan yang pendek, bentuk seperti ini sudah cukup baik. Keuntungan kalimat berurutan adalah mudah dibaca oleh orang yang belum terbiasa dengan notasi algoritmik. Kelemahannya, ketika persoalan menjadi lebih kompleks, kalimat biasa dapat menjadi panjang dan ambigu. Oleh karena itu, kita memerlukan representasi lain seperti diagram alir dan *pseudocode*.
 
 ## Diagram alir
 
-**Diagram alir** (*flowchart*) merupakan representasi visual dari urutan proses dalam suatu algoritma.
-
-Beberapa simbol yang umum digunakan adalah
+**Diagram alir** (*flowchart*) merupakan representasi visual dari urutan proses dalam suatu algoritma. Beberapa simbol yang umum digunakan adalah
 - oval untuk mulai dan selesai;
 - jajar genjang untuk input dan output;
 - persegi panjang untuk proses;
@@ -359,7 +355,7 @@ flowchart TD
     H --> I([Selesai])
 ```
 
-Pada tahap ini kita belum membahas sintaks `if` dalam C secara terperinci. Tujuannya adalah memahami bahwa beberapa algoritma memiliki **percabangan**. Program tidak selalu menjalankan jalur yang sama untuk semua masukan.
+Pada tahap ini kita belum membahas sintaks `if` dalam C secara terperinci. Tujuannya adalah memahami bahwa beberapa algoritma memiliki **percabangan** karena program tidak selalu menjalankan jalur yang sama untuk semua masukan.
 
 ### Diagram alir dengan pengulangan
 
@@ -384,23 +380,19 @@ flowchart TD
 ```
 
 Diagram ini sudah memperlihatkan tiga pola dasar yang akan sering muncul dalam pemrograman:
-```text
-urutan
-keputusan
-pengulangan
-```
+- urutan,
+- keputusan, dan
+- pengulangan
 
 Sebagian besar program dapat dipandang sebagai kombinasi ketiga pola tersebut.
 
 ## Pseudocode
 
-Diagram alir sangat membantu untuk melihat struktur, tetapi untuk algoritma yang lebih panjang diagram dapat menjadi besar.
+Diagram alir sangat membantu untuk melihat struktur masalah, tetapi untuk algoritma yang lebih panjang nantinya diagram alir dapat menjadi terlalu besar. Representasi lain yang sangat penting dan bermanfaat adalah **pseudocode**.
 
-Representasi lain yang sangat penting adalah **pseudocode**.
+*Pseudocode* merupakan cara menulis algoritma menggunakan bentuk yang menyerupai bahasa pemrograman, tetapi tidak terikat pada sintaksis bahasa tertentu. *Pseudocode* seharusnya cukup jelas untuk diterjemahkan ke C, Python, atau bahasa lain. 
 
-*Pseudocode* merupakan cara menulis algoritma menggunakan bentuk yang menyerupai bahasa pemrograman, tetapi tidak terikat pada sintaks bahasa tertentu. *Pseudocode* seharusnya cukup jelas untuk diterjemahkan ke C, Python, atau bahasa lain.
-
-*Pseudocode* tidak mempunyai satu standar universal. Hal yang lebih penting adalah konsistensi. Dalam catatan ini kita akan menggunakan beberapa konvensi berikut.
+*Pseudocode* tidak mempunyai satu standar yang universal karena yang lebih penting adalah konsistensi. Dalam catatan ini kita akan menggunakan beberapa konvensi berikut.
 
 ```text
 INPUT    untuk masukan
@@ -437,7 +429,7 @@ x=x+1
 ```
 tidak mungkin benar sebagai persamaan matematika biasa, tetapi mempunyai makna yang jelas sebagai operasi pembaruan nilai dalam algoritma.
 
-### Pseudocode untuk gerak lurus
+### Contoh pseudocode komputasi gerak lurus
 
 Untuk
 ```math
@@ -462,9 +454,9 @@ OUTPUT:
     x
 ```
 
-Pseudocode tersebut masih sangat dekat dengan persamaan matematis karena tidak terdapat keputusan atau pengulangan.
+*Pseudocode* tersebut masih sangat dekat dengan persamaan matematis karena tidak terdapat keputusan atau pengulangan.
 
-### Pseudocode untuk rata-rata data
+### Contoh pseudocode komputasi rata-rata data
 
 Sekarang kita ingin menghitung rata-rata $N$ data,
 ```math
@@ -494,15 +486,13 @@ OUTPUT:
     mean
 ```
 
-Perhatikan bahwa persamaan jumlahan
+Perhatikan bahwa formula jumlahan
 ```math
 \sum_{i=1}^{N}x_i
 ```
-diterjemahkan menjadi proses penambahan yang dilakukan satu per satu.
+diterjemahkan menjadi proses penambahan yang dilakukan satu per satu. Inilah salah satu contoh penting mengenai hubungan matematika dan algoritma. Notasi matematika sering kali menyatakan **apa** yang ingin dihitung. Algoritma harus menjelaskan **bagaimana** perhitungan tersebut dilakukan.
 
-Inilah salah satu contoh penting mengenai hubungan matematika dan algoritma. Notasi matematika sering kali menyatakan **apa** yang ingin dihitung. Algoritma harus menjelaskan **bagaimana** perhitungan tersebut dilakukan.
-
-### Pseudocode untuk rata-rata, minimum, dan maksimum
+### Contoh pseudocode untuk rata-rata, minimum, dan maksimum
 
 Kita dapat memperluas algoritma barusan.
 ```text
@@ -559,30 +549,28 @@ Jika `maximum` dimulai dari nol, algoritma akan menganggap maksimum tetap nol, p
 
 ## Menelusuri algoritma
 
-Setelah menulis algoritma, kita belum boleh langsung menganggap algoritma tersebut benar. Salah satu teknik paling sederhana untuk memeriksa algoritma adalah **tracing** atau *dry run*, yaitu menjalankan algoritma secara manual menggunakan data kecil.
+Setelah menulis algoritma, kita belum boleh langsung menganggap algoritma tersebut benar. Salah satu teknik paling sederhana untuk memeriksa algoritma adalah penjejakan (**tracing**) atau *dry run*, yaitu eksekusi algoritma secara manual menggunakan data kecil.
 
 Misalkan data temperatur adalah
-
 ```math
 29.5,\quad30.2,\quad28.9,\quad31.1.
 ```
-
-Kita ingin menelusuri algoritma statistik sebelumnya.
+Kita ingin menelusuri algoritma statistik yang sudah dirumuskan sebelumnya.
 
 Pada awal proses,
 
 ```math
-sum=29.5,
+\mathrm{sum}=29.5,
 ```
 
 ```math
-minimum=29.5,
+\mathrm{minimum}=29.5,
 ```
 
 dan
 
 ```math
-maximum=29.5.
+\mathrm{maximum}=29.5.
 ```
 
 Kemudian setiap data berikutnya diproses.
@@ -595,7 +583,6 @@ Kemudian setiap data berikutnya diproses.
 | 4 | 31.1 | 119.7 | 28.9 | 31.1 |
 
 Setelah seluruh data selesai diproses,
-
 ```math
 \overline{T}
 =
@@ -603,33 +590,25 @@ Setelah seluruh data selesai diproses,
 =
 29.925.
 ```
-
-Jadi hasil akhirnya adalah
-
+Jadi, hasil akhirnya adalah
 ```math
 \overline{T}=29.925,
 ```
-
 ```math
 T_{\min}=28.9,
 ```
-
 dan
 
 ```math
 T_{\max}=31.1.
 ```
-
-Tracing sangat berguna karena memungkinkan kita melihat perubahan nilai variabel dari satu langkah ke langkah berikutnya.
+*Tracing* sangat berguna karena memungkinkan kita melihat perubahan nilai variabel dari satu langkah ke langkah berikutnya.
 
 ### Keadaan algoritma
 
-Pada saat algoritma sedang berjalan, variabel-variabel di dalamnya mempunyai nilai tertentu.
-
-Kumpulan nilai tersebut dapat disebut **keadaan** (*state*) algoritma.
+Pada saat algoritma sedang berjalan, variabel-variabel di dalamnya mempunyai nilai tertentu. Kumpulan nilai tersebut dapat disebut **keadaan** (*state*) algoritma.
 
 Sebagai contoh, setelah data ketiga pada tabel sebelumnya diproses, keadaan algoritma adalah
-
 ```text
 i       = 3
 sum     = 88.6
@@ -637,54 +616,39 @@ minimum = 28.9
 maximum = 30.2
 ```
 
-Ketika kita mempelajari pengulangan dalam C, kebiasaan melacak keadaan seperti ini sangat membantu.
+Ketika kita mempelajari pengulangan dalam C, kebiasaan melacak keadaan seperti ini sangat membantu. Banyak kesalahan dalam program berasal dari ketidaktepatan memperbarui keadaan.
 
-Banyak kesalahan dalam program berasal dari ketidaktepatan memperbarui keadaan.
+### Konsep invarian
 
-### Gagasan invarian secara intuitif
-
-Ada satu cara berpikir yang sangat berguna ketika memeriksa algoritma berulang.
-
-Setelah setiap iterasi, kita dapat bertanya:
-
+Ada satu cara berpikir yang sangat berguna ketika memeriksa algoritma berulang. Setelah setiap iterasi, kita dapat bertanya:
 > Apa yang harus selalu benar sejauh ini?
 
 Untuk algoritma penjumlahan, setelah $i$ data diproses,
-
 ```math
 \text{sum}
 =
 \sum_{k=1}^{i}x_k.
 ```
-
 Untuk algoritma minimum,
-
 ```math
 \text{minimum}
 =
 \min(x_1,x_2,\ldots,x_i).
 ```
-
 Untuk algoritma maksimum,
-
 ```math
 \text{maximum}
 =
 \max(x_1,x_2,\ldots,x_i).
 ```
 
-Pernyataan yang tetap benar selama pengulangan semacam ini disebut **invarian**.
-
-Pada mata kuliah ini kita tidak akan melakukan pembuktian formal yang berat, tetapi gagasan invarian membantu kita memahami mengapa suatu algoritma bekerja.
+Pernyataan yang tetap benar selama pengulangan semacam ini disebut **invarian**. Pada mata kuliah ini kita tidak akan melakukan pembuktian formal yang berat, tetapi konsep invarian membantu kita memahami mengapa suatu algoritma bekerja.
 
 ## Memeriksa kebenaran algoritma
 
-Sebuah algoritma dikatakan benar jika, untuk setiap masukan yang memenuhi prakondisinya, algoritma menghasilkan keluaran yang memenuhi spesifikasi.
-
-Dalam praktik mata kuliah ini kita akan menggunakan pendekatan yang lebih sederhana tetapi tetap sistematis.
+Sebuah algoritma dikatakan benar jika, untuk setiap masukan yang memenuhi prakondisinya, algoritma menghasilkan keluaran yang memenuhi spesifikasi. Dalam praktik mata kuliah ini kita akan menggunakan pendekatan yang lebih sederhana tetapi masih tetap sistematis.
 
 Kita akan memeriksa algoritma melalui
-
 - penelusuran manual;
 - kasus sederhana;
 - kasus batas;
@@ -694,48 +658,34 @@ Kita akan memeriksa algoritma melalui
 
 ### Kasus biasa dan kasus batas
 
-Misalkan algoritma menghitung rata-rata $N$ data.
-
-Kasus biasa mungkin menggunakan
-
+Misalkan algoritma menghitung rata-rata $N$ data. Kasus biasa mungkin menggunakan
 ```math
 N=5.
 ```
-
-Namun kita juga perlu memikirkan kasus batas seperti
-
+Namun, kita juga perlu memikirkan kasus batas seperti
 ```math
 N=1
 ```
-
 dan
-
 ```math
 N=0.
 ```
 
 Jika
-
 ```math
 N=1,
 ```
-
 rata-rata seharusnya sama dengan satu-satunya data.
-
 Jika
 
 ```math
 N=0,
 ```
-
-algoritma harus menolak masukan atau menangani kondisi tersebut karena pembagian dengan nol tidak diperbolehkan.
-
-Kasus batas sering mengungkap kesalahan yang tidak terlihat pada data biasa.
+algoritma harus menolak masukan atau menangani kondisi tersebut karena pembagian dengan nol tidak diperbolehkan. Kasus batas sering mengungkap kesalahan yang tidak terlihat pada data biasa.
 
 ### Contoh kesalahan pada pencarian maksimum
 
 Misalkan kita menulis
-
 ```text
 maximum ← 0
 
@@ -745,29 +695,17 @@ FOR setiap x
     END IF
 END FOR
 ```
-
 Untuk data
-
 ```math
 5,\quad2,\quad7,
 ```
-
-algoritma tampak bekerja.
-
-Namun untuk data
-
+algoritma tampak bekerja. Namun, untuk data
 ```math
 -5,\quad-2,\quad-7,
 ```
+hasilnya salah karena `maximum` tetap nol. Masalahnya bukan pada sintaks, melainkan pada rancangan algoritma.
 
-hasilnya salah karena `maximum` tetap nol.
-
-Masalahnya bukan pada sintaks.
-
-Masalahnya berada pada rancangan algoritma.
-
-Perbaikan yang lebih baik adalah
-
+Perbaikan yang diperlukan adalah
 ```text
 maximum ← x1
 
@@ -780,81 +718,53 @@ END FOR
 
 ### Pemeriksaan berdasarkan fisika
 
-Dalam persoalan teknik, kebenaran algoritma tidak hanya diperiksa dari sisi struktur komputasi.
-
-Kita juga perlu menggunakan pengetahuan fisika.
-
-Misalkan algoritma menghitung energi kinetik.
-
-Jika
-
+Dalam persoalan teknik, kebenaran algoritma tidak hanya diperiksa dari sisi struktur komputasi. Kita juga perlu menggunakan pengetahuan fisika. Misalkan algoritma menghitung energi kinetik. Jika
 ```math
 m=2\text{ kg}
 ```
-
 dan
-
 ```math
 v=3\text{ m/s},
 ```
-
 maka
-
 ```math
 E_k=9\text{ J}.
 ```
 
 Jika program menghasilkan
-
 ```math
 E_k=-9\text{ J},
 ```
-
-kita langsung mengetahui ada masalah karena energi kinetik klasik tidak negatif.
-
-Jika program menghasilkan
-
+kita langsung mengetahui ada masalah karena energi kinetik pada fisika klasik tidak bisa negatif. Jika program menghasilkan
 ```math
 E_k=9\times10^{9}\text{ J},
 ```
-
-kita juga harus curiga terhadap satuan atau kesalahan perhitungan.
-
-Dengan demikian, pemeriksaan algoritma dalam Teknik Fisika sebaiknya menggunakan dua lapisan:
+kita juga harus curiga terhadap satuan atau kesalahan perhitungan. Dengan demikian, pemeriksaan algoritma dalam Teknik Fisika sebaiknya menggunakan dua lapisan:
 
 ```text
 Apakah langkah komputasinya benar?
 Apakah hasilnya masuk akal secara fisika?
 ```
 
-## Dari pseudocode menuju bahasa C
+## Implementasi algoritma dalam bahasa tertentu
 
-Setelah algoritma cukup jelas, kita dapat mulai menerjemahkannya ke bahasa pemrograman.
-
-Pada pertemuan ini bahasa C masih digunakan sebagai ilustrasi.
-
-Kita belum akan membahas semua sintaks secara sistematis.
+Setelah algoritma cukup jelas, kita dapat mulai menerjemahkannya ke bahasa pemrograman. Pada pertemuan ini bahasa C masih digunakan sebagai ilustrasi. Kita belum akan membahas semua sintaks secara sistematis.
 
 ### Algoritma berurutan dalam C
 
-Pertimbangkan kembali persamaan gerak
-
+Tinjau kembali persamaan gerak
 ```math
 x
 =
 x_0+v_0t+\frac12at^2.
 ```
-
-Pseudocode-nya adalah
-
+*Pseudocode*-nya adalah
 ```text
 INPUT x0, v0, a, t
 x ← x0 + v0*t + 0.5*a*t*t
 OUTPUT x
 ```
-
 Salah satu implementasi C adalah
-
 ```c
 #include <stdio.h>
 
@@ -874,7 +784,6 @@ int main(void)
 ```
 
 Perhatikan bahwa struktur program mengikuti struktur algoritma.
-
 ```text
 nilai awal
     ↓
@@ -882,13 +791,11 @@ perhitungan
     ↓
 keluaran
 ```
-
 Kita dapat mengganti nilai $x_0$, $v_0$, $a$, dan $t$ tanpa mengubah ide algoritmanya.
 
 ### Algoritma keputusan dalam C
 
-Pertimbangkan klasifikasi temperatur:
-
+Tinjau klasifikasi temperatur:
 ```text
 IF T < 20
     status ← DINGIN
@@ -898,9 +805,7 @@ ELSE
     status ← PANAS
 END IF
 ```
-
-Implementasi C dapat terlihat seperti
-
+Implementasi C dapat dibuat semacam di bawah ini.
 ```c
 #include <stdio.h>
 
@@ -924,11 +829,9 @@ int main(void)
     return 0;
 }
 ```
-
-Sintaks `if`, `else if`, dan `else` akan dibahas lebih rinci pada pertemuan mendatang.
+Sintaks `if`, `else if`, dan `else` akan dibahas lebih terperinci pada pertemuan mendatang.
 
 Pada tahap ini perhatikan korespondensinya:
-
 ```text
 keputusan dalam algoritma
         ↓
@@ -1840,7 +1743,7 @@ Cobalah menjawab beberapa pertanyaan berikut tanpa melihat kembali catatan.
 
 ## Latihan
 
-### 1. Dari masalah menuju algoritma
+### 1. Perumusan algoritma dari suatu masalah fisika
 
 Sebuah sensor tekanan menghasilkan satu nilai tekanan $P$ dalam satuan pascal.
 
