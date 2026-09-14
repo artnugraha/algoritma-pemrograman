@@ -24,7 +24,7 @@ sehingga kemampuan menulis sintaks program (dengan bahasa apapun, tidak terbatas
 | --: | ---------------------------------------------------------- | ------------------------------------------ |
 |   1 | 💻 Pengenalan algoritma, komputer, dan representasi data   | [Materi 1](Catatan-Kuliah/pertemuan-01.md) |
 |   2 | 🧠 Berpikir algoritmik dan perancangan algoritma           | [Materi 2](Catatan-Kuliah/pertemuan-02.md) |
-|   3 | 🧩 Dasar-dasar pemrograman dalam bahasa C                  | menyusul                                   |
+|   3 | 🧩 Dasar-dasar pemrograman dalam bahasa C                  | [Materi 3](Catatan-Kuliah/pertemuan-03.md) |
 |   4 | 🔀 Percabangan dan pengulangan                             | menyusul                                   |
 |   5 | 🔁 Pola algoritma iteratif                                 | menyusul                                   |
 |   6 | 🧱 Larik, fungsi, dan modularisasi program                 | menyusul                                   |

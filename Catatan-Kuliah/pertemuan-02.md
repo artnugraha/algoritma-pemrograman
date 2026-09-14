@@ -1741,9 +1741,7 @@ Kemudian, lakukan tracing algoritma `TemperatureMonitoring` yang dibahas pada ca
 
 - Kebenaran algoritma diperiksa melalui penelusuran, kasus sederhana, kasus batas, hasil yang telah diketahui, serta pemeriksaan makna fisik.
 
-- Kompleksitas algoritma memberikan gambaran mengenai bagaimana kebutuhan komputasi bertumbuh terhadap ukuran masukan.
-
-- Pada tahap awal kita mengenal tiga pola pertumbuhan penting:
+- Kompleksitas algoritma memberikan gambaran mengenai bagaimana kebutuhan komputasi bertumbuh terhadap ukuran masukan. Pada tahap awal ini, kita dikenalkan pada tiga pola pertumbuhan penting:
     ```math
     O(1),
     ```
