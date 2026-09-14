@@ -18,6 +18,25 @@ Seiring dengan perkembangan perangkat kecerdasan buatan (AI), mata kuliah ini le
 ```
 sehingga kemampuan menulis sintaks program (dengan bahasa apapun, tidak terbatas C dan Python) dapat lebih banyak dipelajari secara mandiri. Setelah mengikuti mata kuliah ini, mahasiswa diharapkan dapat merumuskan persoalan teknik secara komputasional, memilih langkah penyelesaian yang sesuai, mengimplementasikannya, memeriksa kebenaran hasil, dan menggunakan perangkat komputasi sebagai bagian dari praktik sains dan rekayasa.
 
+## Daftar Materi
+
+| No. | Topik                                                   | *Link* Catatan Kuliah                         |
+| --: | ------------------------------------------------------- | ------------------------------------------- |
+|   1 | Pengenalan algoritma, komputer, dan representasi data   | [Materi 1](Catatan-Kuliah/pertemuan-01.md)  |
+|   2 | Berpikir algoritmik dan perancangan algoritma           | [Materi 2](Catatan-Kuliah/pertemuan-02.md)  |
+|   3 | Dasar-dasar pemrograman dalam bahasa C                  | menyusul  |
+|   4 | Percabangan dan pengulangan                             | menyusul  |
+|   5 | Pola algoritma iteratif                                 | menyusul  | 
+|   6 | Larik, fungsi, dan modularisasi program                 | menyusul  | 
+|   7 | Data terstruktur dan pengolahan berkas dalam C          | menyusul  | 
+|   8 | Integrasi pemrograman C untuk kasus Teknik Fisika       | menyusul  | 
+|   9 | Python untuk komputasi ilmiah                           | menyusul  |
+|  10 | Algoritma pencarian                                     | menyusul  | 
+|  11 | Algoritma pengurutan                                    | menyusul  | 
+|  12 | Studi kasus terintegrasi C dan Python                   | menyusul  | 
+|  13 | Pengantar algoritma *machine learning*: *decision tree* | menyusul  | 
+
+
 ## Capaian Pembelajaran Program Studi
 
 Mata kuliah ini mendukung beberapa Capaian Pembelajaran (CP) Program Studi atau *Program Learning Outcomes* (PLO) berikut khususnya untuk Teknik Fisika di Telkom Unviersity.
@@ -313,7 +332,7 @@ Pertemuan ini difokuskan pada pemahaman bahwa pustaka *machine learning* tetap m
 5. BRIN Research Center for Quantum Physics, *Python Minimalis*.
    https://github.com/BRIN-Q/Python-minimalis
 
-## Catatan Penggunaan Repositori
+## Perhatian!
 
 Catatan kuliah dalam repositori ini dirancang untuk dibaca secara berurutan. Contoh program sebaiknya tidak hanya disalin dan dijalankan, tetapi digunakan sebagai bahan "eksperimen".
 
