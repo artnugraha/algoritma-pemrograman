@@ -90,7 +90,7 @@ int main(void)
 ```
 Program tersebut terdiri atas beberapa bagian penting.
 
-### 1. Direktif `#include`
+### Direktif `#include`
 
 Baris
 ```c
@@ -112,7 +112,7 @@ scanf()
 ```
 Secara konseptual, pustaka standar menyediakan fungsi-fungsi yang telah ditulis dan diuji sehingga kita tidak perlu membuat semuanya dari awal.
 
-### 2. Fungsi `main`
+### Fungsi `main`
 
 Setiap program C yang dapat dieksekusi memiliki titik awal eksekusi. Dalam contoh kita,
 ```c
@@ -136,7 +136,7 @@ menyatakan bahwa fungsi tersebut tidak menerima argumen. Tubuh fungsi dituliskan
 ```
 Program mulai menjalankan pernyataan-pernyataan di dalam `main` dari atas menuju bawah, kecuali aliran kontrol mengubah urutannya.
 
-### 3. Pernyataan (*statement*)
+### Pernyataan (*statement*)
 
 Baris
 ```c
@@ -153,16 +153,15 @@ printf("Hello, Teknik Fisika!\n")
 ```
 tanpa titik koma, *compiler* akan menghasilkan galat sintaksis.
 
-### 4. `return 0`
+### Akhir program atau subprogram, `return 0`
 
 Baris
 ```c
 return 0;
 ```
-mengakhiri fungsi `main` dan mengembalikan nilai `0`.
-Secara konvensi, nilai nol menunjukkan bahwa program selesai secara normal. 
+mengakhiri bagian utama program, yakni "fungsi" `main`, dan mengembalikan nilai `0`. Secara konvensi, nilai nol menunjukkan bahwa program selesai secara normal. 
 
-Program dapat menggunakan nilai selain nol untuk menunjukkan kondisi gagal atau kesalahan. Namun, kita akan menggunakan pola
+Program atau nantinya subprogram secara umum dapat menggunakan nilai selain nol untuk menunjukkan kondisi gagal atau kesalahan. Namun, kita akan menggunakan bentuk
 ```c
 return 0;
 ```
