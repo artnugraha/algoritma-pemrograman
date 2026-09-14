@@ -836,9 +836,7 @@ atau
 6.02214076\times10^{23}.
 ```
 
-Komputer memiliki jumlah bit yang terbatas, sedangkan beberapa bilangan membutuhkan jumlah digit yang tidak terbatas untuk direpresentasikan secara eksak.
-
-Untuk menyimpan bilangan real, komputer biasanya menggunakan representasi titik kambang (**floating-point**). Idenya mirip dengan notasi ilmiah. Dalam notasi ilmiah desimal, kita dapat menulis
+Komputer memiliki jumlah bit yang terbatas, sedangkan beberapa bilangan membutuhkan jumlah digit yang tidak terbatas untuk direpresentasikan secara eksak. Untuk menyimpan bilangan real, komputer biasanya menggunakan representasi titik kambang (**floating-point**). Idenya mirip dengan notasi ilmiah. Dalam notasi ilmiah desimal, kita dapat menulis
 ```math
 602200000000000000000000
 ```
@@ -846,24 +844,181 @@ sebagai
 ```math
 6.022\times10^{23}.
 ```
-Secara umum,
+Secara umum, kita dapat menuliskan bentuk semacam
 ```math
 x
 =
 \pm m\times10^e.
 ```
 
-*Floating-point* menggunakan gagasan serupa notasi ilmiah, tetapi secara internal menggunakan basis dua dalam suatu konvensi yang disebut format IEEE754:
+Representasi *floating-point* menggunakan gagasan yang serupa, tetapi komputer bekerja menggunakan basis dua. Secara konseptual, bilangan dapat ditulis dalam bentuk
 ```math
-\boxed{
 x
 =
 (-1)^s
 m
-2^e.
+2^e,
+```
+dengan
+* $s$ menyatakan tanda;
+* $m$ menyatakan bagian signifikan;
+* $e$ menyatakan eksponen.
+
+Salah satu standar yang paling banyak digunakan untuk representasi *floating-point* adalah **IEEE 754**. Untuk tipe *single precision* 32-bit, susunan bit secara umum adalah
+
+```text
++----------+----------------+-------------------------+
+| sign     | exponent       | fraction                |
+| 1 bit    | 8 bit          | 23 bit                  |
++----------+----------------+-------------------------+
+```
+atau
+```text
+s eeeeeeee fffffffffffffffffffffff
+```
+Untuk bilangan normal pada format 32-bit, nilainya dapat dipahami melalui bentuk
+```math
+x
+=
+(-1)^s
+(1.f)
+2^{E-127},
+```
+dengan $E$ merupakan nilai bilangan dari delapan bit eksponen. Bilangan $127$ disebut **bias** untuk eksponen pada format *single precision*. Bagian `1.f` menunjukkan bahwa untuk bilangan normal, bit `1` di depan titik biner tidak perlu disimpan secara eksplisit. Bit yang disimpan pada bagian *fraction* hanyalah bagian setelah titik biner.
+
+#### Contoh representasi $5.75$ dalam IEEE 754
+
+Sebagai contoh, kita ingin merepresentasikan
+```math
+5.75
+```
+menggunakan format IEEE 754 *single precision*. Pertama, kita ubah bagian bulat ke biner:
+```math
+5_{10}
+=
+101_2.
+```
+Bagian pecahannya adalah
+```math
+0.75
+=
+0.5+0.25,
+```
+sehingga
+```math
+0.75_{10}
+=
+0.11_2.
+```
+Dengan demikian,
+```math
+5.75_{10}
+=
+101.11_2.
+```
+
+Selanjutnya kita tuliskan dalam bentuk biner ternormalisasi,
+```math
+101.11_2
+=
+1.0111_2\times2^2.
+```
+Dari bentuk tersebut kita memperoleh tiga bagian yang diperlukan.
+
+**Bit tanda**
+
+Karena $5.75$ bernilai positif,
+```math
+s=0.
+```
+Jadi, bit tandanya adalah
+```text
+0
+```
+
+**Eksponen**
+
+Eksponen sebenarnya adalah
+```math
+e=2.
+```
+Pada format *single precision*, eksponen disimpan menggunakan bias $127$,
+```math
+E
+=
+e+127
+=
+2+127
+=
+129.
+```
+Bilangan $129$ dalam biner adalah
+```math
+129_{10}
+=
+10000001_2.
+```
+Jadi, bagian eksponennya adalah
+```text
+10000001
+```
+
+**Fraction**
+
+Dari bentuk ternormalisasi
+```math
+1.0111_2\times2^2,
+```
+angka `1` paling depan tidak disimpan secara eksplisit. Bagian setelah titik biner adalah
+```text
+0111
+```
+Kemudian, kita tambahkan nol hingga panjangnya menjadi 23 bit,
+```text
+01110000000000000000000
+```
+Dengan demikian, ketiga bagian IEEE 754 adalah
+```text
+sign       = 0
+exponent   = 10000001
+fraction   = 01110000000000000000000
+```
+Jika digabungkan,
+```text
+0 10000001 01110000000000000000000
+```
+atau tanpa spasi,
+```text
+01000000101110000000000000000000
+```
+Representasi tersebut adalah representasi IEEE 754 *single precision* untuk nilai
+
+```math
+5.75.
+```
+
+Dalam bentuk heksadesimal, pola bit yang sama dapat ditulis sebagai
+```text
+0x40B80000
+```
+Contoh ini memperlihatkan bahwa representasi *floating-point* pada dasarnya menyimpan tiga informasi:
+```math
+\boxed{
+\text{tanda}
++
+\text{eksponen}
++
+\text{bagian signifikan}.
 }
 ```
-Di sini $s$ berkaitan dengan tanda, $m$ berkaitan dengan bagian signifikan bilangan, dan $e$ merupakan eksponen. Detail format IEEE 754 belum diperlukan pada tahap ini. Kita hanya perlu memahami konsekuensi dari jumlah bit yang terbatas.
+Untuk $5.75$, representasinya dapat dilakukan secara eksak karena pecahan tersebut memiliki representasi biner yang berhingga.
+Namun, tidak semua bilangan desimal mempunyai sifat tersebut. 
+
+Bilangan seperti
+```math
+0.1
+```
+tidak mempunyai representasi biner berhingga. Alasannya, jumlah bit pada bagian *fraction* terbatas, sehingga komputer harus menyimpan nilai yang sangat dekat dengan $0.1$, tetapi bukan nilai matematis $0.1$ secara eksak. Konsekuensi inilah yang akan kita bahas pada bagian berikutnya.
 
 #### Mengapa $0.1$ sulit direpresentasikan?
 
