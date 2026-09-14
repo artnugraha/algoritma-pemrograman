@@ -301,10 +301,17 @@ Pertemuan ini difokuskan pada pemahaman bahwa pustaka *machine learning* tetap m
 
 1. Rinaldi Munir dan Leony Lidya, *Algoritma dan Pemrograman*, Edisi Keenam, Penerbit Informatika, 2016.
 
-2. TutorialsPoint, *Learn C Programming*, 2014.
+2. TutorialsPoint, *C Tutorial*. 
+   https://www.tutorialspoint.com/cprogramming
 
-3. Python Software Foundation, *The Python Tutorial*.  
-   https://docs.python.org/3/tutorial/
+3. TutorialsPoint, *Learn C by Examples*.
+   https://www.tutorialspoint.com/learn_c_by_examples
+
+4. Python Software Foundation, *The Python Tutorial*.  
+   https://docs.python.org/3/tutorial
+
+5. BRIN Research Center for Quantum Physics, *Python Minimalis*.
+   https://github.com/BRIN-Q/Python-minimalis
 
 ## Catatan Penggunaan Repositori
 
