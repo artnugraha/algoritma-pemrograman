@@ -2948,7 +2948,7 @@ sizeof(double)
 sizeof(bool)
 ```
 
-Jalankan pada komputer Anda.
+Jalankan pada komputer masing-masing.
 
 Bandingkan hasilnya dengan teman yang menggunakan sistem operasi atau arsitektur berbeda jika tersedia.
 
@@ -2969,7 +2969,7 @@ INT_MIN
 INT_MAX
 ```
 
-Bandingkan dengan prediksi berdasarkan jumlah bit `int` pada sistem Anda.
+Bandingkan dengan prediksi berdasarkan jumlah bit `int` pada sistem operasi dan lingkungan pemrograman masing-masing.
 
 ### 5. Pembagian integer
 
