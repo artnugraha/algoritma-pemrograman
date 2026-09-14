@@ -1706,9 +1706,9 @@ Kemudian, lakukan tracing algoritma `TemperatureMonitoring` yang dibahas pada ca
 
 ## Rangkuman
 
-- Berpikir algoritmik merupakan proses mengubah persoalan menjadi langkah-langkah komputasi yang jelas dan dapat dilaksanakan.
+- Berpikir algoritmik merupakan proses mengubah persoalan menjadi langkah-langkah komputasi yang jelas dan dapat dilakukan/dieksekusi.
 
-- Alur yang digunakan sepanjang mata kuliah ini adalah
+- Alur/pola pikir yang digunakan sepanjang mata kuliah ini adalah
 
 ```math
 \boxed{
@@ -1728,42 +1728,35 @@ Kemudian, lakukan tracing algoritma `TemperatureMonitoring` yang dibahas pada ca
 
 - Persoalan besar dapat dipecah menjadi subpersoalan yang lebih kecil melalui dekomposisi.
 
-- Algoritma dapat direpresentasikan menggunakan kalimat berurutan, diagram alir, dan pseudocode.
+- Algoritma dapat direpresentasikan menggunakan kalimat berurutan, diagram alir, dan *pseudocode*.
 
 - Tiga pola aliran kontrol yang penting adalah
+  - urutan,
+  - keputusan, dan
+  - pengulangan
 
-```text
-urutan
-keputusan
-pengulangan
-```
+- *Pseudocode* digunakan untuk merancang logika tanpa terlalu terikat pada sintaks bahasa tertentu.
 
-- Pseudocode digunakan untuk merancang logika tanpa terlalu terikat pada sintaks bahasa tertentu.
-
-- Tracing membantu memeriksa perubahan keadaan algoritma dari satu langkah ke langkah berikutnya.
+- *Tracing* membantu memeriksa perubahan keadaan algoritma dari satu langkah ke langkah berikutnya.
 
 - Kebenaran algoritma diperiksa melalui penelusuran, kasus sederhana, kasus batas, hasil yang telah diketahui, serta pemeriksaan makna fisik.
 
 - Kompleksitas algoritma memberikan gambaran mengenai bagaimana kebutuhan komputasi bertumbuh terhadap ukuran masukan.
 
 - Pada tahap awal kita mengenal tiga pola pertumbuhan penting:
-
-```math
-O(1),
-```
-
-```math
-O(N),
-```
-
-dan
-
-```math
-O(N^2).
-```
+    ```math
+    O(1),
+    ```
+    ```math
+    O(N),
+    ```
+    dan
+    ```math
+    O(N^2).
+    ```
 
 - Kompleksitas tidak menyatakan waktu dalam detik. Kompleksitas menyatakan pola pertumbuhan pekerjaan komputasi ketika ukuran masalah membesar.
 
-- Contoh monitoring temperatur memperlihatkan bahwa satu algoritma dapat memadukan pengulangan, keputusan, statistik sederhana, tracing, pemeriksaan kebenaran, serta analisis kompleksitas.
+- Contoh monitoring temperatur memperlihatkan bahwa satu algoritma dapat memadukan pengulangan, keputusan, statistik sederhana, *tracing*, pemeriksaan kebenaran, serta analisis kompleksitas.
 
-- Setelah algoritma cukup jelas, langkah berikutnya adalah menerjemahkan algoritma ke bahasa pemrograman. Pada pertemuan selanjutnya kita akan mulai mempelajari struktur dasar program C, tipe data, variabel, operator, ekspresi, logika Boolean, serta input dan output secara lebih sistematis.
+- Setelah algoritma cukup jelas, langkah berikutnya adalah menerjemahkan algoritma ke bahasa pemrograman. Pada kuliah selanjutnya kita akan mulai mempelajari struktur dasar program C, tipe data, variabel, operator, ekspresi, logika Boolean, serta input dan output secara lebih sistematis.
