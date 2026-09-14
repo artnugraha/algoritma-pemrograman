@@ -1442,7 +1442,7 @@ Bagian pecahan tidak disimpan.
 
 Konversi dari tipe dengan informasi lebih banyak ke tipe dengan informasi lebih sedikit dapat kehilangan informasi.
 
-Karena itu, cast tidak boleh digunakan hanya untuk menghilangkan peringatan *compiler* tanpa memahami konsekuensinya.
+Karena itu, *cast* tidak boleh digunakan hanya untuk menghilangkan peringatan *compiler* tanpa memahami konsekuensinya.
 
 ## Input dan output
 
@@ -3266,14 +3266,10 @@ int main(void)
 }
 ```
 
-Jalankan program dan amati hasilnya.
-
-Bandingkan dengan
-
+Jalankan program dan amati hasilnya. Bandingkan dengan
 ```math
 0.3.
 ```
-
 Jelaskan hubungan hasil eksperimen dengan pembahasan representasi *floating-point* pada Kuliah 1.
 
 ## Rangkuman
@@ -3281,17 +3277,16 @@ Jelaskan hubungan hasil eksperimen dengan pembahasan representasi *floating-poin
 - Pada kuliah ini kita mulai menerjemahkan algoritma menjadi program C.
 
 - Struktur dasar program C dapat ditulis sebagai
+    ```c
+    #include <stdio.h>
 
-```c
-#include <stdio.h>
+    int main(void)
+    {
+        /* program */
 
-int main(void)
-{
-    /* program */
-
-    return 0;
-}
-```
+        return 0;
+    }
+    ```
 
 - Program C dikompilasi menjadi *executable* sebelum dijalankan.
 
@@ -3299,106 +3294,87 @@ int main(void)
 
 - Deklarasi menentukan nama dan tipe variabel, sedangkan inisialisasi memberikan nilai awal.
 
-- Assignment menggunakan operator
-
-```text
-=
-```
-
-dan berbeda dari perbandingan kesamaan
-
-```text
-==
-```
+- *Assignment* menggunakan operator
+    ```text
+    =
+    ```
+    yang berbeda dari perbandingan kesamaan
+    ```text
+    ==
+    ```
 
 - Tipe data dasar yang penting pada tahap ini meliputi
-
-```text
-char
-int
-float
-double
-bool
-```
+  - `char`,
+  - `int`,
+  - `float`,
+  - `double`, dan
+  - `bool`
 
 - Untuk komputasi ilmiah dasar, `double` akan sering digunakan karena menyediakan presisi lebih tinggi daripada `float`.
 
 - Tipe data menentukan representasi, rentang nilai, dan presisi.
 
 - Nilai yang tidak dimaksudkan berubah dapat dideklarasikan menggunakan
-
-```c
-const
-```
+    ```c
+    const
+    ```
 
 - Operator aritmetika dasar meliputi
+    ```text
+    +  -  *  /  %
+    ```
 
-```text
-+  -  *  /  %
-```
-
-- Pembagian integer harus diperhatikan karena
-
-```math
-5/2
-=
-2
-```
-
-jika kedua operand bertipe integer.
+- Pembagian bilangan bulat (*integer*) harus diperhatikan karena
+    ```math
+    5/2
+    =
+    2
+    ```
+    jika kedua *operand* bertipe *integer*.
 
 - C tidak menggunakan `^` sebagai operator pangkat. Untuk kuadrat sederhana, gunakan
-
-```c
-x * x
-```
+    ```c
+    x * x
+    ```
 
 - Operator relasional meliputi
-
-```text
-<  <=  >  >=  ==  !=
-```
+    ```text
+    <  <=  >  >=  ==  !=
+    ```
 
 - Operator logika meliputi
-
-```text
-&&  ||  !
-```
-
-yang masing-masing merepresentasikan AND, OR, dan NOT.
+    ```text
+    &&  ||  !
+    ```
+    yang masing-masing merepresentasikan AND, OR, dan NOT.
 
 - Kondisi matematika seperti
+    ```math
+    20\leq T\leq30
+    ```
+    ditulis dalam C sebagai
+    ```c
+    temperature >= 20.0 &&
+    temperature <= 30.0
+    ```
 
-```math
-20\leq T\leq30
-```
-
-ditulis dalam C sebagai
-
-```c
-temperature >= 20.0 &&
-temperature <= 30.0
-```
-
-- Konversi tipe dapat terjadi secara implisit atau dilakukan secara eksplisit menggunakan cast.
+- Konversi tipe dapat terjadi secara implisit atau dilakukan secara eksplisit menggunakan *cast*.
 
 - `printf` digunakan untuk keluaran, sedangkan `scanf` digunakan untuk masukan.
 
 - Untuk `scanf`,
-
-```text
-%d   → int
-%f   → float
-%lf  → double
-```
+    ```text
+    %d   → int
+    %f   → float
+    %lf  → double
+    ```
 
 - `scanf` memerlukan alamat variabel sehingga kita menggunakan operator `&`.
 
 - Program teknik sebaiknya dikompilasi dengan peringatan aktif, misalnya
-
-```bash
-gcc -Wall -Wextra program.c -o program
-```
+    ```bash
+    gcc -Wall -Wextra program.c -o program
+    ```
 
 - Program yang berhasil dikompilasi belum tentu benar. Hasil tetap perlu diperiksa menggunakan algoritma, perhitungan manual, satuan, orde besaran, dan penalaran fisika.
 
