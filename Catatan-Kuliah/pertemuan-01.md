@@ -1,4 +1,4 @@
-# Pertemuan 1: Pengenalan Algoritma, Komputer, dan Representasi Data
+# Kuliah 1: Pengenalan Algoritma, Komputer, dan Representasi Data
 
 ## Komputer: Alat bantu pemecahan masalah fisis
 
