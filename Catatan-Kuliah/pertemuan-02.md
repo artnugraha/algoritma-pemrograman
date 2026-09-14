@@ -1,8 +1,8 @@
-# Pertemuan 2: Berpikir Algoritmik dan Perancangan Algoritma
+# Kuliah 2: Berpikir Algoritmik dan Perancangan Algoritma
 
 ## Menyusun algoritma dari masalah fisika
 
-Pada pertemuan sebelumnya kita telah melihat bahwa komputer bekerja dengan menjalankan instruksi yang sangat terstruktur. Komputer tidak memahami tujuan eksperimen, makna fisis suatu besaran, atau alasan kita menggunakan suatu persamaan. Komputer hanya "menuruti" manusia, menjalankan instruksi yang diberikan kepadanya. 
+Pada kuliah sebelumnya kita telah melihat bahwa komputer bekerja dengan menjalankan instruksi yang sangat terstruktur. Komputer tidak memahami tujuan eksperimen, makna fisis suatu besaran, atau alasan kita menggunakan suatu persamaan. Komputer hanya "menuruti" manusia, menjalankan instruksi yang diberikan kepadanya. 
 
 Dengan alasan di atas, sebelum menulis program, kita memerlukan suatu cara berpikir yang dapat menjembatani persoalan fisis dengan instruksi komputasi. Cara berpikir ini disebut **pola pikir algoritmik** (*algorithmic thinking*). Secara umum, alur yang akan sering kita gunakan sepanjang mata kuliah ini adalah
 ```math
@@ -19,7 +19,7 @@ Dengan alasan di atas, sebelum menulis program, kita memerlukan suatu cara berpi
 }
 ```
 
-Pada pertemuan ini kita akan fokus pada bagian
+Pada bagian kuliah ini kita akan fokus pada bagian
 ```math
 \boxed{
 \text{masalah}
@@ -750,7 +750,7 @@ Apakah hasilnya masuk akal secara fisika?
 
 Setelah algoritma cukup jelas, kita dapat mulai menerjemahkannya ke bahasa pemrograman. Pada pertemuan ini bahasa C masih digunakan sebagai ilustrasi. Kita belum akan membahas semua sintaks secara sistematis.
 
-### Algoritma berurutan dalam C
+### Algoritma berurutan dalam bahasa C
 
 Tinjau kembali persamaan gerak
 ```math
@@ -793,7 +793,7 @@ keluaran
 ```
 Kita dapat mengganti nilai $x_0$, $v_0$, $a$, dan $t$ tanpa mengubah ide algoritmanya.
 
-### Algoritma keputusan dalam C
+### Algoritma keputusan dalam bahasa C
 
 Tinjau klasifikasi temperatur:
 ```text
@@ -838,10 +838,9 @@ keputusan dalam algoritma
 percabangan dalam program
 ```
 
-### Algoritma pengulangan dalam C
+### Algoritma pengulangan dalam bahasa C
 
-Sekarang kita melihat pratinjau implementasi algoritma rata-rata.
-
+Sekarang kita lirik implementasi algoritma rata-rata.
 ```c
 #include <stdio.h>
 
@@ -864,35 +863,26 @@ int main(void)
     return 0;
 }
 ```
+Program ini dapat bekerja, tetapi tidak fleksibel karena kita menulis setiap data secara terpisah. Untuk data dalam jumlah besar kita memerlukan pengulangan.
 
-Program ini bekerja, tetapi tidak fleksibel karena kita menulis setiap data secara terpisah.
-
-Untuk data dalam jumlah besar kita memerlukan pengulangan.
-
-Sebagai gambaran awal, C menyediakan struktur seperti
-
+Sebagai gambaran awal, bahasa C menyediakan struktur seperti
 ```c
 for (int i = 0; i < n; i++)
 {
     /* lakukan proses berulang */
 }
 ```
-
-Pada pertemuan tentang pengulangan nanti kita akan mempelajari struktur tersebut secara rinci.
-
-Untuk sekarang, hal yang penting adalah memahami ide
-
+Pada pertemuan tentang pengulangan nanti kita akan mempelajari struktur tersebut secara terperinci. Untuk sekarang, hal yang penting adalah memahami ide
 ```text
 FOR setiap data
     lakukan proses
 END FOR
 ```
+yang kemudian diterjemahkan menjadi bentuk pengulangan dalam bahasa C.
 
-yang kemudian diterjemahkan menjadi bentuk pengulangan dalam C.
+### Hubungan pseudocode dan bahasa C
 
-### Hubungan pseudocode dan C
-
-Secara kasar, beberapa konstruksi pseudocode mempunyai pasangan dalam C.
+Secara kasar, beberapa konstruksi pseudocode mempunyai pasangan dalam bahasa C.
 
 | Pseudocode | Gagasan dalam C |
 |---|---|
@@ -903,98 +893,60 @@ Secara kasar, beberapa konstruksi pseudocode mempunyai pasangan dalam C.
 | `WHILE kondisi` | `while (kondisi)` |
 | `OUTPUT x` | misalnya `printf(...)` |
 
-Tabel tersebut bukan aturan penerjemahan otomatis.
-
-Tujuannya hanya menunjukkan bahwa pseudocode berada satu tingkat di atas bahasa pemrograman.
-
-Kita merancang logika terlebih dahulu, baru memilih sintaks.
+Tabel tersebut bukan aturan penerjemahan otomatis. Tujuannya hanya menunjukkan bahwa *pseudocode* berada satu tingkat di atas bahasa pemrograman. Kita merancang logika terlebih dahulu, barulah memilih sintaks setelahnya.
 
 ## Efisiensi algoritma
 
-Dua algoritma dapat menghasilkan jawaban yang sama, tetapi memerlukan jumlah pekerjaan yang berbeda.
-
-Karena itu selain bertanya
-
+Dua algoritma dapat menghasilkan jawaban yang sama, tetapi memerlukan jumlah pekerjaan yang berbeda. Dari sini kita tidak hanya dapat bertanya
 > Apakah algoritma ini benar?
 
-kita juga perlu mulai bertanya
-
+Akan tetapi, kita juga perlu mulai bertanya
 > Berapa banyak pekerjaan yang diperlukan algoritma ini ketika ukuran data membesar?
 
-Pertanyaan tersebut membawa kita pada **kompleksitas algoritma**.
-
-Pada pertemuan ini kita hanya membahas kompleksitas secara intuitif.
-
-Pembahasan lebih rinci akan muncul kembali ketika kita mempelajari algoritma pencarian dan pengurutan.
+Pertanyaan tersebut membawa kita pada **kompleksitas algoritma**. Pada pertemuan ini kita hanya membahas kompleksitas secara intuitif. Pembahasan lebih terperinci akan muncul kembali ketika kita mempelajari algoritma pencarian dan pengurutan.
 
 ### Ukuran masukan
 
-Untuk menganalisis efisiensi, kita perlu mendefinisikan ukuran masukan.
-
-Misalnya, jika kita memproses $N$ data temperatur, maka ukuran masukannya dapat dianggap sebagai
-
+Untuk menganalisis efisiensi, kita perlu mendefinisikan ukuran masukan. Misalnya, jika kita memproses $N$ data temperatur, ukuran masukan dapat dianggap sebagai
 ```math
 N.
 ```
-
 Jika kita mempunyai citra dengan ukuran
 
 ```math
 M\times N,
 ```
-
 jumlah pikselnya adalah
-
 ```math
 MN.
 ```
-
-Jika algoritma bekerja pada matriks bujur sangkar berukuran
-
+Jika algoritma bekerja pada matriks bujur sangkar (kotak persegi) berukuran
 ```math
 N\times N,
 ```
-
 ukuran masalah sering dinyatakan dengan $N$.
 
 ### Operasi konstan: $O(1)$
 
-Pertimbangkan perhitungan energi kinetik
-
+Tinjau perhitungan energi kinetik
 ```math
 E_k=\frac12mv^2.
 ```
-
-Berapa pun nilai $m$ dan $v$, jumlah operasi aritmetika yang dilakukan tetap.
-
-Kita tidak melakukan semakin banyak operasi hanya karena nilai massanya besar.
-
-Algoritma semacam ini dikatakan mempunyai kompleksitas waktu konstan,
-
+Berapapun nilai $m$ dan $v$, jumlah operasi aritmetika yang dilakukan tetap. Kita tidak melakukan semakin banyak operasi hanya karena nilai massanya besar. Algoritma semacam ini dikatakan mempunyai kompleksitas waktu konstan,
 ```math
 O(1).
 ```
-
-Notasi tersebut tidak berarti algoritma hanya melakukan satu operasi.
-
-Maknanya adalah jumlah operasi tidak bertambah sebagai fungsi ukuran masukan.
+Notasi tersebut tidak berarti algoritma hanya melakukan satu operasi. Maknanya adalah jumlah operasi tidak bertambah sebagai fungsi ukuran masukan.
 
 ### Proses satu kali untuk setiap data: $O(N)$
 
 Untuk menghitung jumlah
-
 ```math
 S
 =
 \sum_{i=1}^{N}x_i,
 ```
-
-kita harus mengunjungi setiap data.
-
-Jika $N$ menjadi dua kali lebih besar, secara kasar pekerjaan juga menjadi dua kali lebih besar.
-
-Algoritmanya
-
+kita harus mengunjungi setiap data. Jika $N$ menjadi dua kali lebih besar, secara kasar pekerjaan juga kira-kira menjadi dua kali lebih besar. Algoritmanya:
 ```text
 sum ← 0
 
@@ -1002,21 +954,15 @@ FOR i ← 1 TO N
     sum ← sum + xi
 END FOR
 ```
-
 mempunyai kompleksitas waktu
-
 ```math
 O(N).
 ```
-
 Jumlah operasi penjumlahan kira-kira sebanding dengan $N$.
 
 ### Dua pengulangan bersarang: $O(N^2)$
 
-Misalkan kita memiliki $N$ sensor dan ingin membandingkan setiap sensor dengan setiap sensor lainnya.
-
-Pseudocode sederhana dapat berbentuk
-
+Misalkan kita memiliki $N$ sensor dan ingin membandingkan setiap sensor dengan setiap sensor lainnya. *Pseudocode* sederhana dapat berbentuk
 ```text
 FOR i ← 1 TO N
     FOR j ← 1 TO N
@@ -1024,91 +970,58 @@ FOR i ← 1 TO N
     END FOR
 END FOR
 ```
-
-Pengulangan luar dilakukan sekitar $N$ kali.
-
-Untuk setiap iterasi pengulangan luar, pengulangan dalam juga dilakukan sekitar $N$ kali.
-
-Jumlah operasi menjadi kira-kira
-
+Pengulangan bagian luar dilakukan sekitar $N$ kali. Untuk setiap iterasi pengulangan luar, pengulangan bagian dalam juga dilakukan sekitar $N$ kali. Jumlah operasi menjadi kira-kira
 ```math
 N\times N
 =
 N^2.
 ```
-
 Kompleksitasnya ditulis
-
 ```math
 O(N^2).
 ```
 
 Jika
-
 ```math
 N=100,
 ```
-
-maka jumlah pasangan yang diproses berada pada orde
-
+jumlah pasangan yang diproses berada pada orde
 ```math
 10^4.
 ```
-
 Jika
-
 ```math
 N=1000,
 ```
-
 jumlahnya berada pada orde
-
 ```math
 10^6.
 ```
-
 Pertumbuhan kuadratik menjadi penting ketika data semakin besar.
 
 ### Mengapa konstanta sering diabaikan?
 
 Misalkan algoritma A memerlukan kira-kira
-
 ```math
 3N+5
 ```
-
-operasi.
-
-Algoritma B memerlukan kira-kira
-
+operasi, sementara algoritma B memerlukan kira-kira
 ```math
 100N+20
 ```
-
-operasi.
-
-Keduanya tetap bertumbuh secara linear terhadap $N$.
-
-Dalam notasi orde besar, keduanya ditulis sebagai
-
+operasi. Keduanya tetap bertumbuh secara linear terhadap $N$. Dalam notasi orde besar, keduanya ditulis sebagai
 ```math
 O(N).
 ```
 
-Notasi Big-O terutama digunakan untuk melihat pola pertumbuhan saat ukuran masalah membesar.
-
-Konstanta tetap penting dalam performa nyata, tetapi pada tahap analisis awal kita lebih tertarik pada perbedaan antara pertumbuhan seperti
-
+Notasi yang disebut "Big-O" ini terutama digunakan untuk melihat pola pertumbuhan saat ukuran masalah membesar. Konstanta tetap penting dalam performa riil, tetapi pada tahap analisis awal kita lebih tertarik pada perbedaan antara pertumbuhan seperti
 ```math
 O(1),
 ```
-
 ```math
 O(N),
 ```
-
 dan
-
 ```math
 O(N^2).
 ```
@@ -1128,10 +1041,7 @@ Perbedaan antara $O(N)$ dan $O(N^2)$ mungkin tampak tidak penting untuk $N$ keci
 
 ### Kompleksitas bukan waktu dalam detik
 
-Penting untuk membedakan **kompleksitas algoritma** dan **waktu eksekusi aktual**.
-
-Waktu eksekusi dalam detik bergantung pada
-
+Penting untuk membedakan **kompleksitas algoritma** dan **waktu eksekusi aktual**. Waktu eksekusi dalam detik bergantung pada
 - kecepatan prosesor;
 - compiler;
 - bahasa pemrograman;
@@ -1139,66 +1049,45 @@ Waktu eksekusi dalam detik bergantung pada
 - kondisi perangkat keras;
 - implementasi program.
 
-Sebaliknya, kompleksitas mencoba menggambarkan bagaimana kebutuhan komputasi **bertumbuh** terhadap ukuran masalah.
-
-Karena itu
-
+Sebaliknya, kompleksitas mencoba menggambarkan bagaimana kebutuhan komputasi **bertumbuh** terhadap ukuran masalah. Oleh karena itu,
 ```math
 O(N)
 ```
-
 bukan berarti program memerlukan $N$ detik.
 
 ### Kompleksitas ruang
 
-Selain waktu, algoritma juga menggunakan memori.
-
-Kita dapat membedakan
-
+Selain waktu, algoritma juga menggunakan memori. Kita dapat membedakan
 - kompleksitas waktu;
 - kompleksitas ruang.
 
 Misalkan kita hanya menyimpan
-
 ```text
 sum
 minimum
 maximum
 ```
-
-ketika membaca data satu per satu.
-
-Jumlah memori tambahan yang digunakan tidak bergantung pada $N$.
-
-Secara intuitif, kebutuhan memorinya bersifat
-
+ketika membaca data satu per satu. Jumlah memori tambahan yang digunakan tidak bergantung pada $N$. Secara intuitif, kebutuhan memorinya bersifat
 ```math
 O(1).
 ```
-
 Sebaliknya, jika kita menyimpan seluruh $N$ data dalam sebuah larik, memori yang dibutuhkan bertambah sebanding dengan $N$,
-
 ```math
 O(N).
 ```
-
 Kita akan membahas pertukaran antara penyimpanan data dan pemrosesan ketika mempelajari larik serta pengolahan berkas.
 
 ## Studi kasus: monitoring temperatur
 
-Sekarang kita gabungkan beberapa gagasan dalam satu contoh.
-
-Sebuah sensor mengukur temperatur suatu sistem termal sebanyak $N$ kali.
+Sekarang kita gabungkan beberapa konsep yang sudah dipelajari dalam satu contoh. Sebuah sensor mengukur temperatur suatu sistem termal sebanyak $N$ kali.
 
 Kita ingin memperoleh
-
 - temperatur rata-rata;
 - temperatur minimum;
 - temperatur maksimum;
 - banyak pengukuran yang melebihi ambang $T_{\text{limit}}$.
 
 Sebagai contoh, misalkan
-
 ```math
 T_{\text{limit}}
 =
@@ -1208,43 +1097,33 @@ T_{\text{limit}}
 ### Spesifikasi masalah
 
 **Masukan**
-
 ```math
 N,
 ```
-
 ```math
 T_1,T_2,\ldots,T_N,
 ```
-
 dan
-
 ```math
 T_{\text{limit}}.
 ```
 
 **Prakondisi**
-
 ```math
 N>0.
 ```
 
 **Keluaran**
-
 ```math
 \overline{T},
 ```
-
 ```math
 T_{\min},
 ```
-
 ```math
 T_{\max},
 ```
-
 dan banyak pengukuran yang memenuhi
-
 ```math
 T_i>T_{\text{limit}}.
 ```
@@ -1349,22 +1228,17 @@ flowchart TD
 ### Tracing
 
 Gunakan data
-
 ```math
 N=5,
 ```
-
 ```math
 T_{\text{limit}}=30.0,
 ```
-
 dan
-
 ```math
 T=
 \{29.5,\ 30.2,\ 28.9,\ 31.1,\ 30.0\}.
 ```
-
 Hasil tracing adalah
 
 | $i$ | $T_i$ | `sum` | `minimum` | `maximum` | `count_high` |
@@ -1376,7 +1250,6 @@ Hasil tracing adalah
 | 5 | 30.0 | 149.7 | 28.9 | 31.1 | 2 |
 
 Rata-ratanya adalah
-
 ```math
 \overline{T}
 =
@@ -1385,64 +1258,49 @@ Rata-ratanya adalah
 29.94.
 ```
 
-Jadi
-
+Jadi,
 ```math
 \boxed{
 \overline{T}=29.94^\circ\text{C}
 }
 ```
-
 ```math
 \boxed{
 T_{\min}=28.9^\circ\text{C}
 }
 ```
-
 ```math
 \boxed{
 T_{\max}=31.1^\circ\text{C}
 }
 ```
-
 dan terdapat dua data yang memenuhi
-
 ```math
 T_i>30.0^\circ\text{C}.
 ```
 
 ### Kompleksitas
 
-Setiap temperatur diproses satu kali.
-
-Jika jumlah data menjadi dua kali lebih besar, jumlah pekerjaan secara kasar juga menjadi dua kali lebih besar.
-
-Karena itu kompleksitas waktunya adalah
-
+Setiap temperatur diproses satu kali. Jika jumlah data menjadi dua kali lebih besar, jumlah pekerjaan secara kasar juga menjadi dua kali lebih besar. Dengan demikian, kompleksitas waktunya adalah
 ```math
 O(N).
 ```
 
 Algoritma hanya memerlukan beberapa variabel tambahan,
-
 ```text
 sum
 minimum
 maximum
 count_high
 ```
-
 sehingga jika data dibaca satu per satu tanpa disimpan semuanya, kebutuhan memori tambahannya adalah
-
 ```math
 O(1).
 ```
 
-### Pratinjau implementasi dalam C
+### Ilustrasi implementasi dalam C
 
-Implementasi berikut diperlihatkan sebagai gambaran hubungan pseudocode dengan program C.
-
-Sintaks `for`, `if`, dan `scanf` akan dibahas secara lebih sistematis pada pertemuan berikutnya.
+Implementasi berikut diperlihatkan sebagai gambaran hubungan pseudocode dengan program C. Sintaks `for`, `if`, dan `scanf` akan dibahas secara lebih sistematis pada kuliah-kuliah mendatang.
 
 ```c
 #include <stdio.h>
@@ -1514,211 +1372,127 @@ int main(void)
 }
 ```
 
-Perhatikan struktur program tersebut.
-
-Bagian
-
+Perhatikan struktur program tersebut. Bagian
 ```c
 double sum = temperature;
 double minimum = temperature;
 double maximum = temperature;
 ```
-
-merepresentasikan tahap inisialisasi.
-
-Bagian
-
+merepresentasikan tahap inisialisasi. Bagian
 ```c
 for (int i = 2; i <= n; i++)
 ```
-
-merepresentasikan pengulangan.
-
-Bagian
-
+merepresentasikan pengulangan. Bagian
 ```c
 if (temperature < minimum)
 ```
-
 dan
-
 ```c
 if (temperature > maximum)
 ```
-
-merepresentasikan keputusan.
-
-Program tersebut pada dasarnya hanyalah pseudocode yang telah diterjemahkan ke sintaks C.
+merepresentasikan keputusan. Dengan demikian, program tersebut pada dasarnya hanyalah *pseudocode* yang telah diterjemahkan ke sintaks C.
 
 ## Kesalahan umum dalam merancang algoritma
 
-Kesalahan algoritmik sering muncul bahkan sebelum kita menulis satu baris kode.
-
-Beberapa pola kesalahan berikut perlu dikenali sejak awal.
+Kesalahan algoritmik sering muncul bahkan sebelum kita menulis satu baris kode. Beberapa pola kesalahan berikut perlu dikenali sejak awal.
 
 ### Langkah tidak cukup jelas
 
 Instruksi
-
 ```text
 Perbaiki nilai jika diperlukan
 ```
-
-tidak cukup jelas.
-
-Kapan perbaikan diperlukan?
-
-Bagaimana cara memperbaikinya?
-
-Apa kriterianya?
-
-Algoritma harus mengubah kata-kata semacam itu menjadi kondisi yang dapat diuji.
+tidak cukup jelas. Kapan perbaikan diperlukan? Bagaimana cara memperbaikinya? Apa kriterianya? Algoritma harus mengubah kata-kata semacam itu menjadi kondisi yang dapat diuji.
 
 ### Tidak menetapkan nilai awal
 
 Misalkan kita menulis
-
 ```text
 FOR setiap x
     sum ← sum + x
 END FOR
 ```
-
-tetapi tidak pernah memberi nilai awal kepada `sum`.
-
-Kita belum mengetahui apa nilai `sum` sebelum data pertama diproses.
-
-Untuk penjumlahan, nilai awal yang sesuai adalah
-
+tetapi tidak pernah memberi nilai awal kepada `sum`. Kita belum mengetahui apa nilai `sum` sebelum data pertama diproses. Untuk penjumlahan, nilai awal yang sesuai adalah
 ```text
 sum ← 0.
 ```
 
-### Batas pengulangan salah
+### Batas pengulangan yang keliru
 
 Misalkan data memiliki indeks
-
 ```math
 1,2,\ldots,N.
 ```
-
 Jika pengulangan berhenti pada
-
 ```math
 N-1,
 ```
-
 data terakhir tidak diproses.
-
 Jika pengulangan berjalan sampai
-
 ```math
 N+1,
 ```
-
 algoritma mencoba mengakses data yang tidak ada.
-
 Kesalahan seperti ini sering disebut **off-by-one error**.
 
-### Kondisi berhenti tidak pernah tercapai
+### Kondisi penghentian tidak pernah tercapai
 
 Misalkan kita menulis
-
 ```text
 WHILE error > tolerance
     lakukan perhitungan
 END WHILE
 ```
+tetapi nilai `error` tidak pernah diperbarui. Algoritma dapat berjalan tanpa akhir. 
 
-tetapi nilai `error` tidak pernah diperbarui.
-
-Algoritma dapat berjalan tanpa akhir.
-
-Setiap pengulangan harus memiliki mekanisme yang membuat kondisi berhenti dapat tercapai, kecuali pengulangan tanpa akhir memang sengaja dirancang.
+Setiap pengulangan harus memiliki mekanisme yang membuat kondisi penghentian dapat tercapai, kecuali pengulangan tanpa akhir memang sengaja dirancang.
 
 ### Asumsi yang tidak dinyatakan
 
-Algoritma pencarian tertentu mungkin hanya bekerja jika data sudah terurut.
-
-Algoritma lain mungkin mengasumsikan
-
+Algoritma pencarian tertentu mungkin hanya bekerja jika data sudah terurut. Algoritma lain mungkin mengasumsikan
 ```math
 N>0.
 ```
-
 Jika asumsi semacam ini tidak ditulis, pengguna algoritma dapat memberinya masukan yang tidak sesuai.
 
 ## Kebiasaan berpikir sebelum menulis program
 
 Sebelum mulai menulis C, biasakan menjawab pertanyaan berikut.
 
-**Apa persoalannya?**
-
-Nyatakan dalam satu atau dua kalimat.
-
-**Apa masukannya?**
-
-Tuliskan variabel dan satuannya jika relevan.
-
-**Apa keluarannya?**
-
-Nyatakan dengan jelas hasil yang diinginkan.
-
-**Model atau persamaan apa yang digunakan?**
-
-Pisahkan model fisika dari implementasi program.
-
-**Apakah ada asumsi atau batasan?**
-
-Contohnya
-
-```math
-N>0,
-```
-
-atau
-
-```math
-m\geq0.
-```
-
-**Bisakah masalah dipecah menjadi submasalah?**
-
+- **Apa persoalannya?** Nyatakan dalam satu atau dua kalimat.
+- **Apa masukannya?** Tuliskan variabel dan satuannya jika relevan.
+- **Apa keluarannya?** Nyatakan dengan jelas hasil yang diinginkan.
+- **Model atau persamaan apa yang digunakan?** Pisahkan model fisika dari implementasi program.
+- **Apakah ada asumsi atau batasan?** Contohnya
+    ```math
+    N>0,
+    ```
+    atau
+    ```math
+    m\geq0.
+    ```
+- **Bisakah masalah dipecah menjadi submasalah?**
 Lakukan dekomposisi.
+- **Apakah diperlukan keputusan?** Jika ya, tentukan kondisi secara eksplisit.
+- **Apakah diperlukan pengulangan?** Jika ya, tentukan apa yang berubah setiap iterasi dan kapan proses berhenti.
+- **Bagaimana memeriksa hasilnya?** Siapkan setidaknya satu kasus yang dapat dihitung secara manual.
+- **Seberapa besar pekerjaan komputasinya?** Apakah kira-kira
+    ```math
+    O(1),
+    ```
 
-**Apakah diperlukan keputusan?**
+    ```math
+    O(N),
+    ```
+    atau
 
-Jika ya, tentukan kondisi secara eksplisit.
-
-**Apakah diperlukan pengulangan?**
-
-Jika ya, tentukan apa yang berubah setiap iterasi dan kapan proses berhenti.
-
-**Bagaimana memeriksa hasilnya?**
-
-Siapkan setidaknya satu kasus yang dapat dihitung secara manual.
-
-**Seberapa besar pekerjaan komputasinya?**
-
-Apakah kira-kira
-
-```math
-O(1),
-```
-
-```math
-O(N),
-```
-
-atau
-
-```math
-O(N^2)?
-```
+    ```math
+    O(N^2)?
+    ```
 
 Kebiasaan menjawab pertanyaan-pertanyaan tersebut akan mengurangi kecenderungan menulis kode melalui percobaan acak.
 
-## Beberapa pertanyaan untuk diperiksa sendiri
+## Cek pemahaman
 
 Cobalah menjawab beberapa pertanyaan berikut tanpa melihat kembali catatan.
 
@@ -1745,10 +1519,7 @@ Cobalah menjawab beberapa pertanyaan berikut tanpa melihat kembali catatan.
 
 ### 1. Perumusan algoritma dari suatu masalah fisika
 
-Sebuah sensor tekanan menghasilkan satu nilai tekanan $P$ dalam satuan pascal.
-
-Tuliskan spesifikasi masalah untuk mengubah tekanan tersebut menjadi kilopascal menggunakan
-
+Sebuah sensor tekanan menghasilkan satu nilai tekanan $P$ dalam satuan pascal. Tuliskan spesifikasi masalah untuk mengubah tekanan tersebut menjadi kilopascal menggunakan
 ```math
 P_{\text{kPa}}
 =
@@ -1756,7 +1527,6 @@ P_{\text{kPa}}
 ```
 
 Tentukan
-
 - masukan;
 - keluaran;
 - langkah algoritma;
@@ -1767,17 +1537,10 @@ Tuliskan algoritma dengan kalimat berurutan.
 ### 2. Diagram alir
 
 Buat diagram alir untuk menghitung daya listrik menggunakan
-
 ```math
 P=VI.
 ```
-
-Masukan adalah $V$ dan $I$.
-
-Keluaran adalah $P$.
-
-Kemudian perluas diagram tersebut sehingga program juga menampilkan peringatan jika
-
+Masukannya adalah $V$ dan $I$, sedangkan keluarannya adalah $P$. Kemudian, perluas diagram tersebut sehingga program juga menampilkan peringatan jika
 ```math
 P>100\text{ W}.
 ```
@@ -1785,24 +1548,19 @@ P>100\text{ W}.
 ### 3. Pseudocode gerak lurus
 
 Sebuah benda bergerak dengan persamaan
-
 ```math
 x(t)
 =
 x_0+v_0t+\frac12at^2.
 ```
-
-Tuliskan pseudocode untuk menghitung
-
+Tuliskan *pseudocode* untuk menghitung
 - posisi $x(t)$;
 - kecepatan
+    ```math
+    v(t)=v_0+at.
+    ```
 
-```math
-v(t)=v_0+at.
-```
-
-Masukan adalah
-
+Masukannya adalah
 ```math
 x_0,\quad v_0,\quad a,\quad t.
 ```
@@ -1810,7 +1568,6 @@ x_0,\quad v_0,\quad a,\quad t.
 ### 4. Tracing
 
 Gunakan algoritma statistik berikut.
-
 ```text
 sum ← x1
 minimum ← x1
@@ -1828,15 +1585,12 @@ FOR i ← 2 TO N
     END IF
 END FOR
 ```
-
 Lakukan tracing untuk data
-
 ```math
 4.2,\quad3.8,\quad5.1,\quad2.9,\quad4.7.
 ```
 
 Buat tabel yang memuat
-
 - indeks;
 - data;
 - `sum`;
@@ -1846,7 +1600,6 @@ Buat tabel yang memuat
 ### 5. Mencari kesalahan algoritma
 
 Perhatikan algoritma berikut.
-
 ```text
 minimum ← 0
 
@@ -1856,24 +1609,17 @@ FOR i ← 1 TO N
     END IF
 END FOR
 ```
+Apakah algoritma tersebut **selalu** benar?
 
-Apakah algoritma tersebut selalu benar?
-
-Uji menggunakan data
-
+Ujilah menggunakan data
 ```math
 2,\quad5,\quad1,\quad4.
 ```
-
-Kemudian uji menggunakan
-
+Kemudian, uji menggunakan
 ```math
 2,\quad5,\quad1,\quad4,\quad8.
 ```
-
-Jelaskan mengapa hasil tertentu dapat menipu kita seolah-olah algoritma sudah benar.
-
-Perbaiki algoritma tersebut.
+Jelaskan mengapa hasil tertentu dapat menipu kita seolah-olah algoritma sudah benar. Perbaiki algoritma tersebut.
 
 ### 6. Kompleksitas
 
@@ -1906,58 +1652,44 @@ END FOR
 ```
 
 Pilih dari
-
 ```math
 O(1),
 ```
-
 ```math
 O(N),
 ```
-
 atau
-
 ```math
 O(N^2).
 ```
-
 Jelaskan alasan setiap jawaban.
 
 ### 7. Perbandingan pertumbuhan
 
 Hitung nilai $N$ dan $N^2$ untuk
-
 ```math
 N=10,
 ```
-
 ```math
 N=100,
 ```
-
 ```math
 N=1000,
 ```
-
 dan
-
 ```math
 N=10000.
 ```
-
 Jelaskan mengapa algoritma $O(N^2)$ dapat menjadi masalah untuk data besar.
 
 ### 8. Studi kasus temperatur
 
 Gunakan data
-
 ```math
 T=
 \{27.5,\ 31.2,\ 29.0,\ 32.8,\ 30.1,\ 28.4\}
 ```
-
 dengan batas
-
 ```math
 T_{\text{limit}}
 =
@@ -1965,66 +1697,12 @@ T_{\text{limit}}
 ```
 
 Secara manual tentukan
-
 - rata-rata;
 - minimum;
 - maksimum;
 - banyak data yang lebih besar daripada batas.
 
-Kemudian lakukan tracing algoritma `TemperatureMonitoring`.
-
-### 9. Implementasi C sederhana
-
-Buat program C berdasarkan pseudocode berikut.
-
-```text
-INPUT:
-    voltage
-    current
-
-power ← voltage * current
-
-OUTPUT:
-    power
-```
-
-Gunakan
-
-```math
-V=12.0\text{ V}
-```
-
-dan
-
-```math
-I=2.5\text{ A}.
-```
-
-Prediksi hasil secara manual sebelum menjalankan program.
-
-### 10. Tantangan: dari pseudocode ke C
-
-Gunakan pseudocode berikut.
-
-```text
-INPUT:
-    N
-
-sum ← 0
-
-FOR i ← 1 TO N
-    INPUT x
-    sum ← sum + x
-END FOR
-
-mean ← sum / N
-
-OUTPUT mean
-```
-
-Cobalah menulis implementasinya dalam C meskipun struktur `for` belum dibahas secara formal.
-
-Gunakan data sederhana dan bandingkan hasil program dengan perhitungan manual.
+Kemudian, lakukan tracing algoritma `TemperatureMonitoring` yang dibahas pada catatan kuliah.
 
 ## Rangkuman
 
