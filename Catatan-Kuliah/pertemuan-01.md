@@ -408,12 +408,12 @@ Buka terminal terintegrasi di VS Code menggunakan pintasan keyboard ``Ctrl + ` `
 
 Kompilasi kode program menggunakan GCC:
 ```bash
-gcc main.c -o main
+gcc hello.c -o hello.x
 ```
 Jalankan berkas *executable* hasil kompilasi:
 
 ```bash
-./main
+./hello.x
 ```
 
 Teks keluaran program akan langsung dicetak pada panel terminal VS Code.
@@ -1587,7 +1587,7 @@ CPU and memory
 
 Seorang *programmer* tidak perlu selalu berpikir pada tingkat transistor atau instruksi mesin. Akan tetapi, memahami bahwa lapisan-lapisan tersebut ada membantu kita memahami mengapa tipe data mempunyai batas, mengapa bilangan real tidak selalu eksak, dan mengapa program perlu dikompilasi.
 
-## Beberapa pertanyaan untuk diperiksa sendiri
+## Cek pemahaman
 
 Cobalah menjawab beberapa pertanyaan berikut tanpa melihat kembali catatan.
 - Apa perbedaan antara algoritma dan program?
