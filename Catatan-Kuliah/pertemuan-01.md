@@ -1685,7 +1685,7 @@ Jika sebuah *unsigned integer* menggunakan 10 bit, tentukan:
 
 Ulangi untuk *unsigned integer* 16 bit. 
 
-Kemudian, tentukan rentang *signed integer8 8 bit dan *signed integer* 16 bit dengan asumsi representasi *two's complement*.
+Kemudian, tentukan rentang *signed integer* 8 bit dan *signed integer* 16 bit dengan asumsi representasi *two's complement*.
 
 ### 4. Memahami *overflow*
 
