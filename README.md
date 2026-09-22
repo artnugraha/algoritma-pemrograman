@@ -136,6 +136,8 @@ Pokok bahasan:
 
 ### 3. Dasar-dasar pemrograman dalam bahasa C
 
+[Catatan Kuliah 3](Catatan-Kuliah/pertemuan-03.md)
+
 Pokok bahasan:
 
 - struktur dasar program C;
