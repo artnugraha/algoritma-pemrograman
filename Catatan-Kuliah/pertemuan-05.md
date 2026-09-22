@@ -1,17 +1,15 @@
 # Kuliah 5: Pola Algoritma Iteratif
 
-## Dari pengulangan menuju pola algoritma
-
 Pada kuliah sebelumnya kita telah mempelajari struktur pengulangan `while`, `do-while`, dan `for`. Kita juga telah melihat bahwa pengulangan memungkinkan suatu blok instruksi dijalankan berkali-kali selama kondisi tertentu masih terpenuhi.
 
-Pada kuliah ini fokus kita bergeser dari sintaks pengulangan menuju **pola algoritma iteratif**. Tujuannya adalah mengenali bentuk-bentuk pemecahan masalah yang sering muncul berulang kali dalam komputasi sains dan rekayasa.
+Pada kuliah ini, dengan pemahaman kontrol alur program melalui percabangan dan pengulangan, fokus kita adalah kombinasi pengetahuan tersebut menjadi **pola algoritma iteratif**. Tujuannya untukmengenali bentuk-bentuk pemecahan masalah yang sering muncul berulang kali dalam komputasi sains dan rekayasa.
 
 Banyak program yang tampak berbeda sebenarnya mempunyai struktur algoritmik yang serupa. Sebagai contoh, menghitung jumlah total energi, menghitung banyak data sensor yang melewati ambang, mencari temperatur maksimum, dan mengulangi perhitungan sampai galat cukup kecil semuanya dapat dipahami sebagai pola iteratif.
 
 Pola-pola yang akan dipelajari cukup beragam. Daftar berikut merangkum pola utama yang akan digunakan sepanjang kuliah ini.
 
-- *counter*;
-- *accumulator*;
+- pencacah (*counter*);
+- pengumpul (akumulator/*accumulator*);
 - nilai minimum dan maksimum;
 - *sentinel-controlled iteration*;
 - validasi masukan;
@@ -21,7 +19,7 @@ Pola-pola yang akan dipelajari cukup beragam. Daftar berikut merangkum pola utam
 - kriteria penghentian;
 - pendekatan numerik sederhana.
 
-Pengenalan pola membantu kita merancang algoritma dengan lebih sistematis. Daripada menulis pengulangan secara coba-coba, kita dapat memulai dengan bertanya pola iteratif apa yang paling sesuai dengan persoalan yang sedang dihadapi.
+Pengenalan pola membantu kita merancang algoritma dengan lebih sistematis. Daripada menulis pengulangan secara coba-coba, kita dapat memulai dengan memikirkan pola iteratif apa yang paling sesuai dengan masalah yang sedang dihadapi.
 
 ## Keadaan dalam algoritma iteratif
 
@@ -144,9 +142,9 @@ double percentage =
 
 Angka `100.0` ditulis sebagai bilangan *floating-point* agar hasil pembagian tidak mengalami pembagian integer. Ini merupakan contoh bahwa pola algoritma tetap harus dipadukan dengan pemahaman tipe data.
 
-## Pola *accumulator*
+## Pola akumulator
 
-**Accumulator** adalah variabel yang digunakan untuk mengumpulkan nilai secara bertahap. Pola ini sangat sering muncul ketika kita menghitung jumlah, energi total, massa total, integral diskrit sederhana, atau besaran kumulatif lainnya.
+**Akumulator** adalah variabel yang digunakan untuk mengumpulkan nilai secara bertahap. Pola ini sangat sering muncul ketika kita menghitung jumlah, energi total, massa total, integral diskrit sederhana, atau besaran kumulatif lainnya.
 
 Untuk menghitung
 
@@ -206,7 +204,7 @@ int main(void)
 
 Setelah iterasi ke-$i$, nilai `sum` mewakili jumlah semua data yang telah diproses sampai saat itu. Hubungan ini merupakan invarian yang sangat berguna untuk memeriksa kebenaran algoritma.
 
-## Rata-rata sebagai gabungan *accumulator* dan *counter*
+## Rata-rata sebagai gabungan akumulator dan *counter*
 
 Rata-rata merupakan contoh sederhana yang menggabungkan akumulator dan counter. Kita memerlukan jumlah seluruh nilai serta banyaknya data yang diproses.
 
@@ -991,7 +989,7 @@ Nilai $S_N$ mendekati
 \frac{\pi^2}{6}
 ```
 
-ketika $N$ semakin besar. Kita dapat menggunakan pola accumulator untuk mengamati konvergensi tersebut.
+ketika $N$ semakin besar. Kita dapat menggunakan pola akumulator untuk mengamati konvergensi tersebut.
 
 ```c
 #include <stdio.h>
@@ -1131,13 +1129,13 @@ int main(void)
 }
 ```
 
-Program tersebut menggabungkan `break`, `continue`, sentinel, validasi, counter, dan accumulator. Walaupun strukturnya lebih kompleks, setiap bagian memiliki peran yang jelas.
+Program tersebut menggabungkan `break`, `continue`, sentinel, validasi, counter, dan akumulator. Walaupun strukturnya lebih kompleks, setiap bagian memiliki peran yang jelas.
 
 ## Studi kasus terpadu: analisis getaran mesin
 
-Sekarang kita merancang program untuk membaca data percepatan getaran dari sebuah akselerometer yang dipasang pada mesin. Kasus ini lebih menarik karena sinyal getaran dapat bernilai positif maupun negatif, sehingga rata-rata saja tidak cukup untuk menggambarkan besar getaran.
+Sekarang kita merancang program untuk membaca data percepatan getaran dari sebuah akselerometer yang dipasang pada mesin. Kasus ini menarik karena sinyal getaran dapat bernilai positif maupun negatif, sehingga rata-rata saja tidak cukup untuk menggambarkan besar getaran.
 
-Selain rata-rata, kita akan menghitung nilai RMS (*root mean square*) sebagai ukuran sederhana besar getaran. Nilai RMS didefinisikan sebagai
+Selain rata-rata, kita ternyata perlu menghitung nilai RMS (*root mean square*) sebagai ukuran sederhana besar getaran. Nilai RMS didefinisikan sebagai
 
 ```math
 a_{\text{RMS}}
@@ -1201,7 +1199,7 @@ a_{\text{limit}}.
 
 ### Algoritma
 
-Kita memerlukan dua accumulator, yaitu `sum` dan `sum_square`. Accumulator kedua menyimpan jumlah kuadrat data untuk menghitung RMS.
+Kita memerlukan dua akum,ulator, yaitu `sum` dan `sum_square`. Akumulator kedua menyimpan jumlah kuadrat data untuk menghitung RMS.
 
 ```text
 sum ← 0
@@ -1507,7 +1505,7 @@ Tidak ada ukuran langkah universal yang selalu terbaik. Pemilihannya harus dises
 
 ## Efisiensi pola iteratif
 
-Pola counter, accumulator, minimum, maksimum, dan validasi biasanya membutuhkan pekerjaan konstan untuk setiap data. Jika terdapat $N$ data, jumlah pekerjaan bertumbuh sebanding dengan $N$. Kompleksitas waktunya biasanya
+Pola counter, akumulator, minimum, maksimum, dan validasi biasanya membutuhkan pekerjaan konstan untuk setiap data. Jika terdapat $N$ data, jumlah pekerjaan bertumbuh sebanding dengan $N$. Kompleksitas waktunya biasanya
 
 ```math
 O(N).
@@ -1548,8 +1546,8 @@ Cobalah menjawab pertanyaan berikut tanpa melihat kembali catatan. Setelah menja
 - Apa yang dimaksud dengan keadaan (*state*) dalam algoritma iteratif?
 - Apa tiga komponen utama suatu iterasi?
 - Apa fungsi *counter*?
-- Apa fungsi *accumulator*?
-- Mengapa accumulator penjumlahan biasanya dimulai dari nol?
+- Apa fungsi akumulator/*accumulator*?
+- Mengapa akumulator penjumlahan biasanya dimulai dari nol?
 - Mengapa minimum dan maksimum sebaiknya diinisialisasi menggunakan data pertama?
 - Apa perbedaan antara kasus jumlah data diketahui dan tidak diketahui?
 - Apa yang dimaksud dengan sentinel?
@@ -1564,7 +1562,7 @@ Cobalah menjawab pertanyaan berikut tanpa melihat kembali catatan. Setelah menja
 - Apa risiko menggunakan `x != target` pada nilai *floating-point*?
 - Bagaimana tracing membantu menemukan kesalahan iterasi?
 - Apa yang dimaksud dengan pemrosesan *streaming*?
-- Mengapa counter, accumulator, minimum, dan maksimum dapat diperbarui dalam satu loop?
+- Mengapa counter, akumulator, minimum, dan maksimum dapat diperbarui dalam satu loop?
 - Apa hubungan pola iteratif dengan konsep invarian?
 - Mengapa program harus memeriksa `count > 0` sebelum menghitung rata-rata?
 - Apa pengaruh ukuran langkah terhadap metode iteratif sederhana?
@@ -1733,7 +1731,7 @@ atau jika jumlah iterasi telah mencapai `max_iteration`. Implementasikan dalam C
 
 ### 9. Estimasi integral dengan penjumlahan Riemann
 
-Gunakan pola accumulator untuk mendekati integral
+Gunakan pola akumulator untuk mendekati integral
 
 ```math
 \int_0^1 x^2\,dx
@@ -1775,15 +1773,15 @@ Program harus menghitung `max_abs` selama proses berlangsung tanpa menyimpan sel
 
 - *Counter* digunakan untuk menghitung banyak kejadian. Nilai awalnya biasanya nol karena belum ada kejadian yang tercatat sebelum proses dimulai.
 
-- *Accumulator* digunakan untuk mengumpulkan nilai secara bertahap. Untuk penjumlahan, nilai awal yang alami adalah nol.
+- Akumulator/*accumulator* digunakan untuk mengumpulkan nilai secara bertahap. Untuk penjumlahan, nilai awal yang alami adalah nol.
 
-- Rata-rata dapat diperoleh dengan menggabungkan accumulator dan informasi banyak data. Pembagian hanya boleh dilakukan jika banyak data lebih besar dari nol.
+- Rata-rata dapat diperoleh dengan menggabungkan akumulator dan informasi banyak data. Pembagian hanya boleh dilakukan jika banyak data lebih besar dari nol.
 
 - Minimum dan maksimum sebaiknya diinisialisasi menggunakan data valid pertama. Pendekatan tersebut lebih aman daripada menggunakan konstanta seperti nol.
 
 - Sentinel digunakan untuk menandai akhir masukan ketika jumlah data tidak diketahui sebelumnya. Nilai sentinel harus diperiksa sebelum data diproses agar tidak ikut masuk ke perhitungan.
 
-- Validasi masukan memastikan nilai memenuhi syarat matematis atau fisik sebelum digunakan. Validasi dapat digabungkan dengan sentinel, counter, accumulator, serta pola lainnya.
+- Validasi masukan memastikan nilai memenuhi syarat matematis atau fisik sebelum digunakan. Validasi dapat digabungkan dengan sentinel, counter, akumulator, serta pola lainnya.
 
 - Pengulangan bersarang digunakan ketika persoalan melibatkan lebih dari satu indeks atau kombinasi parameter. Jika dua loop masing-masing berukuran $N$, jumlah operasi dapat bertumbuh sebagai $O(N^2)$.
 
