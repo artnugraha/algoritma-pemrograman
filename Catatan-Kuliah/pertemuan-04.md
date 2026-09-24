@@ -1040,7 +1040,7 @@ i = i + 1;
 
 untuk penggunaan sederhana seperti ini.
 
-### `for` untuk tabel perhitungan
+### `for` untuk tabulasi perhitungan
 
 Misalkan kita ingin menghitung
 
@@ -1091,7 +1091,7 @@ yang nantinya dapat disimpan atau divisualisasikan.
 
 ## `while` atau `for`?
 
-Secara umum, `for` cocok jika jumlah iterasi atau pola pencacah sudah jelas.
+Secara umum, `for` cocok jika jumlah iterasi atau pola pencacah (*counter*) sudah jelas.
 
 Contoh:
 

@@ -1555,10 +1555,7 @@ x_0+v_0t+\frac12at^2.
 ```
 Tuliskan *pseudocode* untuk menghitung
 - posisi $x(t)$;
-- kecepatan
-    ```math
-    v(t)=v_0+at.
-    ```
+- kecepatan $v(t)=v_0+at$
 
 Masukannya adalah
 ```math
