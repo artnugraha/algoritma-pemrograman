@@ -40,7 +40,7 @@ sehingga kemampuan menulis sintaks program (dengan bahasa apapun, tidak terbatas
 
 ## Capaian Pembelajaran Program Studi
 
-Mata kuliah ini mendukung beberapa Capaian Pembelajaran (CP) Program Studi atau *Program Learning Outcomes* (PLO) berikut khususnya untuk Teknik Fisika di Telkom Unviersity.
+Mata kuliah ini mendukung beberapa Capaian Pembelajaran (CP) Program Studi (Prodi) atau *Program Learning Outcomes* (PLO) di bawah ini, khususnya untuk Prodi S-1 Teknik Fisika di Telkom University.
 
 | Kode | Capaian Pembelajaran Program Studi Teknik Fisika |
 |---|---|
@@ -153,6 +153,8 @@ Pokok bahasan:
 - contoh perhitungan sederhana dalam fisika dan rekayasa.
 
 ### 4. Percabangan dan pengulangan
+
+[Catatan Kuliah 4](Catatan-Kuliah/pertemuan-04.md)
 
 Pokok bahasan:
 
