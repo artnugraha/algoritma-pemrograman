@@ -1,6 +1,6 @@
 # Solusi Latihan Kuliah 1: Pengenalan Algoritma, Komputer, dan Representasi Data
 
-Solusi ini mengikuti bagian **Latihan** pada [catatan kuliah pertemuan pertama](https://github.com/artnugraha/algoritma-pemrograman/blob/main/Catatan-Kuliah/pertemuan-01.md). Setiap pernyataan soal ditulis ulang sebelum pembahasannya; blok `math`, `text`, `c`, dan `bash` mengikuti format catatan tersebut.
+Solusi ini mengikuti bagian **Latihan** pada [catatan kuliah pertemuan pertama](https://github.com/artnugraha/algoritma-pemrograman/blob/main/Catatan-Kuliah/pertemuan-01.md). 
 
 ## 1. Representasi biner
 
