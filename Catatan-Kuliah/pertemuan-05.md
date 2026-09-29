@@ -2,7 +2,7 @@
 
 Pada kuliah sebelumnya kita telah mempelajari struktur pengulangan `while`, `do-while`, dan `for`. Kita juga telah melihat bahwa pengulangan memungkinkan suatu blok instruksi dijalankan berkali-kali selama kondisi tertentu masih terpenuhi.
 
-Pada kuliah ini, dengan pemahaman kontrol alur program melalui percabangan dan pengulangan, fokus kita adalah kombinasi pengetahuan tersebut menjadi **pola algoritma iteratif**. Tujuannya untukmengenali bentuk-bentuk pemecahan masalah yang sering muncul berulang kali dalam komputasi sains dan rekayasa.
+Pada kuliah ini, dengan pemahaman kontrol alur program melalui percabangan dan pengulangan, fokus kita adalah kombinasi pengetahuan tersebut menjadi **pola algoritma iteratif**. Tujuannya untuk mengenali bentuk-bentuk pemecahan masalah yang sering muncul berulang kali dalam komputasi sains dan rekayasa.
 
 Banyak program yang tampak berbeda sebenarnya mempunyai struktur algoritmik yang serupa. Sebagai contoh, menghitung jumlah total energi, menghitung banyak data sensor yang melewati ambang, mencari temperatur maksimum, dan mengulangi perhitungan sampai galat cukup kecil semuanya dapat dipahami sebagai pola iteratif.
 
@@ -402,7 +402,7 @@ Misalkan temperatur dibaca terus tanpa mengetahui jumlah datanya terlebih dahulu
 -999.
 ```
 
-Nilai `-999` dianggap sebagai tanda berhenti dan tidak termasuk data. Pola counter tersebut dapat dinyatakan dengan pseudocode sederhana. Bentuknya dapat ditulis sebagai berikut.
+Nilai `-999` dianggap sebagai tanda berhenti dan tidak termasuk data. Pola sentinel tersebut dapat dinyatakan dengan pseudocode sederhana. Bentuknya dapat ditulis sebagai berikut.
 
 ```text
 sum ← 0

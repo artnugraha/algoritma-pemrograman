@@ -170,6 +170,8 @@ Pokok bahasan:
 
 ### 5. Pola algoritma iteratif
 
+[Catatan Kuliah 5](Catatan-Kuliah/pertemuan-05.md)
+
 Pokok bahasan:
 
 - *counter* dan *accumulator*;
