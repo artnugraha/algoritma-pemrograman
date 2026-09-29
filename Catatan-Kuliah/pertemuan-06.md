@@ -233,7 +233,7 @@ for (int i = 1; i < n; i++)
 }
 ```
 
-## Studi kasus: posisi dan kecepatan rata-rata
+## Contoh: posisi dan kecepatan rata-rata
 
 Misalkan sebuah eksperimen gerak satu dimensi menghasilkan data posisi pada interval waktu tetap. Kita menyimpan posisi pada larik karena seluruh nilai akan digunakan kembali untuk menghitung perubahan antarsampel.
 
@@ -660,7 +660,7 @@ main
 
 Program modular biasanya lebih mudah dibaca dan diuji. Jika satu bagian bermasalah, kita dapat memusatkan pemeriksaan pada fungsi yang bertanggung jawab terhadap bagian tersebut.
 
-## Contoh modularisasi fisika
+## Contoh modularisasi masalah fisika
 
 ```c
 #include <stdio.h>
@@ -963,9 +963,9 @@ double *p =
 
 Variabel `p` bertipe `double *`. Artinya, `p` dimaksudkan untuk menunjuk ke objek bertipe `double`.
 
-## Operator dereferensi `*`
+## Operator de-referensi: `*`
 
-Jika `p` menyimpan alamat suatu `double`, kita dapat mengakses nilai pada alamat tersebut menggunakan operator `*`. Operasi ini disebut **dereferensi**.
+Jika `p` menyimpan alamat suatu `double`, kita dapat mengakses nilai pada alamat tersebut menggunakan operator `*`. Operasi ini disebut **de-referensi**.
 
 ```c
 double value =
@@ -1610,7 +1610,7 @@ double *p;
 *p = 5.0;
 ```
 
-tidak benar karena `p` belum diberi alamat objek yang valid. Dereferensi hanya boleh dilakukan ketika *pointer* diketahui menunjuk ke lokasi yang sah.
+tidak benar karena `p` belum diberi alamat objek yang valid. De-referensi hanya boleh dilakukan ketika *pointer* diketahui menunjuk ke lokasi yang sah.
 
 ### Tipe *pointer* tidak sesuai
 
@@ -1648,7 +1648,7 @@ Gunakan `const` jika fungsi hanya membaca larik. Kebiasaan ini membuat kontrak f
 
 Kirim ukuran larik bersama lariknya ketika fungsi perlu menelusuri elemen. Jangan mencoba menebak panjang larik dari `sizeof` parameter fungsi.
 
-Batasi penggunaan *pointer* pada kebutuhan yang benar-benar jelas. Pada tahap ini, fokus kita adalah alamat, dereferensi, hubungan larik-*pointer*, dan keluaran tambahan dari fungsi.
+Batasi penggunaan *pointer* pada kebutuhan yang benar-benar jelas. Pada tahap ini, fokus kita adalah alamat, de-referensi, hubungan larik-*pointer*, dan keluaran tambahan dari fungsi.
 
 Kompilasi program dengan peringatan aktif. Perintah berikut tetap dianjurkan karena membantu menemukan kesalahan tipe dan pola kode yang mencurigakan.
 
@@ -1861,40 +1861,31 @@ N-1.
 - Larik yang dikirim ke fungsi berkaitan dengan alamat elemen pertama. Karena itu, ukuran larik harus dikelola dan biasanya dikirim sebagai parameter terpisah.
 
 - Parameter
-
-```c
-const double data[]
-```
-
-menyatakan bahwa fungsi hanya membaca elemen larik. Penggunaan `const` membantu mencegah perubahan data yang tidak disengaja.
+    ```c
+    const double data[]
+    ```
+    menyatakan bahwa fungsi hanya membaca elemen larik. Penggunaan `const` membantu mencegah perubahan data yang tidak disengaja.
 
 - *Pointer* adalah variabel yang menyimpan alamat memori. Operator `&` mengambil alamat, sedangkan operator `*` mengakses nilai pada alamat yang ditunjuk.
 
 - *Pointer* memungkinkan fungsi mengubah variabel milik pemanggil. Pola ini juga dapat digunakan untuk menghasilkan lebih dari satu keluaran dari sebuah fungsi.
 
 - Nama larik pada banyak ekspresi berkaitan erat dengan alamat elemen pertama. Secara konseptual,
-
-```c
-data
-```
-
-berhubungan dengan
-
-```c
-&data[0]
-```
-
-dan
-
-```c
-data[i]
-```
-
-berhubungan dengan
-
-```c
-*(data + i)
-```
+    ```c
+    data
+    ```
+    berhubungan dengan
+    ```c
+    &data[0]
+    ```
+    dan
+    ```c
+    data[i]
+    ```
+    berhubungan dengan
+    ```c
+    *(data + i)
+    ```
 
 - *String* dalam C direpresentasikan sebagai larik karakter yang diakhiri dengan null terminator `'\0'`. Pustaka `string.h` menyediakan fungsi dasar seperti `strlen` dan `strcmp`.
 
