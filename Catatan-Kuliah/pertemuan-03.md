@@ -3188,20 +3188,9 @@ Misalkan temperatur sistem adalah `temperature`.
 Tuliskan ekspresi Boolean C untuk kondisi berikut.
 
 1. Temperatur lebih besar dari $30^\circ\text{C}$.
-2. Temperatur berada pada rentang
-   ```math
-   20^\circ\text{C}
-   \leq T
-   \leq
-   30^\circ\text{C}.
-   ```
+2. Temperatur berada pada rentang $20^\circ\text{C} \leq T \leq 30^\circ\text{C}$.
 3. Temperatur berada di luar rentang aman
-   ```math
-   10^\circ\text{C}
-   \leq T
-   \leq
-   50^\circ\text{C}.
-   ```
+   $10^\circ\text{C} \leq T \leq 50^\circ\text{C}$.
 4. Sensor aktif dan temperatur lebih besar dari $40^\circ\text{C}$.
 5. Sensor tidak aktif.
 
