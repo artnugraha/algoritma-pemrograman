@@ -1,4 +1,4 @@
-# Solusi Latihan Kuliah 2: Berpikir Algoritmik dan Perancangan Algoritma
+# Solusi Latihan Kuliah 2: Pola Pikir Algoritmik
 
 Solusi ini mengikuti bagian **Latihan** pada [catatan kuliah pertemuan kedua](https://github.com/artnugraha/algoritma-pemrograman/blob/main/Catatan-Kuliah/pertemuan-02.md#latihan). Setiap pernyataan soal ditulis kembali sebelum pembahasannya.
 
