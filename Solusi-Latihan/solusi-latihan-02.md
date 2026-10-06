@@ -1,6 +1,6 @@
 # Solusi Latihan Kuliah 2: Pola Pikir Algoritmik
 
-Solusi ini mengikuti bagian **Latihan** pada [catatan kuliah pertemuan kedua](https://github.com/artnugraha/algoritma-pemrograman/blob/main/Catatan-Kuliah/pertemuan-02.md#latihan). Setiap pernyataan soal ditulis kembali sebelum pembahasannya.
+Solusi ini mengikuti bagian **Latihan** pada [catatan kuliah pertemuan kedua](https://github.com/artnugraha/algoritma-pemrograman/blob/main/Catatan-Kuliah/pertemuan-02.md#latihan).
 
 ## 1. Perumusan algoritma dari suatu masalah fisika
 
@@ -170,7 +170,7 @@ Nilai $N=5$, sehingga data pertama dipakai untuk mengisi keadaan awal. Pada seti
 | 4 | 2.9 | 16.0 | 2.9 | 5.1 |
 | 5 | 4.7 | 20.7 | 2.9 | 5.1 |
 
-Sebagai contoh, pada indeks 4, jumlah berubah dari $13.1$ menjadi $13.1+2.9=16.0$, sedangkan minimum berubah dari $3.8$ menjadi $2.9$. Hasil akhir penjejakan adalah `sum = 20.7`, `minimum = 2.9`, dan `maximum = 5.1`.
+Sebagai contoh, pada indeks 4, jumlah berubah dari $13.1$ menjadi $13.1+2.9=16.0$, sedangkan minimum berubah dari $3.8$ menjadi $2.9$. Hasil akhir *tracing* adalah `sum = 20.7`, `minimum = 2.9`, dan `maximum = 5.1`.
 
 ## 5. Mencari kesalahan algoritma
 
@@ -196,7 +196,7 @@ Kemudian, uji menggunakan
 ```math
 2,\quad5,\quad1,\quad4,\quad8.
 ```
-Jelaskan mengapa hasil tertentu dapat menipu kita seolah-olah algoritma sudah benar. Perbaiki algoritma tersebut.
+Jelaskan mengapa hasil tertentu dapat mengecoh kita seolah-olah algoritma sudah benar. Perbaiki algoritma tersebut.
 
 ### Solusi
 
@@ -207,7 +207,7 @@ Algoritma tersebut **tidak selalu benar** karena nilai awal `minimum = 0` tidak 
 | $2,5,1,4$ | $0,0,0,0$ | 0 | 1 |
 | $2,5,1,4,8$ | $0,0,0,0,0$ | 0 | 1 |
 
-Kedua data uji yang diminta justru langsung menunjukkan kesalahan. Hasil yang dapat menipu muncul jika data memuat bilangan negatif, misalnya $(-3,2,5)$: algoritma menghasilkan $-3$, yang kebetulan memang minimum. Hasil benar pada satu contoh tidak membuktikan bahwa algoritma bekerja untuk semua masukan.
+Kedua data uji yang diminta justru langsung menunjukkan kesalahan. Hasil yang mengecoh dapat muncul jika data memuat bilangan negatif, misalnya $(-3,2,5)$: algoritma menghasilkan $-3$, yang kebetulan memang minimum. Hasil benar pada satu contoh tidak membuktikan bahwa algoritma bekerja untuk semua masukan.
 
 Perbaikan berikut memakai data pertama sebagai nilai awal. Prakondisinya $N>0$, dan pengulangan dimulai dari indeks 2 agar setiap data diproses tepat satu kali.
 
@@ -381,4 +381,4 @@ Algoritma `TemperatureMonitoring` menginisialisasi jumlah, minimum, dan maksimum
 | 5 | 30.1 | 150.6 | 27.5 | 32.8 | 3 |
 | 6 | 28.4 | 179.0 | 27.5 | 32.8 | 3 |
 
-Pada akhir penjejakan, algoritma menghitung `mean = sum / N = 179.0 / 6`. Hasilnya sama dengan perhitungan manual: rata-rata sekitar $29.83\,^\circ\text{C}$, minimum $27.5\,^\circ\text{C}$, maksimum $32.8\,^\circ\text{C}$, dan tiga pengukuran di atas batas.
+Pada akhir *tracing*, algoritma menghitung `mean = sum / N = 179.0 / 6`. Hasilnya sama dengan perhitungan manual: rata-rata sekitar $29.83\,^\circ\text{C}$, minimum $27.5\,^\circ\text{C}$, maksimum $32.8\,^\circ\text{C}$, dan tiga pengukuran di atas batas.
