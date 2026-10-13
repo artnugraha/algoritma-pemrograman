@@ -27,7 +27,7 @@ Setiap algoritma iteratif memiliki **keadaan** (*state*) yang berubah dari satu 
 
 Sebagai contoh, dalam algoritma penjumlahan data kita dapat memiliki variabel `sum` dan `i`. Variabel `sum` menyimpan jumlah sementara, sedangkan `i` menyimpan banyak data yang sudah diproses atau posisi iterasi saat ini.
 
-Secara matematis, setelah data ke-$i$ selesai diproses, `sum` harus mempunyai makna yang jelas. Hubungan yang kita harapkan dapat dinyatakan sebagai berikut.
+Secara matematis, setelah data ke-`i` selesai diproses, `sum` harus mempunyai makna yang jelas. Hubungan yang kita harapkan dapat dinyatakan sebagai berikut.
 
 ```math
 \text{sum}
@@ -202,7 +202,7 @@ int main(void)
 }
 ```
 
-Setelah iterasi ke-$i$, nilai `sum` mewakili jumlah semua data yang telah diproses sampai saat itu. Hubungan ini merupakan invarian yang sangat berguna untuk memeriksa kebenaran algoritma.
+Setelah iterasi ke-`i`, nilai `sum` mewakili jumlah semua data yang telah diproses sampai saat itu. Hubungan ini merupakan invarian yang sangat berguna untuk memeriksa kebenaran algoritma.
 
 ## Rata-rata sebagai gabungan akumulator dan *counter*
 
@@ -1434,7 +1434,7 @@ Dengan demikian, persentase data yang melampaui ambang adalah
 40\%.
 ```
 
-Hasil tersebut menunjukkan perbedaan yang cukup jelas antara rata-rata dan RMS. Walaupun rata-rata hanya $0.4$ m/s$^2$, nilai RMS hampir $6$ m/s$^2$ karena data memiliki osilasi positif dan negatif yang cukup besar.
+Hasil tersebut menunjukkan perbedaan yang cukup jelas antara rata-rata dan RMS. Walaupun rata-rata hanya $0.4~\text{m/s}^2$, nilai RMS hampir $6$ \text{m/s}^2$ karena data memiliki osilasi positif dan negatif yang cukup besar.
 
 ## Kesalahan umum pada algoritma iteratif
 
@@ -1749,7 +1749,7 @@ Untuk setiap subinterval, evaluasi fungsi pada titik tengah lalu akumulasikan ko
 
 ### 10. Proyek mini: analisis data getaran mesin
 
-Kembangkan studi kasus getaran mesin pada catatan ini menjadi program yang menerima data percepatan sampai sentinel `9999`. Program harus menolak data di luar rentang $-50$ sampai $50$ m/s$^2$ dan menghitung rata-rata, RMS, minimum, maksimum, jumlah data dengan $|a|>8$ m/s$^2$, serta persentasenya.
+Kembangkan studi kasus getaran mesin pada catatan ini menjadi program yang menerima data percepatan sampai sentinel `9999`. Program harus menolak data di luar rentang $-50$ sampai $50~\text{m/s}^2$ dan menghitung rata-rata, RMS, minimum, maksimum, jumlah data dengan $|a|>8~\text{m/s}^2$, serta persentasenya.
 
 Tambahkan satu fitur baru: hitung **crest factor**
 
