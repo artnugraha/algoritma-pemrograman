@@ -1434,7 +1434,7 @@ Dengan demikian, persentase data yang melampaui ambang adalah
 40\%.
 ```
 
-Hasil tersebut menunjukkan perbedaan yang cukup jelas antara rata-rata dan RMS. Walaupun rata-rata hanya $0.4~\text{m/s}^2$, nilai RMS hampir $6$ \text{m/s}^2$ karena data memiliki osilasi positif dan negatif yang cukup besar.
+Hasil tersebut menunjukkan perbedaan yang cukup jelas antara rata-rata dan RMS. Walaupun rata-rata hanya $0.4~\text{m/s}^2$, nilai RMS hampir $6~\text{m/s}^2$ karena data memiliki osilasi positif dan negatif yang cukup besar.
 
 ## Kesalahan umum pada algoritma iteratif
 
