@@ -186,6 +186,8 @@ Pokok bahasan:
 
 ### 6. Larik, fungsi, dan modularisasi program
 
+[Catatan Kuliah 6](Catatan-Kuliah/pertemuan-06.md)
+
 Pokok bahasan:
 
 - larik satu dimensi;
@@ -202,6 +204,8 @@ Pokok bahasan:
 
 ### 7. Data terstruktur dan pengolahan berkas dalam C
 
+[Catatan Kuliah 7](Catatan-Kuliah/pertemuan-07.md)
+
 Pokok bahasan:
 
 - `struct`;
@@ -217,6 +221,8 @@ Pokok bahasan:
 
 ### 8. Integrasi pemrograman C untuk kasus Teknik Fisika
 
+[Catatan Kuliah 8](Catatan-Kuliah/pertemuan-08.md)
+
 Pokok bahasan:
 
 - perumusan persoalan fisika menjadi algoritma;
@@ -230,6 +236,8 @@ Pokok bahasan:
 - pengujian dan pemeriksaan kewajaran hasil secara fisis.
 
 ### 9. Python untuk komputasi ilmiah
+
+[Catatan Kuliah 9](Catatan-Kuliah/pertemuan-09.md)
 
 Pokok bahasan:
 
