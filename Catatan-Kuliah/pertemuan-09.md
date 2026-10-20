@@ -2,7 +2,7 @@
 
 ## Mengapa beralih dari C ke Python?
 
-Pada delapan kuliah sebelumnya kita menggunakan bahasa C untuk memahami struktur program, representasi data, aliran kontrol, fungsi, larik, `struct`, dan berkas. Pendekatan tersebut penting karena C memperlihatkan banyak detail komputasi yang biasanya tersembunyi pada bahasa tingkat lebih tinggi.
+Pada kuliah-kuliah sebelumnya kita menggunakan bahasa C untuk memahami struktur program, representasi data, aliran kontrol, fungsi, larik, `struct`, dan berkas. Pendekatan tersebut penting karena C memperlihatkan banyak detail komputasi yang biasanya tersembunyi pada bahasa tingkat lebih tinggi.
 
 Pada kuliah ini kita mulai menggunakan Python sebagai perangkat komputasi ilmiah. Tujuannya bukan mempelajari seluruh bahasa Python, tetapi menggunakan bagian-bagian yang paling relevan untuk pengolahan data, komputasi numerik, dan visualisasi.
 
@@ -28,7 +28,7 @@ Alur berpikir yang ingin dipertahankan tetap sama:
 }
 ```
 
-Python akan membantu kita bekerja lebih cepat pada bagian analisis data dan visualisasi. Namun, kemudahan sintaks tidak menghilangkan kebutuhan untuk memeriksa satuan, asumsi, kasus batas, dan kewajaran hasil.
+Python akan membantu kita bekerja lebih cepat pada bagian analisis data dan visualisasi. Namun, kemudahan sintaks tidak menghilangkan tugas-tugas kita sebagai pemrogram untuk memeriksa satuan, asumsi, kasus batas, dan kewajaran hasil.
 
 ## Python sebagai perangkat komputasi ilmiah
 
@@ -608,7 +608,7 @@ Notasi `data[:, 0]` berarti semua baris pada kolom pertama. Sementara itu, `data
 
 ## Membaca CSV dengan `np.genfromtxt`
 
-Untuk CSV dengan nama kolom, `genfromtxt` cukup nyaman digunakan pada tahap awal. Contoh berikut membaca `motion.csv`.
+Untuk CSV dengan nama kolom, `genfromtxt` cukup memudahkan digunakan pada tahap awal. Contoh berikut membaca `motion.csv`.
 
 ```python
 data = np.genfromtxt(
@@ -1299,36 +1299,6 @@ Buat grafik dengan label sumbu, satuan, dan ukuran huruf yang dapat dibaca. Visu
 Bandingkan hasil numerik dengan nilai referensi jika tersedia. Pemeriksaan model sederhana, limit, atau orde besaran tetap menjadi bagian penting dari analisis.
 
 Simpan kode analisis bersama data dan hasil yang berkaitan. Struktur direktori yang rapi membantu reproduksibilitas dan memudahkan orang lain memahami alur kerja komputasi.
-
-## Struktur paket pertemuan ini
-
-Paket pertemuan ini memisahkan catatan, data, gambar, dan kode contoh. Pemisahan tersebut membuat hubungan antarberkas lebih mudah dipahami.
-
-Strukturnya adalah
-
-```text
-pertemuan-09-package/
-├── pertemuan-09.md
-├── README.txt
-├── Data/
-│   ├── motion.csv
-│   ├── cooling.csv
-│   ├── wave.csv
-│   └── voltage.dat
-├── Gambar/
-│   ├── gerak-posisi.png
-│   ├── gerak-posisi.svg
-│   ├── pendinginan.png
-│   ├── pendinginan.svg
-│   ├── gelombang.png
-│   └── gelombang.svg
-└── Kode/
-    ├── plot_gerak.py
-    ├── analisis_pendinginan.py
-    └── analisis_gelombang.py
-```
-
-Kode contoh menggunakan jalur relatif sehingga sebaiknya dijalankan dari direktori `Kode`. Pendekatan ini menjaga berkas data dan gambar tetap terorganisasi pada direktori masing-masing.
 
 ## Cek pemahaman
 
