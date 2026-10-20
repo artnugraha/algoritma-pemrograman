@@ -28,9 +28,9 @@ sehingga kemampuan menulis sintaks program (dengan bahasa apapun, tidak terbatas
 |   4 | 🔀 Percabangan dan pengulangan | [Materi 4](Catatan-Kuliah/pertemuan-04.md) (alternatif: [versi PDF](PDF/kuliah04.pdf))|
 |   5 | 🔁 Pola algoritma iteratif | [Materi 5](Catatan-Kuliah/pertemuan-05.md) (alternatif: [versi PDF](PDF/kuliah01.pdf))|
 |   6 | 🧱 Larik, fungsi, dan modularisasi program | [Materi 6](Catatan-Kuliah/pertemuan-06.md)                                   |
-|   7 | 📁 Data terstruktur dan pengolahan berkas dalam C          | menyusul                                   |
-|   8 | ⚙️ Integrasi pemrograman C untuk kasus Teknik Fisika       | menyusul                                   |
-|   9 | 🐍 Python untuk komputasi ilmiah                           | menyusul                                   |
+|   7 | 📁 Data terstruktur dan pengolahan berkas dalam C          | [Materi 7](Catatan-Kuliah/pertemuan-07.md)                                   |
+|   8 | ⚙️ Integrasi pemrograman C untuk kasus Teknik Fisika       | [Materi 8](Catatan-Kuliah/pertemuan-08.md)|
+|   9 | 🐍 Python untuk komputasi ilmiah                           | [Materi 9](Catatan-Kuliah/pertemuan-09.md)                                   |
 |  10 | 🔎 Algoritma pencarian                                     | menyusul                                   |
 |  11 | 📊 Algoritma pengurutan                                    | menyusul                                   |
 |  12 | 🔗 Studi kasus terintegrasi C dan Python                   | menyusul                                   |
