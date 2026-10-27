@@ -116,7 +116,7 @@ int main(void)
 }
 ```
 
-Kompilasi dengan `gcc -Wall -Wextra -Wpedantic -std=c17 arus.c -lm -o arus`. Contoh tracing untuk tujuh input berikut memakai `-999` sebagai input ketujuh.
+Kompilasi dengan `gcc arus.c -lm -o arus`. Contoh tracing untuk tujuh input berikut memakai `-999` sebagai input ketujuh.
 
 | Input $I$ (A) | Tindakan | `count` | `sum` | `sum_square` | `minimum` | `maximum` | `count_high` |
 |---:|---|---:|---:|---:|---:|---:|---:|
@@ -206,7 +206,7 @@ int main(void)
 }
 ```
 
-Kompilasi dengan `gcc -Wall -Wextra -Wpedantic -std=c17 getaran.c -lm -o getaran`. Untuk lima data $-12,-5,0,8,10$, jumlah tiap kategori berturut-turut adalah 2, 2, dan 1. Jumlah kuadratnya 333, sehingga RMS $=\sqrt{333/5}\approx8{,}161$ m/s$^2$, dan persentase `DANGER` adalah $20\%$. Nilai yang tepat sama dengan 5 masuk `NORMAL`, sedangkan yang tepat sama dengan 10 masuk `WARNING`.
+Kompilasi dengan `gcc getaran.c -lm -o getaran`. Untuk lima data $-12,-5,0,8,10$, jumlah tiap kategori berturut-turut adalah 2, 2, dan 1. Jumlah kuadratnya 333, sehingga RMS $=\sqrt{333/5}\approx8{,}161$ m/s$^2$, dan persentase `DANGER` adalah $20\%$. Nilai yang tepat sama dengan 5 masuk `NORMAL`, sedangkan yang tepat sama dengan 10 masuk `WARNING`.
 
 ## 3. Studi konvergensi deret
 
@@ -343,7 +343,7 @@ int main(void)
 }
 ```
 
-Kompilasi dengan `gcc -Wall -Wextra -Wpedantic -std=c17 akar_langkah.c -lm -o akar_langkah`. Nilai pembandingnya $\sqrt{7}\approx2{,}6457513111$.
+Kompilasi dengan `gcc akar_langkah.c -lm -o akar_langkah`. Nilai pembandingnya $\sqrt{7}\approx2{,}6457513111$.
 
 | $\Delta x$ | Pendekatan | Galat absolut | Iterasi |
 |---:|---:|---:|---:|
@@ -428,7 +428,7 @@ int main(void)
 }
 ```
 
-Kompilasi dengan `gcc -Wall -Wextra -Wpedantic -std=c17 babilonia.c -lm -o babilonia`. Sebagai uji, gunakan toleransi $10^{-10}$ dan batas 50 iterasi untuk $S=2$, $S=7$, dan $S=0{,}25$. Hasilnya berturut-turut mendekati $1{,}414213562373$ dalam **5** iterasi, $2{,}645751311065$ dalam **6** iterasi, dan $0{,}5$ dalam **6** iterasi. Konvergensi dekat akar biasanya cepat karena galat baru kira-kira sebanding dengan kuadrat galat sebelumnya, tetapi toleransi perubahan berturut-turut bukan pemeriksaan langsung atas $|x^2-S|$.
+Kompilasi dengan `gcc babilonia.c -lm -o babilonia`. Sebagai uji, gunakan toleransi $10^{-10}$ dan batas 50 iterasi untuk $S=2$, $S=7$, dan $S=0{,}25$. Hasilnya berturut-turut mendekati $1{,}414213562373$ dalam **5** iterasi, $2{,}645751311065$ dalam **6** iterasi, dan $0{,}5$ dalam **6** iterasi. Konvergensi dekat akar biasanya cepat karena galat baru kira-kira sebanding dengan kuadrat galat sebelumnya, tetapi toleransi perubahan berturut-turut bukan pemeriksaan langsung atas $|x^2-S|$.
 
 ## 6. Pemetaan daya pada dua parameter
 
@@ -573,7 +573,7 @@ int main(void)
 }
 ```
 
-Kompilasi dengan `gcc -Wall -Wextra -Wpedantic -std=c17 tekanan.c -lm -o tekanan`. Masukan `-10 121 100 89 111 -1` mula-mula menolak dua nilai, lalu menerima $100,89,111$ kPa. Hasilnya rata-rata 100 kPa, minimum 89 kPa, maksimum 111 kPa, dan dua data menyimpang lebih dari 10 kPa. Jika tidak ada data valid, program tidak membagi dengan nol.
+Kompilasi dengan `gcc tekanan.c -lm -o tekanan`. Masukan `-10 121 100 89 111 -1` mula-mula menolak dua nilai, lalu menerima $100,89,111$ kPa. Hasilnya rata-rata 100 kPa, minimum 89 kPa, maksimum 111 kPa, dan dua data menyimpang lebih dari 10 kPa. Jika tidak ada data valid, program tidak membagi dengan nol.
 
 ## 8. Algoritma iteratif dengan dua kriteria penghentian
 
@@ -664,7 +664,7 @@ int main(void)
 }
 ```
 
-Kompilasi dengan `gcc -Wall -Wextra -Wpedantic -std=c17 dua_kriteria.c -lm -o dua_kriteria`. Gunakan $A=2$ dan $\varepsilon=10^{-10}$ dalam kedua eksperimen:
+Kompilasi dengan `gcc dua_kriteria.c -lm -o dua_kriteria`. Gunakan $A=2$ dan $\varepsilon=10^{-10}$ dalam kedua eksperimen:
 
 | `max_iteration` | Hasil $x$ | Banyak iterasi | Alasan berhenti |
 |---:|---:|---:|---|
@@ -828,7 +828,7 @@ int main(void)
 }
 ```
 
-Kompilasi dengan `gcc -Wall -Wextra -Wpedantic -std=c17 getaran_mesin.c -lm -o getaran_mesin`. Gunakan urutan input $1{,}2,-2{,}4,8{,}7,75,-9{,}1,3{,}6,9999$ untuk tracing manual.
+Kompilasi dengan `gcc getaran_mesin.c -lm -o getaran_mesin`. Gunakan urutan input $1{,}2,-2{,}4,8{,}7,75,-9{,}1,3{,}6,9999$ untuk tracing manual.
 
 | Input | Tindakan | `count` | `sum` | `sum_square` | `minimum` | `maximum` | `max_abs` | `count_high` |
 |---:|---|---:|---:|---:|---:|---:|---:|---:|
