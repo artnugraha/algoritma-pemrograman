@@ -20,13 +20,16 @@ sehingga kemampuan menulis sintaks program (dengan bahasa apapun, tidak terbatas
 
 ## Daftar Materi
 
+Materi 1-9 tersedia dalam suatu format buku PDF: [klik di sini untuk *download*/unduh](Buku-AlPro.pdf).
+Untuk pembahasan yang lebih terperinci setiap babnya, silakan klik *link* setiap materi di bawah.
+
 | No. | Topik                                                      | *Link* Catatan Kuliah                      |
 | --: | ---------------------------------------------------------- | ------------------------------------------ |
-|   1 | 💻 Pengenalan algoritma, komputer, dan representasi data | [Materi 1](Catatan-Kuliah/pertemuan-01.md) (alternatif: [versi PDF](PDF/kuliah01.pdf))|
-|   2 | 🧠 Berpikir algoritmik dan perancangan algoritma         | [Materi 2](Catatan-Kuliah/pertemuan-02.md) (alternatif: [versi PDF](PDF/kuliah02.pdf))|
-|   3 | 🧩 Dasar-dasar pemrograman dalam bahasa C                 | [Materi 3](Catatan-Kuliah/pertemuan-03.md) (alternatif: [versi PDF](PDF/kuliah03.pdf))|
-|   4 | 🔀 Percabangan dan pengulangan | [Materi 4](Catatan-Kuliah/pertemuan-04.md) (alternatif: [versi PDF](PDF/kuliah04.pdf))|
-|   5 | 🔁 Pola algoritma iteratif | [Materi 5](Catatan-Kuliah/pertemuan-05.md) (alternatif: [versi PDF](PDF/kuliah01.pdf))|
+|   1 | 💻 Pengenalan algoritma, komputer, dan representasi data | [Materi 1](Catatan-Kuliah/pertemuan-01.md)|
+|   2 | 🧠 Berpikir algoritmik dan perancangan algoritma         | [Materi 2](Catatan-Kuliah/pertemuan-02.md)|
+|   3 | 🧩 Dasar-dasar pemrograman dalam bahasa C                 | [Materi 3](Catatan-Kuliah/pertemuan-03.md)|
+|   4 | 🔀 Percabangan dan pengulangan | [Materi 4](Catatan-Kuliah/pertemuan-04.md)|
+|   5 | 🔁 Pola algoritma iteratif | [Materi 5](Catatan-Kuliah/pertemuan-05.md)|
 |   6 | 🧱 Larik, fungsi, dan modularisasi program | [Materi 6](Catatan-Kuliah/pertemuan-06.md)                                   |
 |   7 | 📁 Data terstruktur dan pengolahan berkas dalam C          | [Materi 7](Catatan-Kuliah/pertemuan-07.md)                                   |
 |   8 | ⚙️ Integrasi pemrograman C untuk kasus Teknik Fisika       | [Materi 8](Catatan-Kuliah/pertemuan-08.md)|
