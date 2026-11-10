@@ -508,9 +508,9 @@ C dan Python tidak harus dipilih salah satu. Dalam praktik riset dan industri, k
 
 ```mermaid
 flowchart LR
-    RAW[("motion.csv")] --> PROG["program C<br/>(Kuliah 8)"]
-    PROG --> VEL[("velocity.csv")]
-    VEL --> PY["Python<br/>NumPy + Matplotlib"]
+    A["motion.csv"] --> B["program C (Kuliah 8)"]
+    B --> C["velocity.csv"]
+    C --> D["Python: NumPy dan Matplotlib"]
 ```
 
 Program Python berikut membaca `velocity.csv` yang dihasilkan program C pada Kuliah 8 dan menggambarkan kecepatan setiap interval pada titik tengahnya. Dari kemiringan garisnya, percepatan diperkirakan dengan `np.polyfit`, yang mencocokkan polinomial derajat satu terhadap data.

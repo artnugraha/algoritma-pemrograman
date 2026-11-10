@@ -35,14 +35,11 @@ Inisialisasi pertama mengikuti urutan anggota, sedangkan bentuk kedua (*designat
 
 Anggota `struct` tidak harus bertipe sama. Satu rekaman pembacaan sensor dapat memuat bilangan dan teks sekaligus:
 
-```mermaid
-classDiagram
-    class SensorReading {
-        char name[32]
-        double value
-        char unit[16]
-    }
-```
+| Anggota `SensorReading` | Tipe |
+|---|---|
+| `name` | `char[32]` |
+| `value` | `double` |
+| `unit` | `char[16]` |
 
 Contoh satu rekaman: `"pressure_1"`, `101.3`, `"kPa"`.
 
@@ -151,9 +148,9 @@ Pustaka `stdio.h` menyediakan tipe `FILE`; program bekerja dengan *pointer* `FIL
 
 ```mermaid
 flowchart LR
-    A["buka<br/>fopen"] --> B{"periksa<br/>fp == NULL?"}
-    B --> C[/"baca / tulis<br/>fscanf, fprintf"/]
-    C --> D["tutup<br/>fclose"]
+    A["buka: fopen"] --> B["periksa: fp == NULL?"]
+    B --> C["baca/tulis: fscanf, fprintf"]
+    C --> D["tutup: fclose"]
 ```
 
 Fungsi `fopen(nama, mode)` membuka berkas dan mengembalikan `NULL` jika gagal. Mode dasar yang penting adalah sebagai berikut.
@@ -405,11 +402,11 @@ Kode yang membuka berkas, mengurai baris, dan menghitung hasil di satu tempat su
 
 ```mermaid
 flowchart LR
-    IN[("electrical.csv")] --> LOAD["load_measurements"]
-    LOAD --> ARR["larik struct"]
-    ARR --> AN["mean_power<br/>index_max_power"]
-    ARR --> SAVE["save_results"]
-    SAVE --> OUT[("processed.csv")]
+    A["electrical.csv"] --> B["load_measurements"]
+    B --> C["larik struct"]
+    C --> D["mean_power, index_max_power"]
+    C --> E["save_results"]
+    E --> F["processed.csv"]
 ```
 
 Fungsi pemuatan berikut mengelola seluruh siklus buka–periksa–baca–tutup dan mengembalikan banyaknya rekaman valid, atau $-1$ jika berkas tidak dapat dibuka. Dengan antarmuka ini, jelas pula siapa yang bertanggung jawab menutup berkas.

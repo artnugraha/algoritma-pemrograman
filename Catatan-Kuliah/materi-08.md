@@ -59,20 +59,24 @@ Persoalan dipecah menjadi fungsi-fungsi dengan satu tanggung jawab masing-masing
 
 ```mermaid
 flowchart LR
-    M(["main"])
-    M --> F1["load_motion_data<br/><i>berkas → larik struct</i>"]
-    M --> F2["check_time_order<br/><i>validasi urutan waktu</i>"]
-    M --> F3["compute_velocities<br/><i>v_i = Δx_i / Δt_i</i>"]
-    M --> F4["mean_value<br/><i>rata-rata v_i</i>"]
-    M --> F5["global_average_velocity<br/><i>(x_N-1 − x_0) / (t_N-1 − t_0)</i>"]
-    M --> F6["index_max_abs<br/><i>indeks max |v_i|</i>"]
-    M --> F7["first_crossing<br/><i>indeks pertama |v_i| > v_th</i>"]
-    M --> F8["save_velocities<br/><i>larik → velocity.csv</i>"]
-    M --> F9["save_summary<br/><i>ringkasan → summary.txt</i>"]
-    classDef io fill:#E3EDF6,stroke:#3F7CAC
-    classDef an fill:#EFE7F3,stroke:#5A2D6E
-    class F1,F8,F9 io
-    class F2,F3,F4,F5,F6,F7 an
+    M["main"] --> F1["load_motion_data: berkas ke larik struct"]
+    M --> F2["check_time_order: validasi urutan waktu"]
+    M --> F3["compute_velocities: kecepatan tiap interval"]
+    M --> F4["mean_value: rata-rata kecepatan interval"]
+    M --> F5["global_average_velocity: perpindahan total / waktu total"]
+    M --> F6["index_max_abs: indeks kecepatan absolut terbesar"]
+    M --> F7["first_crossing: indeks pertama melewati ambang"]
+    M --> F8["save_velocities: larik ke velocity.csv"]
+    M --> F9["save_summary: ringkasan ke summary.txt"]
+    style F1 fill:#E3EDF6,stroke:#3F7CAC
+    style F8 fill:#E3EDF6,stroke:#3F7CAC
+    style F9 fill:#E3EDF6,stroke:#3F7CAC
+    style F2 fill:#EFE7F3,stroke:#5A2D6E
+    style F3 fill:#EFE7F3,stroke:#5A2D6E
+    style F4 fill:#EFE7F3,stroke:#5A2D6E
+    style F5 fill:#EFE7F3,stroke:#5A2D6E
+    style F6 fill:#EFE7F3,stroke:#5A2D6E
+    style F7 fill:#EFE7F3,stroke:#5A2D6E
 ```
 
 Fungsi berwarna biru muda bekerja dengan berkas (lapisan I/O); fungsi berwarna ungu muda hanya bekerja pada data di memori (lapisan analisis). Dengan pemisahan ini, jika kecepatan yang dihitung salah, kita cukup memeriksa `compute_velocities` tanpa menelusuri kode pembacaan berkas.
