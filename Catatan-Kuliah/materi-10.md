@@ -481,7 +481,7 @@ Jika pengguna memasukkan 26, kedua program menampilkan `Besi (Z=26): 7.87 g/cm^3
 
 ## Pencarian pada data pengukuran real
 
-Dalam data eksperimen, pencarian eksak menggunakan `==` tidak selalu sesuai karena pembulatan *floating-point* dan ketidakpastian pengukuran. Kita perlu merumuskan kondisi pencarian berdasarkan tujuan fisik, misalnya mencari pengukuran tegangan yang berada dalam toleransi tertentu.
+Dalam data eksperimen, pencarian eksak menggunakan `==` tidak selalu sesuai karena pembulatan *floating-point* dan ketidakpastian pengukuran. Kita perlu merumuskan kondisi pencarian berdasarkan tujuan fisika, misalnya mencari pengukuran tegangan yang berada dalam toleransi tertentu.
 
 Jika target tegangan adalah $V_*$ dengan toleransi absolut $\varepsilon\geq0$, kondisi yang digunakan dapat berupa persamaan berikut. Toleransi tersebut harus memiliki satuan yang sama dengan tegangan.
 
@@ -616,5 +616,5 @@ Simpan hasil sebagai CSV dan gambarkan jumlah pemeriksaan terhadap $N$ menggunak
 - Pencarian beruntun memeriksa elemen secara berurutan dan dapat digunakan pada data tidak terurut. Kompleksitas waktu terburuknya adalah $O(N)$.
 - Pencarian biner memperkecil ruang pencarian menjadi sekitar separuh pada setiap langkah. Algoritma ini memerlukan data terurut berdasarkan kunci pencarian dan memiliki kompleksitas waktu terburuk $O(\log N)$.
 - Kedua algoritma dapat mengembalikan indeks sehingga informasi lain pada rekaman yang sama tetap dapat diakses. Nilai `-1` harus diperiksa sebelum indeks digunakan.
-- Pemilihan algoritma bergantung pada keterurutan data, banyaknya pencarian, dan kondisi yang ingin ditemukan. Pencarian pada data real juga harus mempertimbangkan toleransi serta makna fisik besaran.
+- Pemilihan algoritma bergantung pada keterurutan data, banyaknya pencarian, dan kondisi yang ingin ditemukan. Pencarian pada data real juga harus mempertimbangkan toleransi serta makna fisis besaran.
 - Implementasi C dan Python memiliki sintaks berbeda, tetapi mengikuti logika algoritmik yang sama. Kebenaran dapat diperiksa melalui invarian, penelusuran, dan pengujian kasus batas.
