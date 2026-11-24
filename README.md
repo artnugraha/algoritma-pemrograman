@@ -35,7 +35,7 @@ Untuk pembahasan yang lebih terperinci setiap babnya, silakan klik *link* setiap
 |   8 | ⚙️ Integrasi pemrograman C untuk kasus Teknik Fisika       | [Materi 8](Catatan-Kuliah/materi-08.md)|
 |   9 | 🐍 Python untuk komputasi ilmiah                           | [Materi 9](Catatan-Kuliah/materi-09.md)                                   |
 |  10 | 🔎 Algoritma pencarian                                     | [Materi 10](Catatan-Kuliah/materi-10.md)                                   |
-|  11 | 📊 Algoritma pengurutan                                    | menyusul                                   |
+|  11 | 📊 Algoritma pengurutan                                    | [Materi 11](Catatan-Kuliah/materi-11.md)                                   |
 |  12 | 🔗 Studi kasus terintegrasi C dan Python                   | menyusul                                   |
 |  13 | 🌳 Pengantar algoritma *machine learning*: *decision tree* | menyusul                                   |
 
