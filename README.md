@@ -34,7 +34,7 @@ Untuk pembahasan yang lebih terperinci setiap babnya, silakan klik *link* setiap
 |   7 | 📁 Data terstruktur dan pengolahan berkas dalam C          | [Materi 7](Catatan-Kuliah/materi-07.md)                                   |
 |   8 | ⚙️ Integrasi pemrograman C untuk kasus Teknik Fisika       | [Materi 8](Catatan-Kuliah/materi-08.md)|
 |   9 | 🐍 Python untuk komputasi ilmiah                           | [Materi 9](Catatan-Kuliah/materi-09.md)                                   |
-|  10 | 🔎 Algoritma pencarian                                     | menyusul                                   |
+|  10 | 🔎 Algoritma pencarian                                     | [Materi 10](Catatan-Kuliah/materi-10.md)                                   |
 |  11 | 📊 Algoritma pengurutan                                    | menyusul                                   |
 |  12 | 🔗 Studi kasus terintegrasi C dan Python                   | menyusul                                   |
 |  13 | 🌳 Pengantar algoritma *machine learning*: *decision tree* | menyusul                                   |
